@@ -734,8 +734,11 @@
     <string name="less_boring_heads_up_summary">Show heads up only for dialer, messaging and alarm app</string>
 
     <!-- Notification guts kill app button -->
-    <string name="notification_misc">Misc</string>
     <string name="notification_guts_kill_app_button_title">Kill app button</string>
     <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+
+    <!-- Show statusbar on lockscreen -->
+    <string name="lockscreen_show_status_bar_title">Statusbar</string>
+    <string name="lockscreen_show_status_bar_summary">Show statusbar on the lockscreen</string>
 
 </resources>
