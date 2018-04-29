@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 Zenx-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/zen_hub_title" >
+
+        <!-- Quick Settings + Statusbar -->
+        <Preference
+            android:key="statusbar_quicksettings_category"
+            android:title="@string/statusbar_quicksettings_title"
+            android:summary="@string/statusbar_quicksettings_summary"
+            android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.StatusbarQuicksettingsController"
+            android:icon="@drawable/ic_settings_quicksettings"/>
+
+        <!-- Lock Screen + Ambient Display -->
+        <Preference
+            android:key="lockscreen_ambient_category"
+            android:title="@string/lockscreen_ambient_title"
+            android:summary="@string/lockscreen_ambient_summary"
+            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.LockScreenAmbientController"
+            android:icon="@drawable/ic_settings_lockscreen"/>
+
+        <!-- Buttons + Gestures -->
+        <Preference
+            android:key="buttons_powermenu_volumebutton_category"
+            android:title="@string/buttons_powermenu_volumebutton_title"
+            android:summary="@string/buttons_powermenu_volumebutton_summary"
+            android:fragment="com.zenx.zen.hub.fragments.buttons.ButtonsPowerMenuVolumeButtonController"
+            android:icon="@drawable/ic_settings_buttons"/>
+
+        <!-- Notifications + Headsup -->
+        <Preference
+            android:key="notification_headsup_category"
+            android:title="@string/notification_headsup_title"
+            android:summary="@string/notification_headsup_summary"
+            android:fragment="com.zenx.zen.hub.fragments.noficationheadsup.NotificationsHeadsUpSettingsController"
+            android:icon="@drawable/ic_settings_notifications"/>
+
+        <!-- Screen + Animation -->
+        <Preference
+            android:key="screen_animation_category"
+            android:title="@string/screen_animation_title"
+            android:summary="@string/screen_animation_summary"
+            android:fragment="com.zenx.zen.hub.fragments.screenanimation.UserInterfaceController"
+            android:icon="@drawable/ic_settings_screen"/>
+
+        <!-- Misc + Battery saving-->
+        <Preference
+            android:key="misc_battery_category"
+            android:title="@string/misc_battery_title"
+            android:summary="@string/misc_battery_summary"
+            android:fragment="com.zenx.zen.hub.fragments.noficationbattery.MiscBatteryController"
+            android:icon="@drawable/ic_settings_misc"/>
+
+        <!-- Rom links + contact -->
+        <Preference
+            android:key="links_devs_category"
+            android:title="@string/links_devs_title"
+            android:summary="@string/links_devs_summary"
+            android:fragment="com.zenx.zen.hub.fragments.noficationdevs.LinksDevsController"
+            android:icon="@drawable/ic_settings_about"/>
+
+</PreferenceScreen>

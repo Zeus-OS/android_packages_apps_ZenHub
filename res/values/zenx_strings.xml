@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 Zenx-OS
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="zen_hub_title">ZenHub</string>
+
+     <!-- Zenx-Combination-Categories -->
+    <string name="statusbar_quicksettings_title">Statusbar</string>
+    <string name="statusbar_quicksettings_summary">Clock, Battery, Traffic, Carrier, Quicksettings</string>
+    <string name="screen_animation_title">Userinterface</string>
+    <string name="screen_animation_summary"> Theming, Round Corner, App Scaling, Animation</string>
+    <string name="notification_headsup_title">Notifications</string>
+    <string name="notification_headsup_summary">Notification LED, Clear button, Headsup settings</string>
+    <string name="misc_battery_title">Miscellaneous</string>
+    <string name="misc_battery_summary">Gaming Mode, Screenshot, Suspend Actions, Battery options</string>
+    <string name="lockscreen_ambient_title">Lockscreen</string>
+    <string name="lockscreen_ambient_summary">Media cover art, Charging Info, Always on, Doze gestures</string>
+    <string name="links_devs_title">Rom Information</string>
+    <string name="links_devs_summary">General Rom and Developer Information</string>
+    <string name="buttons_powermenu_volumebutton_title">Navigation</string>
+    <string name="buttons_powermenu_volumebutton_summary">Buttons, Gestures, Powermenu settings, Volume options</string>
+    <string name="update_title">Update</string>
+    <string name="system_updates_title">System Update</string>
+    <string name="system_updates_summary">Check for newer ZenX-OS version</string>
+    <string name="ui_catergory_title">Style</string>
+    <string name="settings_category_title">Settings</string>
+    <string name="device_parts_title">Device Parts</string>
+    <string name="device_parts_summary">Advanced options for setting up device and kernel values</string>
+
+    <!-- Zenx-Bottom-Navigation -->
+    <string name="bottom_nav_statusbar_title">Statusbar</string>
+    <string name="bottom_nav_quicksettings_title">Quicksettings</string>
+    <string name="bottom_nav_animations_title">Animation</string>
+    <string name="bottom_nav_screen_title">UI</string>
+    <string name="bottom_nav_notification_title">Notification</string>
+    <string name="bottom_nav_headsupsettings_title">HeadsUp</string>
+    <string name="bottom_nav_misc_title">Misc</string>
+    <string name="bottom_nav_battery_title">Battery</string>
+    <string name="bottom_nav_lockscreen_title">Lockscreen</string>
+    <string name="bottom_nav_ambient_title">Ambient</string>
+    <string name="bottom_nav_links_title">Links</string>
+    <string name="bottom_nav_devs_title">Devs</string>
+    <string name="bottom_nav_buttons_title">Buttons</string>
+    <string name="bottom_nav_powermenu_title">Power</string>
+    <string name="bottom_nav_volumebutton_title">Volume</string>
+
+    <!-- Zenx-Header-Title -->
+    <string name="volume_title">Volume Buttons</string>
+    <string name="misc_title">Miscellaneous</string>
+    <string name="powermenu_title">Power Menu</string>
+    <string name="statusbar_title">Status Bar</string>
+    <string name="screen_title">Userinterface</string>
+    <string name="quicksettings_title">Quick Settings</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="lockscreen_title">Lock Screen</string>
+    <string name="links_title">Links &#38; Community </string>
+    <string name="headsup_title">Heads Up </string>
+    <string name="devs_title">Developers</string>
+    <string name="buttons_title">Buttons</string>
+    <string name="battery_title">Battery Saving</string>
+    <string name="animations_title">Animations</string>
+    <string name="ambient_title">Ambient</string>
+    <string name="device_maintainers_title">Maintainers</string>
+
+     <!-- Zenx-Categories -->
+    <string name="about_summary">Learn more about ZenX-OS</string>
+    <string name="animations_summary">System animations, QS tile animations</string>
+    <string name="buttons_summary">Hardware keys, Navigation bar</string>
+    <string name="gestures_title">Gestures</string>
+    <string name="gestures_summary">Jump to camera, swipe to screenshot</string>
+    <string name="display_title">Screen</string>
+    <string name="ime_title">IME Settings</string>
+    <string name="ime_summary">Advanced IME settings</string>
+    <string name="interface_title">Interface</string>
+    <string name="lockscreen_summary">Music visualizer, pocket detection</string>
+    <string name="ambient_summary">Doze wake up gestures, aod</string>
+    <string name="misc_summary">Gaming mode, charging animation</string>
+    <string name="navigation_title">Navigation</string>
+    <string name="notifications_summary">Edge lighting, heads-up</string>
+    <string name="quicksettings_summary">Tile layout, header image, background blur</string>
+    <string name="recents_title">Recents</string>
+    <string name="statusbar_summary">Clock, logo, status icons</string>
+    <string name="system_title">System</string>
+    <string name="battery_saving_summary">Smart pixels, suspend actions</string>
+    <string name="doze_display_title">Ambient Display</string>
+    <string name="ambient_display_custom_title">Ambient Display</string>
+    <string name="ambient_display_custom_summary">Always on, music ticker, gestures</string>
+    <string name="screen_summary">Rounded corners, legacy app scaling</string>
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="attention">Attention</string>
+    <string name="default_string">Default</string>
+    
+
+    <!-- Animation Categories -->
+	<string name="system_animation_title">System</string>
+	<string name="list_animation_title">List</string>
+	<string name="tile_animation_title">Tile</string>
+	<string name="power_menu_category">Power</string>
+	<string name="toast_animation_cat_title">Toast</string>
+
+    <!-- Battery Categories -->
+    <string name="battery_wakelock">Wakelocks</string>
+    <string name="advanced_doze_settings">Doze</string>
+
+    <!-- Display Categories -->
+    <string name="corners_category">Corners</string>
+    <string name="cutout_main">Display Cutout</string>
+
+    <!-- Gestures Categories -->
+    <string name="gesture_misc">Misc</string>
+    <string name="gesture_nav">Navigation</string>
+
+    <!-- Interface Categories -->
+     <string name="qs_themes_category_title">QS Themes</string>
+     <string name="custom_header_category">QS Header</string>
+     <string name="dashboard_category">Settings</string>
+
+    <!-- Lockscreen Categories -->
+    <string name="lockscreen_media_category">Music</string>
+    <string name="ls_clock">Widgets</string>
+    <string name="weather_title">Weather</string>
+    <string name="ls_unlocking">Weather</string>
+    <string name="ls_disable_elements">Elements</string>
+    <string name="ls_shortcuts">Shortcuts</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Charging info</string>
+    <string name="lockscreen_battery_info_summary">Display charger max current, voltage and battery temperature while charging</string>
+
+    <!-- Misc Categories -->
+    <string name="connector_category">Connection Settings</string>
+    <string name="gaming_category">Gaming Mode</string>
+    <string name="screenshot_category">Screenshot</string>
+
+    <!-- Notification Categories -->
+    <string name="notification_lights">Lights</string>
+    <string name="notification_stat">Statusbar</string>
+    <string name="status_bar_show_ticker_title">Ticker</string>
+    <string name="notification_messages">System</string>
+    <string name="notification_misc">Misc</string>
+    <string name="incall_vibration_category">In-call Vibration</string>
+
+    <!-- Quicksettings Categories -->
+    <string name="qs_layout_category">Layout</string>
+    <string name="brightness_category_title">Brightness</string>
+    <string name="qs_element_title">Brightness Slider</string>
+    <string name="qs_clock_title">QS header clock</string>
+    <string name="header_title">Header</string>
+    <string name="footer_title">Footer</string>
+
+    <!-- Recent Categories -->
+    <string name="slim_recents_title">Slim Recents</string>
+    <string name="recent_button_title">Stock Recents</string>
+    <string name="immersive_recent_title">Immersive Recent</string>
+
+    <!-- System Categories -->
+    <string name="navigation_burnin_category">Burn-in Protection</string>
+    <string name="system_tuner">System Tuner</string>
+
+    <!-- Statusbar Categories -->
+    <string name="statusbar_gestures">Gestures</string>
+    <string name="statusbar_clock">Clock</string>
+    <string name="statusbar_battery">Battery</string>
+    <string name="statusbar_ntraffic">Network</string>
+    <string name="statusbar_logo">Logo</string>
+    <string name="statusbar_items_category">Icons</string>
+    <string name="breathing_notifications_category">Breathing Notifications</string>
+    <string name="default_string">Default</string>
+</resources>

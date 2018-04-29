@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zenx.zen.hub.ZenHub"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:id="@+id/zenhublinearlayout">
+
+    <GridLayout
+        android:id="@+id/main_zen_hub_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="4dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:padding="2dp"
+        android:rowCount="4">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/statusbar_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_quicksettings" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/statusbar_quicksettings_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/statusbar_quicksettings_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/notification_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_notifications" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notification_headsup_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notification_headsup_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/lockscreen_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_lockscreen" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lockscreen_ambient_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lockscreen_ambient_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/navigation_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_navigation" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buttons_powermenu_volumebutton_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buttons_powermenu_volumebutton_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/screen_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_screen" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_animation_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_animation_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/misc_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_misc" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/misc_battery_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/misc_battery_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/device_parts_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_device_parts" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/device_parts_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/device_parts_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rom_info_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="48dp"
+            app:rippleColor="?android:attr/colorAccent"
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_settings_about" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/links_devs_title"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/links_devs_summary"
+                    android:textAlignment="center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </GridLayout>
+</LinearLayout>
