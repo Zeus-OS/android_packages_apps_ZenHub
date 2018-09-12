@@ -27,16 +27,24 @@
          android:summary="@string/animation_settings_summary"
          android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.SystemAnimation" />
 
+        <ListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values"
+            android:persistent="false"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
-<!-- 
-    <PreferenceCategory
+
+    <!-- <PreferenceCategory
         android:title="@string/list_animation_title"
         android:key="list_animation"  >
 
 
-    </PreferenceCategory> -->
- 
-    <PreferenceCategory
+    </PreferenceCategory>
+
+    <PreferenceCategory -->
          android:title="@string/tile_animation_title"
          android:key="tile_animation">
 
