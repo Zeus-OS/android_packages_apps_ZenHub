@@ -52,7 +52,7 @@
         android:entryValues="@array/volume_key_cursor_control_values"
         android:defaultValue="0" />
 
-    <com.havoc.support.preferences.SystemSettingSwitchPreference
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="volume_answer_call"
         android:title="@string/volume_answer_call_title"
         android:summary="@string/volume_answer_call_summary"
