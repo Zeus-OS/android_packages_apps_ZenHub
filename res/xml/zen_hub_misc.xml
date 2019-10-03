@@ -22,6 +22,12 @@
         android:key="connector_category"
         android:title="@string/connector_category">
 
+    <com.zenx.support.preferences.GlobalSettingSwitchPreference
+            android:key="wake_when_plugged_or_unplugged"
+            android:title="@string/wakeup_when_plugged_unplugged_title"
+            android:summary="@string/wakeup_when_plugged_unplugged_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
