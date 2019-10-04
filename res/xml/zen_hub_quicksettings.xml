@@ -49,6 +49,12 @@
         android:title="@string/qs_element_title"
         android:key="element" >
 
+      <com.zenx.support.preferences.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
+
      <com.zenx.support.preferences.SystemSettingListPreference
          android:key="qs_system_info"
          android:title="@string/qs_system_info_title"
@@ -56,6 +62,8 @@
          android:entryValues="@array/qs_system_info_values"
          android:defaultValue="0"
          android:summary="%s" />
+
+
 
     </PreferenceCategory>
 
