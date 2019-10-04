@@ -22,6 +22,12 @@
         android:key="ls_gestures"
         android:title="@string/gestures_title">
 
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_lockscreen"
+        android:title="@string/double_tap_sleep_lockscreen_title"
+        android:summary="@string/double_tap_sleep_lockscreen_summary"
+        android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
