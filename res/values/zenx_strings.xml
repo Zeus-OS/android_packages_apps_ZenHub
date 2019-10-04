@@ -58,7 +58,6 @@
     <string name="bottom_nav_volumebutton_title">Volume</string>
 
     <!-- Zenx-Header-Title -->
-    <string name="volume_title">Volume Buttons</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="powermenu_title">Power Menu</string>
     <string name="statusbar_title">Status Bar</string>
@@ -101,6 +100,7 @@
     <string name="screen_summary">Rounded corners, legacy app scaling</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="volume_summary">Customize settings for volume buttons</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -188,4 +188,7 @@
     <string name="default_string">Default</string>
      <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar items</string>
+        <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Playback control</string>
+    <string name="volume_rocker_music_controls_summary">When the screen is off, long-pressing the volume keys will seek music tracks</string>
 </resources>
