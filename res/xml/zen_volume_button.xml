@@ -30,12 +30,6 @@
             android:title="@string/volume_rocker_wake_title"
             android:defaultValue="false" />
     
-        <Preference
-            android:key="volume_key"
-            android:fragment="com.zen.hub.fragments.Volume"
-            android:title="@string/volume_title"
-            android:summary="@string/volume_summary" />
-
     <com.zenx.support.preferences.SystemSettingListPreference
         android:key="volume_key_cursor_control"
         android:summary="%s"
