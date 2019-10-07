@@ -18,7 +18,7 @@
     android:title="@string/misc_battery_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
+
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="sensor_block"
             android:title="@string/sensor_block_title"
@@ -32,12 +32,16 @@
          android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.SmartPixels" />
 
 
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:key="battery_actions"
         android:title="@string/advanced_doze_settings">
 
+
+    <Preference
+        android:key="screenstate_category" 
+        android:title="@string/screen_state_toggles_title"  
+        android:summary="@string/screen_state_toggles_summary"  
+        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.ScreenStateToggles" /> 
 
     </PreferenceCategory>
 
