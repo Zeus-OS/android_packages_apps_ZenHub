@@ -280,6 +280,19 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Prevent burn-in by shifting pixels every</string>
 
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_category">QS tiles animations</string>
+    <string name="qs_tile_animation_style_title">QS tiles animation style</string>
+    <string name="qs_tile_animation_duration_title">QS tiles animation duration</string>
+    <string name="qs_tile_animation_style_off">no animation</string>
+    <string name="qs_tile_animation_style_flip">flip</string>
+    <string name="qs_tile_animation_style_rotate">rotate</string>
+    <string name="qs_tile_animation_duration_low">low</string>
+    <string name="qs_tile_animation_duration_default">default</string>
+    <string name="qs_tile_animation_duration_fast">fast</string>
+    <string name="qs_set_animation_style">Animation is set to %1$s</string>
+    <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
+
      <!-- Volume Steps Fragment -->
     <string name="volume_steps_fragment_title">Volume steps</string>
     <string name="volume_steps_summary">Customize volume steps</string>
