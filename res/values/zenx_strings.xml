@@ -292,4 +292,7 @@
     <string name="ambient_battery_percent_title">Battery level on bottom</string> 
     <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
 
+        <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Sensor block per-package</string>
+    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string> 
 </resources>
