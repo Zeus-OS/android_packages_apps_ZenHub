@@ -18,4 +18,10 @@
     android:title="@string/misc_battery_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+     <Preference
+         android:key="smart_pixels"
+         android:title="@string/smart_pixels_title"
+         android:summary="@string/smart_pixels_summary"
+         android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.SmartPixels" />
+
 </PreferenceScreen>
