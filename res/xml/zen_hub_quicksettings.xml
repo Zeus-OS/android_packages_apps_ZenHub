@@ -84,6 +84,12 @@
         android:title="@string/footer_title"
         android:key="footer" >
 
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_edit_toggle"
+            android:title="@string/qs_edit_title"
+            android:summary="@string/qs_edit_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
