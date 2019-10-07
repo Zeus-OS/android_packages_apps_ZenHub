@@ -90,6 +90,12 @@
             android:summary="@string/qs_edit_summary"
             android:defaultValue="true" />
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_settings_toggle"
+            android:title="@string/qs_settings_title"
+            android:summary="@string/qs_settings_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
