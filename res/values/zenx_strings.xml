@@ -387,4 +387,9 @@
 
         <!-- QS background opacity -->
     <string name="qs_panel_alpha_title">Opacity</string>
+
+    <string name="status_bar_clock_auto_hide_title">Auto-hide</string>
+    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular intervals</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
 </resources>
