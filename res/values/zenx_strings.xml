@@ -403,4 +403,5 @@
     <string name="show_dnd_on_lockscreen_summary">Enable or disable dnd in infobox</string>
     <string name="show_alarm_on_lockscreen_title">Show Alarm in Info</string>
     <string name="show_alarm_on_lockscreen_summary">Enable or disable alarm in infobox</string>
+    <string name="sysui_qqs_count_title">Small tiles</string>	
 </resources>

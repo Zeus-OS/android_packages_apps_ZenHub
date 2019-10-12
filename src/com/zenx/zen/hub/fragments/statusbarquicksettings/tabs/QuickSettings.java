@@ -43,6 +43,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private SystemSettingSeekBarPreference mQsPanelAlpha;
 
+    private SystemSettingSeekBarPreference mSysuiQqsCount;	
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,13 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         mQsPanelAlpha.setValue(qsPanelAlpha);
         mQsPanelAlpha.setOnPreferenceChangeListener(this);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
+        mSysuiQqsCount = (SystemSettingSeekBarPreference) findPreference("sysui_qqs_count");
+        mSysuiQqsCount.setValue(value);
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);		
     }
 
     @Override
@@ -62,6 +71,11 @@ public class QuickSettings extends SettingsPreferenceFragment
             int bgAlpha = (Integer) newValue;
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mSysuiQqsCount) {
+            int val = (Integer) newValue;
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
