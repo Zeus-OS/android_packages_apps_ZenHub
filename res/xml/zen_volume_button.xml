@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="swap_volume_buttons"
+        android:title="@string/swap_volume_buttons_title"
+        android:summary="@string/swap_volume_buttons_summary"
+        android:defaultValue="false" />
+
+     <com.zenx.support.preferences.SystemSettingSwitchPreference
          android:key="volume_button_music_control"
          android:summary="@string/volume_rocker_music_controls_summary"
          android:title="@string/volume_rocker_music_controls_title"
