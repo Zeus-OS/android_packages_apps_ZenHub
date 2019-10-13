@@ -28,6 +28,11 @@
         android:key="cutout_settings"
         android:title="@string/cutout_main" >
 
+    <Preference
+        android:key="display_cutout_force_fullscreen_settings"
+        android:title="@string/display_cutout_force_fullscreen_title"
+        android:summary="@string/display_cutout_force_fullscreen_summary"
+        android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.DisplayCutoutForceFullscreenSettings" />
 
     </PreferenceCategory>
 </PreferenceScreen>
