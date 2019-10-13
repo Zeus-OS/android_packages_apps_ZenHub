@@ -41,6 +41,13 @@
         android:key="screenshot_category"
         android:title="@string/screenshot_category">
 
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="screenshot_type"
+            android:entries="@array/screenshot_type_entries"
+            android:entryValues="@array/screenshot_type_values"
+            android:title="@string/screenshot_type_title"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

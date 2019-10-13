@@ -404,4 +404,11 @@
     <string name="show_alarm_on_lockscreen_title">Show Alarm in Info</string>
     <string name="show_alarm_on_lockscreen_summary">Enable or disable alarm in infobox</string>
     <string name="sysui_qqs_count_title">Small tiles</string>	
+    
+    <!-- Screenshot -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshots</string>
+    <string name="screenshot_type_partial">Drag selection on the area you want to take as a screenshot</string>
+    <string name="screenshot_options_category">Screenshot options</string>
+    <string name="screenshot_options_summary">Customize screenshot attributes like time, delay,type etc</string>
 </resources>
