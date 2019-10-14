@@ -89,6 +89,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mShowDuration.setValue(showVal);
         mShowDuration.setOnPreferenceChangeListener(this);
         
+
     }
 
     @Override
