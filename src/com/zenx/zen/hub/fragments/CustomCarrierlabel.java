@@ -33,7 +33,6 @@ import android.text.Spannable;
 import android.text.TextUtils;
 import android.provider.Settings;
 import android.widget.EditText;
-import com.android.settings.R;
 
 import java.util.Locale;
 import android.text.TextUtils;

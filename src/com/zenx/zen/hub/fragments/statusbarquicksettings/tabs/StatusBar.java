@@ -64,9 +64,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
      private static final String CLOCK_DATE_AUTO_HIDE_HDUR = "status_bar_clock_auto_hide_hduration";
     private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
+    private static final String KEY_CARRIER_LABEL = "status_bar_show_carrier";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
+    private SystemSettingListPreference mShowCarrierLabel;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -88,6 +90,23 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, 5, UserHandle.USER_CURRENT);
         mShowDuration.setValue(showVal);
         mShowDuration.setOnPreferenceChangeListener(this);
+
+        mShowCarrierLabel = (SystemSettingListPreference) findPreference(KEY_CARRIER_LABEL);
+        int showCarrierLabel = Settings.System.getInt(resolver,
+        Settings.System.STATUS_BAR_SHOW_CARRIER, 1);
+        CharSequence[] NonNotchEntries = { getResources().getString(R.string.show_carrier_disabled),
+                getResources().getString(R.string.show_carrier_keyguard),
+                getResources().getString(R.string.show_carrier_statusbar), getResources().getString(
+                        R.string.show_carrier_enabled) };
+        CharSequence[] NotchEntries = { getResources().getString(R.string.show_carrier_disabled),
+                getResources().getString(R.string.show_carrier_keyguard) };
+        CharSequence[] NonNotchValues = {"0", "1" , "2", "3"};
+        CharSequence[] NotchValues = {"0", "1"};
+        mShowCarrierLabel.setEntries(Utils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
+        mShowCarrierLabel.setEntryValues(Utils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
+        mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
+        mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
+        mShowCarrierLabel.setOnPreferenceChangeListener(this);
         
 
     }
@@ -105,10 +124,29 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, value, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mShowCarrierLabel) {
+            int value = Integer.parseInt((String) newValue);
+            updateCarrierLabelSummary(value);
+            return true;
         }
         return false;
     }
 
+    private void updateCarrierLabelSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Carrier Label disabled
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_disabled));
+        } else if (value == 1) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_keyguard));
+        } else if (value == 2) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_statusbar));
+        } else if (value == 3) {
+            mShowCarrierLabel.setSummary(res.getString(R.string.show_carrier_enabled));
+        }
+    }
+    
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.ZENX_SETTINGS;
