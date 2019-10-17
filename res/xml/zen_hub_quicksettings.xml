@@ -95,6 +95,19 @@
             android:defaultValue="14"
             settings:units="sp" />
 
+        <ListPreference
+            android:key="qs_header_clock_font_style"
+            android:dialogTitle="@string/qs_header_clock_font_style_title"
+            android:title="@string/qs_header_clock_font_style_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="@string/qs_header_clock_font_style_summary"
+            android:defaultValue="14" />
+
+        <com.zenx.support.colorpicker.ColorPickerPreference
+            android:key="qs_header_clock_color"
+            android:title="@string/qs_header_clock_color_title"
+            settings:defaultColorValue="0xFFFFFFFF" />
 
     </PreferenceCategory>
 
