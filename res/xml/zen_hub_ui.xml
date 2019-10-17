@@ -73,13 +73,6 @@
         android:title="@string/ui_elemets_catergory_title">
 
     <com.zenx.support.preferences.SystemSettingListPreference
-            android:key="systemui_plugin_volume"
-            android:title="@string/volume_panel"
-            android:entries="@array/volume_panel_entries"
-            android:entryValues="@array/volume_panel_values"
-            android:defaultValue="@string/volume_panel_aosp_val" />
-
-    <com.zenx.support.preferences.SystemSettingListPreference
         android:key="switch_style"
         android:title="@string/switch_style_title"
         android:dialogTitle="@string/switch_style_title"
@@ -103,6 +96,11 @@
         android:entries="@array/navbar_style_entries"
         android:entryValues="@array/navbar_style_values"
         android:defaultValue="0" />
+
+    <Preference
+        android:key="audio_panel"
+        android:fragment="com.derpquest.settings.fragments.AudioPanelSettings"
+        android:title="@string/audio_panel_view" />
 
     </PreferenceCategory>
 
