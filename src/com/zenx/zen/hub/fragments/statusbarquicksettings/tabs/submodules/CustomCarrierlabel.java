@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zenx.zen.hub.fragments;
+package com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules;
 
 import android.app.AlertDialog;
 import android.os.Bundle;

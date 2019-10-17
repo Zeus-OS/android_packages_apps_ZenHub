@@ -65,11 +65,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
      private static final String CLOCK_DATE_AUTO_HIDE_HDUR = "status_bar_clock_auto_hide_hduration";
     private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
     private static final String KEY_CARRIER_LABEL = "status_bar_show_carrier";
+    private static final String STATUS_BAR_CLOCK = "status_bar_clock";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
     private SystemSettingListPreference mShowCarrierLabel;
 
+    private SystemSettingMasterSwitchPreference mStatusBarClockShow;
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -78,18 +80,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.zen_hub_statusbar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        mHideDuration = (CustomSeekBarPreference) findPreference(CLOCK_DATE_AUTO_HIDE_HDUR);
-        int hideVal = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, 60, UserHandle.USER_CURRENT);
-        mHideDuration.setValue(hideVal);
-        mHideDuration.setOnPreferenceChangeListener(this);
-
-        mShowDuration = (CustomSeekBarPreference) findPreference(CLOCK_DATE_AUTO_HIDE_SDUR);
-        int showVal = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, 5, UserHandle.USER_CURRENT);
-        mShowDuration.setValue(showVal);
-        mShowDuration.setOnPreferenceChangeListener(this);
 
         mShowCarrierLabel = (SystemSettingListPreference) findPreference(KEY_CARRIER_LABEL);
         int showCarrierLabel = Settings.System.getInt(resolver,
@@ -108,27 +98,25 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
         mShowCarrierLabel.setOnPreferenceChangeListener(this);
         
-
+        mStatusBarClockShow = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CLOCK);
+        mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CLOCK, 1) == 1));
+        mStatusBarClockShow.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mHideDuration) {
-            int value = (Integer) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, value, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mShowDuration) {
-            int value = (Integer) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, value, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mShowCarrierLabel) {
+        if (preference == mShowCarrierLabel) {
             int value = Integer.parseInt((String) newValue);
             updateCarrierLabelSummary(value);
             return true;
-        }
+        } else if (preference == mStatusBarClockShow) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
+            return true;
+		}
         return false;
     }
 
