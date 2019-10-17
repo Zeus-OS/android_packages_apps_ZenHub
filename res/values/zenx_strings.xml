@@ -432,7 +432,9 @@
 
      <!-- Statusbar Clock Font Style, Size & Color -->
     <string name="status_bar_clock_font_style_title">Clock font style</string>
-    <string name="status_bar_clock_font_size_title">Clock font size</string>
+    <string name="status_bar_clock_font_size_title">Status bar font size</string>
+    <string name="qs_header_clock_font_size_title">QS header Font size</string>
+    <string name="qs_clock_title">QS header clock</string>
     <string name="status_bar_clock_color_title">Clock font color</string>
 
     <!-- Lock Clock Fonts -->

@@ -41,9 +41,12 @@ public class QuickSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
-    private SystemSettingSeekBarPreference mQsPanelAlpha;
+    private static final String QS_HEADER_CLOCK_SIZE  = "qs_header_clock_size";
 
-    private SystemSettingSeekBarPreference mSysuiQqsCount;	
+    private SystemSettingSeekBarPreference mQsPanelAlpha;
+    private SystemSettingSeekBarPreference mSysuiQqsCount;
+    private CustomSeekBarPreference mQsClockSize;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +65,13 @@ public class QuickSettings extends SettingsPreferenceFragment
         int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
         mSysuiQqsCount = (SystemSettingSeekBarPreference) findPreference("sysui_qqs_count");
         mSysuiQqsCount.setValue(value);
-        mSysuiQqsCount.setOnPreferenceChangeListener(this);		
+        mSysuiQqsCount.setOnPreferenceChangeListener(this);
+
+        mQsClockSize = (CustomSeekBarPreference) findPreference(QS_HEADER_CLOCK_SIZE);
+        int qsClockSize = Settings.System.getInt(resolver,
+                Settings.System.QS_HEADER_CLOCK_SIZE, 14);
+                mQsClockSize.setValue(qsClockSize / 1);
+        mQsClockSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -77,6 +86,11 @@ public class QuickSettings extends SettingsPreferenceFragment
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
             return true;
+        }  else if (preference == mQsClockSize) {
+                int width = ((Integer)newValue).intValue();
+                Settings.System.putInt(resolver,
+                        Settings.System.QS_HEADER_CLOCK_SIZE, width);
+                return true;
         }
         return false;
     }
