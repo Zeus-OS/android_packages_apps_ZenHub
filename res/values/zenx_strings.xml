@@ -101,6 +101,7 @@
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in ROM</string>
     <string name="volume_summary">Customize settings for volume buttons</string>
+    <string name="ambient_display_custom_title">Ambient Display</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
