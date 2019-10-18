@@ -24,4 +24,25 @@
         android:summary="@string/allow_incall_home_summary"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:key="hardware_keys"
+        android:title="@string/hardware_keys_category" >
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="button_brightness"
+            android:title="@string/button_brightness_title"
+            android:max="255"
+            android:min="0"
+            android:defaultValue="255"
+            settings:units=""
+            android:persistent="false" />
+
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:entries="@array/backlight_timeout_entries"
+            android:entryValues="@array/backlight_timeout_values"
+            android:key="backlight_timeout"
+            android:persistent="false"
+            android:title="@string/backlight_timeout_title" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
