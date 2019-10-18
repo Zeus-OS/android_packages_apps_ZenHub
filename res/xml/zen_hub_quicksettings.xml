@@ -82,6 +82,11 @@
     <PreferenceCategory 
         android:title="@string/qs_element_title"
         android:key="element" >
+        <com.zenx.support.preferences.SystemSettingSwitchPreference 
+        android:key="qs_tile_title_visibility" 
+        android:title="@string/qs_tile_title_visibility_title" 
+        android:summary="@string/qs_tile_title_visibility_summary" 
+            android:defaultValue="true" /> 
 
       <com.zenx.support.preferences.SecureSettingSwitchPreference
         android:key="quick_settings_vibrate"
