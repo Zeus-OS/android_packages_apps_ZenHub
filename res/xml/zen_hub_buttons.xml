@@ -72,6 +72,7 @@
             android:summary="@string/anbi_summary"
             android:defaultValue="false" />
 
+    </PreferenceCategory>
     <PreferenceCategory
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
