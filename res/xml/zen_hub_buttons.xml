@@ -18,6 +18,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/buttons_powermenu_volumebutton_title" >
 
+        <Preference
+            android:key="power_menu"
+            android:title="@string/powermenu_title"
+            android:summary="@string/powermenu_summary"
+            android:fragment="com.zenx.zen.hub.fragments.PowerMenu" />
+
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="allow_incall_home"
         android:title="@string/allow_incall_home_title"
@@ -65,8 +71,6 @@
             android:title="@string/anbi_title"
             android:summary="@string/anbi_summary"
             android:defaultValue="false" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="back_key"
