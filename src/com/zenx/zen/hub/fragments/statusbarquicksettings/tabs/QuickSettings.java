@@ -45,12 +45,17 @@ public class QuickSettings extends SettingsPreferenceFragment
     static final int DEFAULT_STATUS_CLOCK_COLOR = 0xFFFFFFFF;
     private static final String QS_HEADER_CLOCK_FONT_STYLE  = "qs_header_clock_font_style";
     private static final String QS_HEADER_CLOCK_COLOR = "qs_header_clock_color";
+    public static final String TAG = "QuickSettings";
+    private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
+    private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
 
-    private SystemSettingSeekBarPreference mQsPanelAlpha;
-    private SystemSettingSeekBarPreference mSysuiQqsCount;
+    private CustomSeekBarPreference mQsPanelAlpha;
+//     private CustomSeekBarPreference mSysuiQqsCount;
     private CustomSeekBarPreference mQsClockSize;
     private ColorPickerPreference mClockColor;
     private ListPreference mClockFontStyle;
+    private CustomSeekBarPreference mQsColumnsPortrait;
+    private CustomSeekBarPreference mQsColumnsLandscape;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +63,7 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.zen_hub_quicksettings);
 
-        mQsPanelAlpha = (SystemSettingSeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         mQsPanelAlpha.setValue(qsPanelAlpha);
@@ -66,10 +71,10 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
-        mSysuiQqsCount = (SystemSettingSeekBarPreference) findPreference("sysui_qqs_count");
-        mSysuiQqsCount.setValue(value);
-        mSysuiQqsCount.setOnPreferenceChangeListener(this);
+        // int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
+        // mSysuiQqsCount = (CustomSeekBarPreference) findPreference("sysui_qqs_count");
+        // mSysuiQqsCount.setValue(value);
+        // mSysuiQqsCount.setOnPreferenceChangeListener(this);
 
         mQsClockSize = (CustomSeekBarPreference) findPreference(QS_HEADER_CLOCK_SIZE);
         int qsClockSize = Settings.System.getInt(resolver,
@@ -97,6 +102,19 @@ public class QuickSettings extends SettingsPreferenceFragment
             mClockColor.setSummary(hexColor);
         }
         mClockColor.setNewPreviewColor(intColor);
+
+        mQsColumnsPortrait = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
+        int columnsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_COLUMNS, 4, UserHandle.USER_CURRENT);
+        mQsColumnsPortrait.setValue(columnsPortrait);
+        mQsColumnsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsColumnsLandscape = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        int columnsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+        mQsColumnsLandscape.setValue(columnsLandscape);
+        mQsColumnsLandscape.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -106,11 +124,11 @@ public class QuickSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha, UserHandle.USER_CURRENT);
             return true;
-        } else if (preference == mSysuiQqsCount) {
-            int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
-            return true;
+        // } else if (preference == mSysuiQqsCount) {
+        //     int val = (Integer) newValue;
+        //     Settings.Secure.putIntForUser(getContentResolver(),
+        //             Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
+        //     return true;
         }  else if (preference == mQsClockSize) {
                 int width = ((Integer)newValue).intValue();
                 Settings.System.putInt(getContentResolver(),
@@ -135,7 +153,17 @@ public class QuickSettings extends SettingsPreferenceFragment
                     QS_HEADER_CLOCK_FONT_STYLE, showClockFont);
                 mClockFontStyle.setSummary(mClockFontStyle.getEntries()[index]);
                 return true;
-            }
+        } else if (preference == mQsColumnsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_LAYOUT_COLUMNS, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsColumnsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
