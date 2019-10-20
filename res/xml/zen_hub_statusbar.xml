@@ -103,6 +103,12 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="roaming_indicator_icon"
+            android:title="@string/roaming_indicator_icon_title"
+            android:summary="@string/roaming_indicator_icon_summary"
+            android:defaultValue="true"/>
+
         <Preference
                 android:title="@string/statusbar_items_title">
                 <intent android:action="android.intent.action.MAIN"
