@@ -70,8 +70,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
     private SystemSettingListPreference mShowCarrierLabel;
-
+    private SystemSettingMasterSwitchPreference mNetMonitor;
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -102,6 +103,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarClockShow.setOnPreferenceChangeListener(this);
+
+        boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+        mNetMonitor = (SystemSettingMasterSwitchPreference) findPreference("network_traffic_state");
+        mNetMonitor.setChecked(isNetMonitorEnabled);
+        mNetMonitor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -116,7 +123,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
             return true;
-		}
+		} else if (preference == mNetMonitor) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mNetMonitor.setChecked(value);
+            return true;
+        }
         return false;
     }
 

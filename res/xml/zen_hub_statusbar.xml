@@ -45,6 +45,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="network"
+        android:title="@string/network_traffic_state_category">
+
+    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.NetworkTraffic"
+        android:summary="@string/network_traffic_state_summary"
+        android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="statusbar_battery"
         android:title="@string/statusbar_battery">
 
