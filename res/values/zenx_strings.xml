@@ -73,7 +73,7 @@
     <string name="animations_title">Animations</string>
     <string name="ambient_title">Ambient</string>
     <string name="device_maintainers_title">Maintainers</string>
-
+    
      <!-- Zenx-Categories -->
     <string name="about_summary">Learn more about ZenX-OS</string>
     <string name="animations_summary">System animations, QS tile animations</string>

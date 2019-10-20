@@ -18,11 +18,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/buttons_powermenu_volumebutton_title" >
 
-        <Preference
-            android:key="power_menu"
-            android:title="@string/powermenu_title"
-            android:summary="@string/powermenu_summary"
-            android:fragment="com.zenx.zen.hub.fragments.PowerMenu" />
+    <!-- Gestures -->
+    <Preference
+        android:key="gesture_settings"
+        android:title="@string/gesture_preference_title"
+        android:icon="@drawable/ic_settings_gesture"
+        android:fragment="com.android.settings.gestures.GestureSettings"
+        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="allow_incall_home"
