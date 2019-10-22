@@ -29,6 +29,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 import android.provider.Settings;
+import android.widget.Toast;
+import android.app.Activity;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -52,6 +54,9 @@ public class PowerMenu extends SettingsPreferenceFragment
     private static final String KEY_POWERMENU_LS_ADVANCED_REBOOT = "powermenu_ls_advanced_reboot";
     private static final String KEY_POWERMENU_LS_SCREENSHOT = "powermenu_ls_screenshot";
     private static final String KEY_POWERMENU_LS_TORCH = "powermenu_ls_torch";
+    private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+
+    private ListPreference mTorchPowerButton;
 
     private SwitchPreference mPowermenuTorch;
     private SwitchPreference mPowerMenuLockscreen;
@@ -104,12 +109,53 @@ public class PowerMenu extends SettingsPreferenceFragment
                 Settings.System.POWERMENU_LS_TORCH, 0) == 1));
         mPowerMenuLSTorch.setOnPreferenceChangeListener(this);
 
+            // screen off torch
+        mTorchPowerButton = (ListPreference) findPreference(TORCH_POWER_BUTTON_GESTURE);
+        int mTorchPowerButtonValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.TORCH_POWER_BUTTON_GESTURE, 0);
+        mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
+        mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
+        mTorchPowerButton.setOnPreferenceChangeListener(this);
+
         updateLockscreen();
+    }
+
+    private ListPreference initActionList(String key, int value) {
+        ListPreference list = (ListPreference) getPreferenceScreen().findPreference(key);
+        list.setValue(Integer.toString(value));
+        list.setSummary(list.getEntry());
+        list.setOnPreferenceChangeListener(this);
+        return list;
+    }
+
+    private void handleActionListChange(ListPreference pref, Object newValue, String setting) {
+        String value = (String) newValue;
+        int index = pref.findIndexOfValue(value);
+        pref.setSummary(pref.getEntries()[index]);
+        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
     }
 	
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mPowermenuTorch) {
+         boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
+                    Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1) == 0;
+        if (preference == mTorchPowerButton) {
+            int mTorchPowerButtonValue = Integer.valueOf((String) newValue);
+            int index = mTorchPowerButton.findIndexOfValue((String) newValue);
+            mTorchPowerButton.setSummary(
+                    mTorchPowerButton.getEntries()[index]);
+            Settings.Secure.putInt(resolver, Settings.Secure.TORCH_POWER_BUTTON_GESTURE,
+                    mTorchPowerButtonValue);
+            if (mTorchPowerButtonValue == 1 && DoubleTapPowerGesture) {
+                //if doubletap for torch is enabled, switch off double tap for camera
+                Settings.Secure.putInt(resolver, Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
+                        1);
+                Toast.makeText(getActivity(),
+                    (R.string.torch_power_button_gesture_dt_toast),
+                    Toast.LENGTH_SHORT).show();
+            }
+            return true;
+        } else if (preference == mPowermenuTorch) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_TORCH, value ? 1 : 0);

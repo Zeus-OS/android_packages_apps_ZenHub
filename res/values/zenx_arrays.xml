@@ -25,22 +25,6 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="torch_long_press_power_timeout_entries" translatable="false">
-        <item>@string/torch_long_press_power_timeout_never</item>
-        <item>@string/torch_long_press_power_timeout_1min</item>
-        <item>@string/torch_long_press_power_timeout_2min</item>
-        <item>@string/torch_long_press_power_timeout_5min</item>
-        <item>@string/torch_long_press_power_timeout_10min</item>
-    </string-array>
-
-    <string-array name="torch_long_press_power_timeout_values" translatable="false">
-        <item>0</item>
-        <item>60</item>
-        <item>120</item>
-        <item>300</item>
-        <item>600</item>
-    </string-array>
-
          <!-- QS SystemInfo -->
     <string-array name="qs_system_info_entries">
         <item>@string/qs_system_info_off</item>
@@ -336,6 +320,18 @@
      <string-array name="action_dialog_no_default_values" translatable="false">
         <item>@string/action_value_custom_action</item>
         <item>@string/action_value_select_app</item>
+    </string-array>
+
+    <!-- Torch Power button gestures -->
+    <string-array name="torch_power_button_gesture_entries">
+        <item>@string/torch_power_button_gesture_none</item>
+        <item>@string/torch_power_button_gesture_dt</item>
+        <item>@string/torch_power_button_gesture_lp</item>
+    </string-array>
+     <string-array name="torch_power_button_gesture_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
 </resources>
