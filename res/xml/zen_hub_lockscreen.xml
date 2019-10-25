@@ -34,11 +34,6 @@
         android:key="lockscreen_media_category"
         android:title="@string/lockscreen_media_category" >
 
-       <com.zenx.support.preferences.SecureSettingSwitchPreference
-            android:key="lockscreen_visualizer_enabled"
-            android:title="@string/lockscreen_visualizer_title"
-            android:defaultValue="true" />
-
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:title="@string/lockscreen_media_art_title"
@@ -53,6 +48,13 @@
             settings:interval="5"
             android:defaultValue="25"
             android:dependency="lockscreen_media_metadata" />
+
+        <com.zenx.support.preferences.SecureSettingMasterSwitchPreference
+            android:key="lockscreen_visualizer_enabled"
+            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.Visualizer"
+            android:title="@string/lockscreen_visualizer_enable"
+            android:summary="@string/lockscreen_visualizer_enable_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
