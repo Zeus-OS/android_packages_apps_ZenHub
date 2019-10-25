@@ -631,4 +631,7 @@
     <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
     <string name="lockscreen_solid_units_opacity_title">Lines opacity</string>
 
+        <!-- Volume dialog timeout -->
+    <string name="volume_dialog_timeout_title">Volume panel timeout</string>
+
 </resources>

@@ -18,6 +18,13 @@
 	android:title="@string/buttons_powermenu_volumebutton_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.zenx.support.preferences.SystemSettingSeekBarPreference
+        android:key="volume_dialog_timeout"
+        android:title="@string/volume_dialog_timeout_title"
+        android:min="500"
+        android:max="10000"
+        android:defaultValue="3000" />
+
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="swap_volume_buttons"
         android:title="@string/swap_volume_buttons_title"
