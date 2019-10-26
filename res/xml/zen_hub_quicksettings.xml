@@ -18,8 +18,21 @@
     android:title="@string/statusbar_quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory 
-        android:key="qs_layout_category" 
+    <PreferenceCategory
+        android:key="qs_gesture_category"
+        android:title="@string/qs_gesture_category">
+
+         <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/quick_pulldown_title"
+            android:entries="@array/quick_pulldown_entries" 
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qs_layout_category"
         android:title="@string/qs_layout_category">
     
             <com.zenx.support.preferences.CustomSeekBarPreference
@@ -57,7 +70,7 @@
          settings:units=""
          android:persistent="false" />
 
-    </PreferenceCategory> 
+    </PreferenceCategory>
 
     <PreferenceCategory 
         android:title="@string/brightness_category_title"
