@@ -62,7 +62,7 @@
         android:key="ls_clock"
         android:title="@string/ls_clock">
 
-        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+        <!-- <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="lockscreen_clock"
             android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSClockWidget"
             android:title="@string/lockscreen_clock_title"
@@ -74,7 +74,19 @@
             android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSDateWidget"
             android:title="@string/lockscreen_info_title"
             android:summary="@string/lockscreen_info_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" /> -->
+
+    <PreferenceScreen
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:fragment="com.zenx.zen.hub.fragments.LSClockWidget" />
+
+    <PreferenceScreen
+        android:key="lockscreen_info"
+        android:title="@string/lockscreen_info_title"
+        android:summary="@string/lockscreen_info_summary"
+        android:fragment="com.zenx.zen.hub.fragments.LSDateWidget" />
 
     </PreferenceCategory>
 
