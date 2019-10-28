@@ -49,6 +49,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
 
     private CustomSeekBarPreference mQsPanelAlpha;
 //     private CustomSeekBarPreference mSysuiQqsCount;
@@ -58,6 +59,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
     private ListPreference mQuickPulldown;
+    private CustomSeekBarPreference mQsColumnsQuickbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,10 +75,11 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        // int value = Settings.Secure.getInt(resolver, Settings.Secure.QQS_COUNT, 6);
-        // mSysuiQqsCount = (CustomSeekBarPreference) findPreference("sysui_qqs_count");
-        // mSysuiQqsCount.setValue(value);
-        // mSysuiQqsCount.setOnPreferenceChangeListener(this);
+        mQsColumnsQuickbar = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_QUICKBAR);
+        int columnsQuickbar = Settings.System.getInt(resolver,
+                Settings.System.QS_QUICKBAR_COLUMNS, 6);
+        mQsColumnsQuickbar.setValue(columnsQuickbar);
+        mQsColumnsQuickbar.setOnPreferenceChangeListener(this);
 
         mQsClockSize = (CustomSeekBarPreference) findPreference(QS_HEADER_CLOCK_SIZE);
         int qsClockSize = Settings.System.getInt(resolver,
@@ -133,11 +136,12 @@ public class QuickSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_PANEL_BG_ALPHA, bgAlpha, UserHandle.USER_CURRENT);
             return true;
-        // } else if (preference == mSysuiQqsCount) {
-        //     int val = (Integer) newValue;
-        //     Settings.Secure.putIntForUser(getContentResolver(),
-        //             Settings.Secure.QQS_COUNT, val, UserHandle.USER_CURRENT);
-        //     return true;
+        } else if (preference == mQsColumnsQuickbar) {
+                int value = (Integer) newValue;
+                Settings.System.putIntForUser(getContentResolver(),
+                        Settings.System.QS_QUICKBAR_COLUMNS, value, UserHandle.USER_CURRENT);
+                return true;
+            
         }  else if (preference == mQsClockSize) {
                 int width = ((Integer)newValue).intValue();
                 Settings.System.putInt(getContentResolver(),
