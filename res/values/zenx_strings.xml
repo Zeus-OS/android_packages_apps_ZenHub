@@ -695,4 +695,7 @@
     <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
 
 
+        <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 </resources>
