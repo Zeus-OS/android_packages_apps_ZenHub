@@ -21,6 +21,11 @@
     <PreferenceCategory
         android:title="@string/system_animation_title">
 
+     <Preference
+         android:key="animations_category"
+         android:title="@string/animation_settings_title"
+         android:summary="@string/animation_settings_summary"
+         android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.SystemAnimation" />
 
     </PreferenceCategory>
 
