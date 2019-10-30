@@ -66,12 +66,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
     private static final String KEY_CARRIER_LABEL = "status_bar_show_carrier";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
     private SystemSettingListPreference mShowCarrierLabel;
     private SystemSettingMasterSwitchPreference mNetMonitor;
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
+    private SystemSettingListPreference mStatusbarBatteryStyles;
+    private SystemSettingListPreference mStatusbarBatteryPercentage;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -109,6 +113,17 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mNetMonitor = (SystemSettingMasterSwitchPreference) findPreference("network_traffic_state");
         mNetMonitor.setChecked(isNetMonitorEnabled);
         mNetMonitor.setOnPreferenceChangeListener(this);
+        mStatusbarBatteryStyles = (SystemSettingListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        mStatusbarBatteryStyles.setValue(String.valueOf(Settings.System.getInt(
+        getContentResolver(), Settings.System.STATUS_BAR_BATTERY_STYLE, 107)));
+        mStatusbarBatteryStyles.setSummary(mStatusbarBatteryStyles.getEntry());
+        mStatusbarBatteryStyles.setOnPreferenceChangeListener(this);
+
+        mStatusbarBatteryPercentage = (SystemSettingListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+        mStatusbarBatteryPercentage.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0)));
+                mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
+                mStatusbarBatteryPercentage.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -129,6 +144,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0,
                     UserHandle.USER_CURRENT);
             mNetMonitor.setChecked(value);
+            return true;
+        } else if (preference == mStatusbarBatteryStyles) {
+            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_BATTERY_STYLE,
+                    Integer.valueOf((String) newValue));
+                    mStatusbarBatteryStyles.setValue(String.valueOf(newValue));
+                    mStatusbarBatteryStyles.setSummary(mStatusbarBatteryStyles.getEntry());
+            return true;
+        } else if (preference == mStatusbarBatteryPercentage) {
+            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
+                    Integer.valueOf((String) newValue));
+                    mStatusbarBatteryPercentage.setValue(String.valueOf(newValue));
+                    mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
             return true;
         }
         return false;
