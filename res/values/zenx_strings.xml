@@ -167,11 +167,13 @@
     <!-- Quicksettings Categories -->
     <string name="qs_layout_category">Layout</string>
     <string name="brightness_category_title">Brightness</string>
-    <string name="qs_element_title">Brightness Slider</string>
+    <string name="qs_element_title">Qs Elements</string>
     <string name="qs_clock_title">QS header clock</string>
     <string name="header_title">Header</string>
     <string name="footer_title">Footer</string>
     <string name="sysui_qqs_count_title">Columns (Quickbar)</string>
+    <string name="qs_accent_header_switch_title">Qs Accent</string>
+    <string name="qs_accent_header_switch_summary">Enable QS Accent gradient background</string>
 
     <!-- Recent Categories -->
     <string name="slim_recents_title">Slim Recents</string>
