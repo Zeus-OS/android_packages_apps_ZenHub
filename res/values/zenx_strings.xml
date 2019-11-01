@@ -704,4 +704,10 @@
         <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
     <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+
+        <!-- Title text for system navigation [CHAR LIMIT=60] -->
+    <string name="system_navigation_title">System navigation</string>
+
+    <string name="qs_running_service_title">Running service icon</string>
+    <string name="qs_running_service_summary">Enable or disable running service icon</string>
 </resources>
