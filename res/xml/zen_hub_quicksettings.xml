@@ -99,7 +99,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory 
+    <PreferenceCategory
         android:title="@string/qs_element_title"
         android:key="element" >
 
@@ -108,6 +108,12 @@
         android:title="@string/qs_tile_title_visibility_title" 
         android:summary="@string/qs_tile_title_visibility_summary" 
             android:defaultValue="true" /> 
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="show_privacy_chip"
+        android:title="@string/show_privacy_chip_title"
+        android:summary="@string/show_privacy_chip_summary"
+            android:defaultValue="true" />
 
       <com.zenx.support.preferences.SecureSettingSwitchPreference
         android:key="quick_settings_vibrate"

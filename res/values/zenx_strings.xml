@@ -721,4 +721,8 @@
     <string name="brightness_icon_title">Auto brightness icon</string>
     <string name="brightness_icon_summary">Show toggle for adaptive brightness near the slider</string>
 
+    <!-- Privacy indicators -->
+    <string name="show_privacy_chip_title">Show privacy chip</string>
+    <string name="show_privacy_chip_summary">Enable or disable privacy chip</string>
+
 </resources>
