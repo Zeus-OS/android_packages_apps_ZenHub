@@ -24,6 +24,12 @@
             android:summary="@string/summary_heads_up_enabled"
             android:defaultValue="true" />
 
+	<com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="less_boring_heads_up"
+        android:title="@string/less_boring_heads_up_title"
+        android:summary="@string/less_boring_heads_up_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
             android:title="@string/heads_up_stoplist_title"
             android:key="stoplist_applications" >
