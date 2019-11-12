@@ -26,6 +26,11 @@
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
+    <com.zenx.support.preferences.SecureSettingSwitchPreference
+            android:key="sysui_nav_bar_inverse"
+            android:title="@string/navbar_invert_layout_title"
+            android:defaultValue="false" />
+
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="allow_incall_home"
         android:title="@string/allow_incall_home_title"
