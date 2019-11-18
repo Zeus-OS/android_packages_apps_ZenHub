@@ -109,7 +109,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarClockShow.setOnPreferenceChangeListener(this);
 
         boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 1, UserHandle.USER_CURRENT) == 1;
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT) == 1;
         mNetMonitor = (SystemSettingMasterSwitchPreference) findPreference("network_traffic_state");
         mNetMonitor.setChecked(isNetMonitorEnabled);
         mNetMonitor.setOnPreferenceChangeListener(this);
