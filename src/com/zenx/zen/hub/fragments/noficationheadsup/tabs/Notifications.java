@@ -39,8 +39,11 @@ public class Notifications extends SettingsPreferenceFragment
 
     public static final String TAG = "Notifications";
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
-    
+    private static final String LIGHTS_CATEGORY = "notification_lights";
+    private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
     private CustomSeekBarPreference mFlashOnCallWaitingDelay;
+    private PreferenceCategory mLightsCategory;
+    private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,16 @@ public class Notifications extends SettingsPreferenceFragment
         mFlashOnCallWaitingDelay = (CustomSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
         mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
         mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
+        mBatteryLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_LIGHT_ENABLED);
+        mBatteryLightEnabled.setOnPreferenceChangeListener(this);
+        int batteryLightEnabled = Settings.System.getInt(getContentResolver(),
+                BATTERY_LIGHT_ENABLED, 1);
+        mBatteryLightEnabled.setChecked(batteryLightEnabled != 0);
+
+        mLightsCategory = (PreferenceCategory) findPreference(LIGHTS_CATEGORY);
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_hasNotificationLed)) {
+            getPreferenceScreen().removePreference(mLightsCategory);
+        }
     }
 
     @Override
@@ -64,6 +77,11 @@ public class Notifications extends SettingsPreferenceFragment
         if (preference == mFlashOnCallWaitingDelay) {
             int val = (Integer) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.FLASH_ON_CALLWAITING_DELAY, val);
+            return true;
+        } else if (preference == mBatteryLightEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            BATTERY_LIGHT_ENABLED, value ? 1 : 0);
             return true;
         }
         return false;
