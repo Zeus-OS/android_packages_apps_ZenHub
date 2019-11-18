@@ -32,6 +32,7 @@
         <item>@string/qs_system_info_battery_temp</item>
         <item>@string/qs_system_info_gpu_clock</item>
         <item>@string/qs_system_info_gpu_busy</item>
+        <item>@string/qs_system_info_battery_level</item>
     </string-array>
     <string-array name="qs_system_info_values" translatable="false">
         <item>0</item>
@@ -39,6 +40,7 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 
   <!-- Smart Pixels -->

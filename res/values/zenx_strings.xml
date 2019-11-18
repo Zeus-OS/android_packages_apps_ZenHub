@@ -273,6 +273,7 @@
     <string name="qs_system_info_battery_temp">Battery temperature</string>
     <string name="qs_system_info_gpu_clock">GPU frequency</string>
     <string name="qs_system_info_gpu_busy">GPU utilization</string>
+    <string name="qs_system_info_battery_level">Battery level</string>
 
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
