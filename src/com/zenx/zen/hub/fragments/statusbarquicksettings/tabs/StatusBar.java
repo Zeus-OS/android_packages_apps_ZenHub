@@ -68,6 +68,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_LOGO = "status_bar_logo";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
@@ -76,6 +77,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
     private SystemSettingListPreference mStatusbarBatteryStyles;
     private SystemSettingListPreference mStatusbarBatteryPercentage;
+    private SystemSettingMasterSwitchPreference mStatusBarLogo;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -107,6 +109,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
         mStatusBarClockShow.setOnPreferenceChangeListener(this);
+
+        mStatusBarLogo = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_LOGO);
+        mStatusBarLogo.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_LOGO, 0) == 1));
+        mStatusBarLogo.setOnPreferenceChangeListener(this);
 
         boolean isNetMonitorEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT) == 1;
@@ -157,7 +164,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     mStatusbarBatteryPercentage.setValue(String.valueOf(newValue));
                     mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
             return true;
-        }
+		} else if (preference == mStatusBarLogo) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
+            return true;
+		}
         return false;
     }
 

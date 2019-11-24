@@ -47,7 +47,6 @@
             android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.StatusbarClockSettings"
             android:defaultValue="true" />
 
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -116,6 +115,12 @@
         android:key="statusbar_logo"
         android:title="@string/statusbar_logo">
 
+    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="status_bar_logo"
+        android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.StatusbarLogo"
+        android:title="@string/status_bar_logo_title"
+        android:summary="@string/status_bar_logo_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 
