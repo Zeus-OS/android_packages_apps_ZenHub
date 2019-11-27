@@ -35,4 +35,30 @@
         android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.DisplayCutoutForceFullscreenSettings" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="aspect_ratio_category"
+        android:title="@string/aspect_ratio_category_title">
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="aspect_ratio_apps_enabled"
+            android:title="@string/aspect_ratio_apps_enabled_title"
+            android:summary="@string/aspect_ratio_apps_enabled_summary"
+            android:defaultValue="false" />
+
+        <com.zenx.zen.hub.preferences.AppMultiSelectListPreference
+            android:key="aspect_ratio_apps_list"
+            android:title="@string/aspect_ratio_apps_list_title"
+            android:summary="@string/aspect_ratio_apps_list_summary"
+            android:dependency="aspect_ratio_apps_enabled"
+            android:persistent="false" />
+
+        <com.zenx.zen.hub.preferences.ScrollAppsViewPreference
+            android:key="aspect_ratio_apps_list_scroller"
+            android:dependency="aspect_ratio_apps_enabled"
+            android:persistent="false"
+            android:selectable="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
