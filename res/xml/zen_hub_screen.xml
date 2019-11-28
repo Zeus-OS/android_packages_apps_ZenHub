@@ -19,12 +19,6 @@
     android:title="@string/screen_animation_title" >
 
     <PreferenceCategory
-        android:title="@string/corners_category" >
-
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="cutout_settings"
         android:title="@string/cutout_main" >
 
@@ -34,6 +28,36 @@
         android:summary="@string/display_cutout_force_fullscreen_summary"
         android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.DisplayCutoutForceFullscreenSettings" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="corners_category"
+        android:title="@string/corners_category_title">
+
+        <com.zenx.support.preferences.SecureSettingSwitchPreference
+            android:key="sysui_rounded_fwvals"
+            android:title="@string/corner_fwvals_title"
+            android:summary="@string/corner_fwvals_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_size"
+            android:title="@string/corner_radius"
+            android:max="60"
+            settings:min="0"
+            settings:units="dp"
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
+
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="sysui_rounded_content_padding"
+            android:title="@string/content_padding"
+            android:max="30"
+            settings:min="0"
+            settings:units="dp"
+            android:persistent="false"
+            android:dependency="sysui_rounded_fwvals" />
     </PreferenceCategory>
 
     <PreferenceCategory
