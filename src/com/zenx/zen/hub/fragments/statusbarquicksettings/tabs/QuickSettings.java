@@ -50,6 +50,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
+    private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
 
     private CustomSeekBarPreference mQsPanelAlpha;
 //     private CustomSeekBarPreference mSysuiQqsCount;
@@ -60,6 +61,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsColumnsLandscape;
     private ListPreference mQuickPulldown;
     private CustomSeekBarPreference mQsColumnsQuickbar;
+    private SystemSettingMasterSwitchPreference mCustomHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,6 +129,11 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
 
+        mCustomHeader = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        int qsHeader = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0);
+        mCustomHeader.setChecked(qsHeader != 0);
+        mCustomHeader.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -182,6 +189,11 @@ public class QuickSettings extends SettingsPreferenceFragment
                         quickPulldownValue, UserHandle.USER_CURRENT);
                 updatePulldownSummary(quickPulldownValue);
                 return true;
+        } else if (preference == mCustomHeader) {
+            boolean header = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER, header ? 1 : 0);
+            return true;
         }
         return false;
     }
