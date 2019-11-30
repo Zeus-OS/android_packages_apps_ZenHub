@@ -899,4 +899,8 @@
     <string name="corner_fwvals_title">Use framework values</string>
     <string name="corner_fwvals_summary">Use the default values for your device</string>
 
+    <!-- Swap navigation keys -->
+    <string name="swap_navigation_keys_title">Swap keys</string>
+    <string name="swap_navigation_keys_title_summary">Swap back and recents hardware keys</string>
+
 </resources>
