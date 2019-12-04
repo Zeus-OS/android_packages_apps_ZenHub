@@ -903,4 +903,10 @@
     <string name="swap_navigation_keys_title">Swap keys</string>
     <string name="swap_navigation_keys_title_summary">Swap back and recents hardware keys</string>
 
+    <!-- Ambient edge lighting -->
+    <string name="notification_screen_title">Screen</string>
+    <string name="pulse_ambient_light_title">Edge lighting</string>
+    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_color_title">Edge light color</string>
+
 </resources>
