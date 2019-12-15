@@ -50,6 +50,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
+    private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
+    private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
 
     private CustomSeekBarPreference mQsPanelAlpha;
@@ -61,6 +63,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsColumnsLandscape;
     private ListPreference mQuickPulldown;
     private CustomSeekBarPreference mQsColumnsQuickbar;
+    private CustomSeekBarPreference mQsRowsPortrait;
+    private CustomSeekBarPreference mQsRowsLandscape;
     private SystemSettingMasterSwitchPreference mCustomHeader;
 
     @Override
@@ -122,12 +126,17 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsColumnsLandscape.setValue(columnsLandscape);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int quickPulldownValue = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
-        updatePulldownSummary(quickPulldownValue);
+        mQsRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
+        int rowsPortrait = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_ROWS, 3, UserHandle.USER_CURRENT);
+        mQsRowsPortrait.setValue(rowsPortrait);
+        mQsRowsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsRowsLandscape = (CustomSeekBarPreference) findPreference(PREF_ROWS_LANDSCAPE);
+        int rowsLandscape = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+        mQsRowsLandscape.setValue(rowsLandscape);
+        mQsRowsLandscape.setOnPreferenceChangeListener(this);
 
         mCustomHeader = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
         int qsHeader = Settings.System.getInt(getContentResolver(),
@@ -189,6 +198,16 @@ public class QuickSettings extends SettingsPreferenceFragment
                         quickPulldownValue, UserHandle.USER_CURRENT);
                 updatePulldownSummary(quickPulldownValue);
                 return true;
+        } else if (preference == mQsRowsPortrait) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsRowsLandscape) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_LAYOUT_ROWS_LANDSCAPE, value, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mCustomHeader) {
             boolean header = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),

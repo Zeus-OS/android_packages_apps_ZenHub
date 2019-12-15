@@ -61,6 +61,24 @@
             android:persistent="false" />
 
         <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="qs_rows_portrait"
+            android:title="@string/qs_rows_portrait_title"
+            android:max="4"
+            settings:min="1"
+            settings:units=""
+            android:defaultValue="3"
+            android:persistent="false" />
+
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="qs_rows_landscape"
+            android:title="@string/qs_rows_landscape_title"
+            android:max="2"
+            settings:min="1"
+            settings:units=""
+            android:defaultValue="2"
+            android:persistent="false" />
+
+        <com.zenx.support.preferences.CustomSeekBarPreference
             android:key="qs_columns_quickbar"
             android:title="@string/sysui_qqs_count_title"
             android:max="8"
@@ -68,21 +86,20 @@
             android:defaultValue="6"
             android:persistent="false" />
             
-    <com.zenx.support.preferences.CustomSeekBarPreference
-         android:key="qs_panel_alpha"
-         android:title="@string/qs_panel_alpha_title"
-         android:max="255"
-         android:min="100"
-         android:defaultValue="255"
-         settings:units=""
-         android:persistent="false" />
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="qs_panel_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:max="255"
+            android:min="100"
+            android:defaultValue="255"
+            settings:units=""
+            android:persistent="false" />
 
-
-    <com.zenx.support.preferences.SystemSettingSwitchPreference
-        android:key="qs_accent_header_switch"
-        android:title="@string/qs_accent_header_switch_title"
-        android:summary="@string/qs_accent_header_switch_summary"
-        android:defaultValue="true" />
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_accent_header_switch"
+            android:title="@string/qs_accent_header_switch_title"
+            android:summary="@string/qs_accent_header_switch_summary"
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
