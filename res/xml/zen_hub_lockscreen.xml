@@ -149,6 +149,15 @@
             android:defaultValue="true"
             android:dependency="screen_off_fod" />
 
+       </PreferenceCategory>
+
+       <!-- FOD icon picker -->
+       <Preference
+        android:key="fod_icon_picker_category"
+        android:title="@string/fod_icon_picker_title"
+        android:summary="@string/fod_icon_picker_summary"
+        android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.FODIconPickerFragment" />
+
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
