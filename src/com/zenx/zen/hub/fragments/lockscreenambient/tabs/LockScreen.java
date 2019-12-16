@@ -31,6 +31,7 @@ import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceScreen;
+import android.content.pm.PackageManager;
 
 import com.android.internal.custom.app.LineageContextConstants;
 import com.android.internal.logging.nano.MetricsProto;
@@ -54,6 +55,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
     private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
     private static final String KEY_SCREEN_OFF_FOD_ICON = "screen_off_fod_icon";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -63,6 +65,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mFODAnimationEnabled;
     private SwitchPreference mScreenOffFOD;
     private SystemSettingSwitchPreference mScreenOffFODIcon;
+    private Preference mFODIconPicker;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,6 +75,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
+        PreferenceScreen prefSet = getPreferenceScreen();
+        Context mContext = getContext();
 
         mLsBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(SYSUI_KEYGUARD_SHOW_BATTERY_BAR);
         mLsBatteryBar.setOnPreferenceChangeListener(this);
@@ -98,6 +103,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         }
 
         updateMasterPrefs();
+
+        boolean hasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
+
+        mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPicker != null && !hasFod) {
+            prefSet.removePreference(mFODIconPicker);
+        }
     }
 
     private void updateMasterPrefs() {
