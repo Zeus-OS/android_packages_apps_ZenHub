@@ -15,6 +15,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
 	android:title="@string/lockscreen_clock_title">
 
+    <com.zenx.support.preferences.SecureSettingListPreference
+        android:key="lockscreen_date_selection"
+        android:title="@string/lockscreen_date_selection_title"
+        android:entries="@array/lockscreen_date_selection_entries"
+        android:entryValues="@array/lockscreen_date_selection_values"
+        android:defaultValue="0" />
+        
     <com.zenx.support.preferences.CustomSeekBarPreference
         android:key="lockdate_font_size"
         android:title="@string/lockdate_font_size_title"

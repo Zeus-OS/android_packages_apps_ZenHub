@@ -974,4 +974,18 @@
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Enable or disable the Lock icon</string>
 
+            <!-- Lockscreen Date styles -->
+    <string name="lockscreen_date_selection_title">Date style</string>
+    <string name="lockscreen_date_selection_default">Default</string>
+    <string name="lockscreen_date_selection_str_box">Semi-transparent box</string>
+    <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string>
+    <string name="lockscreen_date_selection_qbeta_style">Q Beta pill</string>
+    <string name="lockscreen_date_selection_str_accent">Rounded, simple and with accent</string>
+    <string name="lockscreen_date_selection_str_accent_day">Rounded, simple and with accent (alt)</string>
+    <string name="lockscreen_date_selection_str_accent_transparent">Rounded, transparent and with accent</string>
+    <string name="lockscreen_date_selection_str_accent_transparent_day">Rounded, transparent and with accent (alt)</string>
+    <string name="lockscreen_date_selection_str_gradient">Gradient</string>
+    <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
+    <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
+    <string name="lockscreen_cover_filter_tinted_blur">Accent Tinted and blurred</string>
 </resources>
