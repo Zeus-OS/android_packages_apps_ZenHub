@@ -20,7 +20,7 @@
 
 
     <PreferenceCategory
-        android:key="notification_lights"
+        android:key="notification_lights_flash"
         android:title="@string/notification_lights">
 
         <com.zenx.support.preferences.SystemSettingListPreference
@@ -137,6 +137,12 @@
             android:title="@string/notification_guts_kill_app_button_title"
             android:summary="@string/notification_guts_kill_app_button_summary"
             android:defaultValue="false" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="dismiss_all_button"
+            android:title="@string/enable_clear_all_button"
+            android:summary="@string/enable_clear_all_button_summary"
+            android:defaultValue="true" />
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="notification_sound_vib_screen_on"
