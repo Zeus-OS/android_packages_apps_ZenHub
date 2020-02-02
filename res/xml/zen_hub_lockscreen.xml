@@ -121,6 +121,37 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="charging_ls"
+        android:title="@string/charging_ls_category">
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+       <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="sysui_keyguard_show_battery_bar"
+            android:title="@string/tuner_keyguard_show_battery_bar_title"
+            android:summary="@string/tuner_keyguard_show_battery_bar_summary"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="sysui_keyguard_show_battery_bar_always"
+            android:title="@string/tuner_keyguard_show_battery_bar_always_title"
+            android:summary="@string/tuner_keyguard_show_battery_bar_always_summary"
+            android:dependency="sysui_keyguard_show_battery_bar"
+            android:defaultValue="false" />
+
+        <com.zenx.support.colorpicker.ColorPickerPreference
+            android:key="sysui_keyguard_battery_bar_color"
+            android:title="@string/tuner_keyguard_battery_bar_color_title"
+            android:dependency="sysui_keyguard_show_battery_bar"
+            android:defaultValue="0xffffffff" />
+
+ </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="ls_disable_elements"
         android:title="@string/ls_disable_elements">
 
@@ -146,12 +177,6 @@
             android:key="lockscreen_show_status_bar"
             android:title="@string/lockscreen_show_status_bar_title"
             android:summary="@string/lockscreen_show_status_bar_summary"
-            android:defaultValue="true" />
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_battery_info"
-            android:title="@string/lockscreen_battery_info_title"
-            android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
         <Preference

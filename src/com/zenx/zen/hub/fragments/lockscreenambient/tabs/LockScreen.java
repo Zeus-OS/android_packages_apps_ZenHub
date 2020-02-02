@@ -45,8 +45,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String KEY_BATT_BAR_COLOR = "sysui_keyguard_battery_bar_color";
+
+    private static final int DEFAULT_COLOR = 0xffffffff;
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+    private ColorPickerPreference mBatteryBarColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -62,6 +66,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
+
+        mBatteryBarColor = (ColorPickerPreference) findPreference(KEY_BATT_BAR_COLOR);
+        mBatteryBarColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, DEFAULT_COLOR);
+        String hexColor = String.format("#%08x", (DEFAULT_COLOR & intColor));
+        mBatteryBarColor.setSummary(hexColor);
+        mBatteryBarColor.setNewPreviewColor(intColor);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -71,7 +83,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
 		            LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
             return true;
-        }
+        } else if (preference == mBatteryBarColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SYSUI_KEYGUARD_BATTERY_BAR_COLOR, intHex);
+                return true;
+            }
         return false;
     }
 

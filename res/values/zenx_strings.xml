@@ -1021,4 +1021,11 @@
     <string name="enable_clear_all_button">Replace clear all text with nice button (beta)</string>
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
 
+    <!-- Battery Bar -->
+    <string name="charging_ls_category">Charging Info</string>
+    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
+    <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
 </resources>
