@@ -220,6 +220,12 @@
         android:title="@string/footer_title"
         android:key="footer" >
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_datausage"
+            android:title="@string/qs_datausage_title"
+            android:summary="@string/qs_datausage_subtitle"
+            android:defaultValue="true" />
+
          <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_edit_toggle"
             android:title="@string/qs_edit_title"

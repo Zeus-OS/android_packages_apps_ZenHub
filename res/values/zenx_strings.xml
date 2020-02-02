@@ -1011,4 +1011,6 @@
     <string name="flashlight_on_call_wait_title">Blink for call waiting</string>
     <string name="flashlight_on_call_wait_summary">Pulse flash when there\'s a call waiting</string>
 
+    <string name="qs_datausage_title">Show data usage in qs header</string>
+    <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
 </resources>
