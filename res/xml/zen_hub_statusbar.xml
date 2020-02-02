@@ -58,7 +58,7 @@
         android:title="@string/network_traffic_state_title"
         android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.NetworkTraffic"
         android:summary="@string/network_traffic_state_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
     </PreferenceCategory>
 
