@@ -964,11 +964,22 @@
     
     <!-- Lockscreen clock style -->
     <string name="lockscreen_clock_dialog_title">Select clock style</string>
-    <string name="lockscreen_clock_hide">Hide</string>
-    <string name="lockscreen_clock_default">Default</string>
-    <string name="lockscreen_clock_default_bold">Default (bold)</string>
-    <string name="lockscreen_clock_sammy">Sammy</string>
-    <string name="lockscreen_clock_sammy_bold">Sammy (bold)</string>
+    <string name="lockscreen_clock_selection_hidden">Hidden</string>
+    <string name="lockscreen_clock_selection_digital">Default</string>
+    <string name="lockscreen_clock_selection_digital_bold">Bold (digital)</string>
+    <string name="lockscreen_clock_selection_digital_small">Small (digital)</string>
+    <string name="lockscreen_clock_selection_digital_accent">Full accent (digital)</string>
+    <string name="lockscreen_clock_selection_digital_accent_min">Accent minutes (digital)</string>
+    <string name="lockscreen_clock_selection_digital_accent_hour">Accent hours (digital)</string>
+    <string name="lockscreen_clock_selection_sammy">Sammy</string>
+    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
+    <string name="lockscreen_clock_selection_sammy_accent">Sammy accent</string>
+    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy accent (darker hour)</string>
+    <string name="ls_clock_position_title">Digital Clock position</string>
+    <string name="ls_clock_position_summary">Change position fo digital clock on lockscreen(horizontal)</string>
+    <string name="ls_clock_position_center">Center</string>
+    <string name="ls_clock_position_right">Right</string>
+    <string name="ls_clock_position_left">Left</string>
 
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Enable or disable the Lock icon</string>

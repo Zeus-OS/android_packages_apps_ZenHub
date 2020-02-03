@@ -687,5 +687,17 @@
        <item>2</item>
        <item>3</item>
    </string-array>
-   
+
+    <!-- Lockscreen clock positions -->
+    <string-array name="ls_clock_position_entries">
+        <item>@string/ls_clock_position_center</item>
+        <item>@string/ls_clock_position_left</item>
+        <item>@string/ls_clock_position_right</item>
+    </string-array>
+    <string-array name="ls_clock_position_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
