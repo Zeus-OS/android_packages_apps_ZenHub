@@ -146,6 +146,10 @@
        </PreferenceCategory>
 
        <!-- FOD icon picker -->
+       <PreferenceCategory
+        android:key="fod_icon_picker"
+        android:title="@string/fod_icon_picker_category_title">
+
        <Preference
         android:key="fod_icon_picker_category"
         android:title="@string/fod_icon_picker_title"
@@ -158,6 +162,15 @@
             android:title="@string/fod_recog_animation"
             android:summary="@string/fod_recog_animation_summary"
             android:defaultValue="false" />
+
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="fod_anim"
+            android:title="@string/fod_recog_animation_picker_title"
+            android:summary="%s"
+            android:entries="@array/fod_recog_animation_entries"
+            android:entryValues="@array/fod_recog_animation_values"
+            android:defaultValue="0"
+            android:dependency="fod_recognizing_animation" />
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
