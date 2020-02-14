@@ -53,12 +53,24 @@
         android:key="network"
         android:title="@string/network_traffic_state_category">
 
-    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
-        android:key="network_traffic_state"
-        android:title="@string/network_traffic_state_title"
-        android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.NetworkTraffic"
-        android:summary="@string/network_traffic_state_summary"
-        android:defaultValue="true" />
+        <ListPreference
+            android:key="network_traffic_location"
+            android:title="@string/network_traffic_state_title"
+            android:defaultValue="2" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="network_traffic_arrow"
+            android:title="@string/network_traffic_arrow_title"
+            android:summary="@string/network_traffic_arrow_summary"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="network_traffic_autohide_threshold"
+            android:title="@string/network_traffic_autohide_threshold_title"
+            android:max="10"
+            settings:min="0"
+            android:defaultValue="0"
+            settings:units="KB/s" />
 
     </PreferenceCategory>
 
@@ -155,7 +167,7 @@
             android:key="use_old_mobiletype"
             android:title="@string/use_old_mobiletype_title"
             android:summary="@string/use_old_mobiletype_summary" />
-
+            
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
             android:title="@string/roaming_indicator_icon_title"

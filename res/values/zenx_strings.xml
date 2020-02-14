@@ -382,6 +382,9 @@
     <string name="qs_edit_title">Edit icon</string>
     <string name="qs_edit_summary">Display the tile edit icon in quick settings footer</string>
 
+    <string name="qs_user_title">User icon</string>
+    <string name="qs_user_summary">Display the tile user icon in quick settings footer</string>
+
     <string name="qs_settings_title">Settings icon</string>
     <string name="qs_settings_summary">Display the tile settings icon in quick settings footer</string>
 
@@ -630,9 +633,12 @@
     <string name="network_traffic_state_title">Network traffic</string>
     <string name="network_traffic_state_summary">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-    <string name="network_traffic_hidearrow">Hide arrows</string>
-    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
-    
+    <string name="network_traffic_arrow_title">Hide arrows</string>
+    <string name="network_traffic_arrow_summary">Hide the network traffic indicator arrows</string>
+    <string name="network_traffic_disabled">Disabled</string>
+    <string name="network_traffic_statusbar">Statusbar</string>
+    <string name="network_traffic_qs_header">QS header</string>
+
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
     <string name="roaming_indicator_icon_summary">Display the roaming indicator in signal icon when in roaming mode</string>
