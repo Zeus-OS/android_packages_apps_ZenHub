@@ -121,11 +121,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.NETWORK_TRAFFIC_LOCATION, 2);
         CharSequence[] NonNotchEntries = { getResources().getString(R.string.network_traffic_disabled),
                 getResources().getString(R.string.network_traffic_statusbar),
-                getResources().getString(R.string.network_traffic_qs_header) };
+                getResources().getString(R.string.network_traffic_qs_header),
+                getResources().getString(R.string.network_traffic_qs_footer) };
         CharSequence[] NotchEntries = { getResources().getString(R.string.network_traffic_disabled),
-                getResources().getString(R.string.network_traffic_qs_header) };
-        CharSequence[] NonNotchValues = {"0", "1" , "2"};
-        CharSequence[] NotchValues = {"0", "2"};
+                getResources().getString(R.string.network_traffic_qs_header),
+                getResources().getString(R.string.network_traffic_qs_footer) };
+        CharSequence[] NonNotchValues = {"0", "1" , "2", "3"};
+        CharSequence[] NotchValues = {"0", "2", "3"};
         mNetworkTraffic.setEntries(Utils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
         mNetworkTraffic.setEntryValues(Utils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
         mNetworkTraffic.setValue(String.valueOf(networkTraffic));

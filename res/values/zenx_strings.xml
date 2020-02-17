@@ -638,6 +638,7 @@
     <string name="network_traffic_disabled">Disabled</string>
     <string name="network_traffic_statusbar">Statusbar</string>
     <string name="network_traffic_qs_header">QS header</string>
+    <string name="network_traffic_qs_footer">QS footer</string>
 
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
