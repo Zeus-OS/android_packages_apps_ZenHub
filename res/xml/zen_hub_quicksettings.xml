@@ -144,7 +144,7 @@
         android:key="qs_battery_category"
         android:title="@string/battery_category_title">
 
-        <com.havoc.support.preferences.SystemSettingSwitchPreference
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/qs_show_battery_estimate_title"
             android:summary="@string/qs_show_battery_estimate_summary"
