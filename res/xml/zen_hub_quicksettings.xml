@@ -139,6 +139,18 @@
             android:summary="@string/qs_show_brightness_buttons_summary"
             android:defaultValue="true" />
     </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="qs_battery_category"
+        android:title="@string/battery_category_title">
+
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_show_battery_estimate"
+            android:title="@string/qs_show_battery_estimate_title"
+            android:summary="@string/qs_show_battery_estimate_summary"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/qs_element_title"
@@ -161,14 +173,6 @@
         android:title="@string/quick_settings_vibrate_title"
         android:summary="@string/quick_settings_vibrate_summary"
         android:defaultValue="false"/>
-
-            <!-- Battery mode -->
-        <com.zenx.support.preferences.SystemSettingListPreference
-            android:key="qs_battery_mode"
-            android:title="@string/battery_percentage_title"
-            android:entries="@array/qs_battery_mode_entries"
-            android:entryValues="@array/qs_battery_mode_values"
-            android:defaultValue="1" />
 
      <com.zenx.support.preferences.SystemSettingListPreference
          android:key="qs_system_info"
