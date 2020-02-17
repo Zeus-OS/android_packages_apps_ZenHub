@@ -162,7 +162,6 @@
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="notification_messages">System</string>
     <string name="notification_misc">Misc</string>
-    <string name="incall_vibration_category">In-call Vibration</string>
 
     <!-- Quicksettings Categories -->
     <string name="qs_layout_category">Layout</string>
@@ -217,11 +216,6 @@
     <!-- Wakeup options -->
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
-
-    <!-- Incall vibrate options -->
-    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
-    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
-    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 
     <string name="flash_on_call_category">Pulse flash</string>
     <string name="flash_on_call_title">Pulse flash on incoming call</string>
