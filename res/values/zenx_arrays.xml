@@ -680,4 +680,28 @@
         <item>2</item>
     </string-array>
 
+    <!-- QS Header -->
+    <string-array name="qs_battery_mode_entries">
+        <item>@string/qs_battery_mode_off</item>
+        <item>@string/qs_battery_mode_estimate</item>
+        <item>@string/qs_battery_mode_battery</item>
+    </string-array>
+    <string-array name="qs_battery_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- QS System -->
+    <string-array name="qs_sys_battery_mode_entries">
+        <item>@string/qs_battery_mode_off</item>
+        <item>@string/qs_battery_mode_estimate</item>
+        <item>@string/qs_battery_mode_battery</item>
+    </string-array>
+    <string-array name="qs_sys_battery_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

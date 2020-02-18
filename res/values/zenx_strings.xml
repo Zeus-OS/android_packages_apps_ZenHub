@@ -1040,4 +1040,11 @@
 
     <string name="pulse_ambient_light_repeat_count_title">Edge Light Repeat count</string>
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
+
+    <string name="qs_battery_mode_title">QS Header</string>
+    <string name="qs_sys_battery_mode_title">QS System</string>
+    <string name="qs_battery_mode_off"> Hide </string>
+    <string name="qs_battery_mode_battery">Battery level</string>
+    <string name="qs_battery_mode_estimate">Battery estimation</string>
+
 </resources>
