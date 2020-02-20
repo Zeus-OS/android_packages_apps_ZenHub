@@ -268,6 +268,8 @@
     <string name="qs_system_info_gpu_clock">GPU frequency</string>
     <string name="qs_system_info_gpu_busy">GPU utilization</string>
     <string name="qs_system_info_battery_level">Battery level</string>
+    <string name="qs_system_info_icon_title">Show icon</string>
+    <string name="qs_system_info_icon_summary">Show or hide system info icon in qs header</string>
 
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>

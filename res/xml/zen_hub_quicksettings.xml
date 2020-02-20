@@ -192,7 +192,11 @@
          android:defaultValue="2"
          android:summary="%s" />
 
-
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="qs_system_info_icon"
+        android:title="@string/qs_system_info_icon_title"
+        android:summary="@string/qs_system_info_icon_summary"
+        android:defaultValue="true" />
 
     </PreferenceCategory>
 
