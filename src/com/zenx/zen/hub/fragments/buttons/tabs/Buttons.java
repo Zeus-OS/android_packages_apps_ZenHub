@@ -26,6 +26,7 @@ import android.widget.Toast;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto; 
+import com.android.internal.util.zenx.Utils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -48,6 +49,7 @@ public class Buttons extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.zen_hub_buttons);
         resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefSet = getPreferenceScreen();
 
         mNavBarLayout = (ListPreference) findPreference(NAV_BAR_LAYOUT);
         mNavBarLayout.setOnPreferenceChangeListener(this);
@@ -56,6 +58,10 @@ public class Buttons extends SettingsPreferenceFragment
             mNavBarLayout.setValue(navBarLayoutValue);
         } else {
             mNavBarLayout.setValueIndex(0);
+        }
+
+        if (!Utils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefSet.removePreference(mNavBarLayout);
         }
 
         final boolean defaultToNavigationBar = getResources().getBoolean(
