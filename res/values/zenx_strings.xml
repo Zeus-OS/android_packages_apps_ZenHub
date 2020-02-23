@@ -432,7 +432,7 @@
     <string name="status_bar_clock_advanced_summary">Advanced clock settings</string>
 
      <!-- Statusbar Clock Font Style, Size & Color -->
-    <string name="status_bar_clock_font_style_title">Statusbar Clock font style</string>
+    <string name="status_bar_clock_font_style_title">Font style</string>
     <string name="status_bar_clock_font_style_summary">%1$s</string>
     <string name="status_bar_clock_font_size_title">Status bar font size</string>
     <string name="status_bar_clock_color_title">Status bar font color</string>
@@ -632,7 +632,7 @@
     <string name="network_traffic_disabled">Disabled</string>
     <string name="network_traffic_statusbar">Statusbar</string>
     <string name="network_traffic_qs_header">QS header</string>
-    <string name="network_traffic_qs_footer">QS footer</string>
+    <string name="network_traffic_qs_footer">QS footer (recommended for notch devices)</string>
 
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
