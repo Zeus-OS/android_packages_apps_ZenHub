@@ -146,7 +146,7 @@
 
         <com.zenx.support.preferences.SystemSettingListPreference
             android:key="qs_battery_mode"
-            android:title="@string/qs_battery_mode_title"
+            android:title="@string/qs_sys_battery_mode_title"
             android:entries="@array/qs_battery_mode_entries"
             android:entryValues="@array/qs_battery_mode_values"
             android:defaultValue="0"
@@ -154,7 +154,7 @@
 
         <com.zenx.support.preferences.SystemSettingListPreference
             android:key="qs_sys_battery_mode"
-            android:title="@string/qs_sys_battery_mode_title"
+            android:title="@string/qs_battery_mode_title"
             android:entries="@array/qs_sys_battery_mode_entries"
             android:entryValues="@array/qs_sys_battery_mode_values"
             android:defaultValue="0"

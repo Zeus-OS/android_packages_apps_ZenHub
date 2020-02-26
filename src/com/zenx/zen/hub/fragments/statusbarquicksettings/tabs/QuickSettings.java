@@ -146,6 +146,8 @@ public class QuickSettings extends SettingsPreferenceFragment
         mCustomHeader.setChecked(qsHeader != 0);
         mCustomHeader.setOnPreferenceChangeListener(this);
 
+        boolean isBlurEnabled = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_BLUR, 1, UserHandle.USER_CURRENT) == 1;
         mQsBlur = (SystemSettingMasterSwitchPreference) findPreference(QS_BLUR);
         int blur = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_BLUR, 0);
