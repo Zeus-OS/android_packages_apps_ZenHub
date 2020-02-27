@@ -74,6 +74,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_NETWORK_TRAFFIC = "network_traffic_location";
     private static final String KEY_NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
     private static final String KEY_NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide_threshold";
+    private static final String STATUSBAR_BATTERY_BAR = "statusbar_battery_bar";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
@@ -89,6 +90,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mNetworkTraffic;
     private SystemSettingSwitchPreference mNetworkTrafficArrow;
     private SystemSettingSeekBarPreference mNetworkTrafficAutohide;
+    private SystemSettingMasterSwitchPreference mStatusbarBatteryBar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -147,6 +149,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarLogo.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0) == 1));
         mStatusBarLogo.setOnPreferenceChangeListener(this);
+
+        mStatusbarBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(STATUSBAR_BATTERY_BAR);
+        mStatusbarBatteryBar.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_BATTERY_BAR, 0) == 1));
+                mStatusbarBatteryBar.setOnPreferenceChangeListener(this);
 
         mConfigShowHDVolteIcon = getResources().getBoolean(com.android.internal.R.bool.config_display_hd_volte);
         int useHDIcon = (mConfigShowHDVolteIcon ? 1 : 0);
@@ -215,6 +222,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     Settings.System.NETWORK_TRAFFIC_LOCATION, networkTraffic);
             mNetworkTraffic.setSummary(mNetworkTraffic.getEntries()[index]);
             updateNetworkTrafficPrefs(networkTraffic);
+            return true;
+        } else if (preference == mStatusbarBatteryBar) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR, value ? 1 : 0);
             return true;
         }
         return false;

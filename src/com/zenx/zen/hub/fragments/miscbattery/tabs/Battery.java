@@ -34,6 +34,8 @@ import com.zenx.support.preferences.SystemSettingMasterSwitchPreference;
 public class Battery extends SettingsPreferenceFragment implements 
         Preference.OnPreferenceChangeListener {
 
+    public static final String TAG = "Battery";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +43,8 @@ public class Battery extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-      
-        return true; 
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
     }
 
     @Override
