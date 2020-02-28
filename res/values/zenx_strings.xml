@@ -934,6 +934,9 @@
     <string name="pulse_ambient_light_color_mode_accent">Accent</string>
     <string name="pulse_ambient_light_color_mode_custom">Custom</string>
     <string name="pulse_ambient_light_duration_title">Light duration</string>
+    <string name="pulse_ambient_light_repeat_count_title">Light repeat count</string>
+    <string name="pulse_ambient_light_show_always_title">Show for all doze events</string>
+    <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
 
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>
@@ -1040,9 +1043,6 @@
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
     <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
-
-    <string name="pulse_ambient_light_repeat_count_title">Edge Light Repeat count</string>
-    <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
 
     <string name="qs_battery_mode_title">QS Header</string>
     <string name="qs_sys_battery_mode_title">QS System</string>
