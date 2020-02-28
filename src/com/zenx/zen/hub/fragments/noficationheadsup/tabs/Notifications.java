@@ -40,7 +40,7 @@ public class Notifications extends SettingsPreferenceFragment
     public static final String TAG = "Notifications";
     private static final String LIGHTS_CATEGORY = "notification_lights";
     private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
-    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
+    private static final String AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
 
     private PreferenceCategory mLightsCategory;
     private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
@@ -64,10 +64,10 @@ public class Notifications extends SettingsPreferenceFragment
             getPreferenceScreen().removePreference(mLightsCategory);
         }
 
-        mEdgeLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
+        mEdgeLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT);
         mEdgeLightEnabled.setOnPreferenceChangeListener(this);
         int edgeLightEnabled = Settings.System.getInt(getContentResolver(),
-                PULSE_AMBIENT_LIGHT, 0);
+                AMBIENT_NOTIFICATION_LIGHT, 0);
         mEdgeLightEnabled.setChecked(edgeLightEnabled != 0);
     }
 
@@ -86,7 +86,7 @@ public class Notifications extends SettingsPreferenceFragment
         } else if (preference == mEdgeLightEnabled) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
-                    PULSE_AMBIENT_LIGHT, value ? 1 : 0);
+                    AMBIENT_NOTIFICATION_LIGHT, value ? 1 : 0);
             return true;
         }
         return false;
