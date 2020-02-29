@@ -31,6 +31,8 @@ import com.android.internal.util.zenx.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.zenx.support.preferences.SystemSettingSwitchPreference;
+
 public class Buttons extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -39,10 +41,12 @@ public class Buttons extends SettingsPreferenceFragment
     private static final String NAV_BAR_LAYOUT = "nav_bar_layout";
     private static final String SYSUI_NAV_BAR = "sysui_nav_bar";
     private static final String KEY_NAVIGATION_BAR_ENABLED = "force_show_navbar";
+    private static final String KEY_NAVIGATION_BAR_ARROWS = "navigation_bar_menu_arrow_keys";
 
     private ContentResolver resolver;
     private ListPreference mNavBarLayout;
     private SwitchPreference mNavigationBar;
+    private SystemSettingSwitchPreference mNavigationArrows;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,11 @@ public class Buttons extends SettingsPreferenceFragment
                 Settings.System.FORCE_SHOW_NAVBAR,
                 defaultToNavigationBar ? 1 : 0) == 1));
         mNavigationBar.setOnPreferenceChangeListener(this);
+
+        mNavigationArrows = (SystemSettingSwitchPreference) findPreference(KEY_NAVIGATION_BAR_ARROWS);
+        if (Utils.isThemeEnabled("com.android.internal.systemui.navbar.gestural_nopill")) {
+            prefSet.removePreference(mNavigationArrows);
+        }
     }
 
     @Override
