@@ -1462,7 +1462,7 @@
 	    <item>35</item>
     </string-array>
 
-    <string-array name="accent_presets_entries" translatable="false">
+ <string-array name="accent_presets_entries" translatable="false">
         <item>@string/default_string</item>
         <item>@string/accent_preset_0</item>
         <item>@string/accent_preset_1</item>

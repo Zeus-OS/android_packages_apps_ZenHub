@@ -46,12 +46,12 @@
         android:entryValues="@array/ui_style_selector_values"
         android:persistent="false" />
 
-    <com.zenx.support.colorpicker.ColorPickerPreference
-            android:key="accent_color"
-            android:title="@string/accent_color"
-            android:summary="@string/accent_summary"
-            android:defaultValue="0x4285F4"
-            android:persistent="false" />
+        <ListPreference
+            android:key="accent_preset"
+            android:title="@string/accent_preset_title"
+            android:persistent="false"
+            android:entries="@array/accent_presets_entries"
+            android:entryValues="@array/accent_presets_values" />
 
     <com.zenx.support.colorpicker.ColorPickerPreference
             android:key="rgb_accent_picker"

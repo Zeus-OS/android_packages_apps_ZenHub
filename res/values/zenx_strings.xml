@@ -1557,7 +1557,8 @@
     <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
 
      <!-- Accent presets -->
-    <string name="accent_preset_0">AOSP Cinnamon</string>
+     <string name="custom_string">Custom</string>
+      <string name="accent_preset_0">AOSP Cinnamon</string>
     <string name="accent_preset_1">AOSP Green</string>
     <string name="accent_preset_2">AOSP Ocean</string>
     <string name="accent_preset_3">AOSP Orchid</string>
