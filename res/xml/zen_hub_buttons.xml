@@ -56,7 +56,7 @@
             android:dependency="hardware_keys_enable" />
 
         <Preference
-            android:key="button_backlight_enable"
+            android:key="button_backlight"
             android:title="@string/button_backlight_title"
             android:summary="@string/button_backlight_summary"
             android:fragment="com.zenx.zen.hub.fragments.buttons.tabs.submodules.ButtonBrightness"
