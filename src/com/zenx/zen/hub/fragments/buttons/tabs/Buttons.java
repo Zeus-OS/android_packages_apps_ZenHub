@@ -137,7 +137,7 @@ public class Buttons extends SettingsPreferenceFragment
     private SecureSettingSwitchPreference mSwapNavbar;
     private SystemSettingSwitchPreference mNavigationArrowKeys;
     private SystemSettingListPreference mTimeout;
-    private SystemSettingSwitchPreference mExtendedSwipe;
+    private SystemSettingListPreference mBackSwipeType;
 
     private int deviceKeys;
 
@@ -359,13 +359,13 @@ public class Buttons extends SettingsPreferenceFragment
 
         mTimeout = (SystemSettingListPreference) findPreference("long_back_swipe_timeout");
 
-        mExtendedSwipe = (SystemSettingSwitchPreference) findPreference("back_swipe_extended");
-        boolean extendedSwipe = Settings.System.getIntForUser(resolver,
-                Settings.System.BACK_SWIPE_EXTENDED, 0,
-                UserHandle.USER_CURRENT) != 0;
-        mExtendedSwipe.setChecked(extendedSwipe);
-        mExtendedSwipe.setOnPreferenceChangeListener(this);
-        mTimeout.setEnabled(!mExtendedSwipe.isChecked());
+        mBackSwipeType = (SystemSettingListPreference) findPreference("back_swipe_type");
+        int swipeType = Settings.System.getIntForUser(resolver,
+                Settings.System.BACK_SWIPE_TYPE, 0, UserHandle.USER_CURRENT);
+        mBackSwipeType.setValue(String.valueOf(swipeType));
+        mBackSwipeType.setSummary(mBackSwipeType.getEntry());
+        mBackSwipeType.setOnPreferenceChangeListener(this);
+        mTimeout.setEnabled(swipeType == 0);
 
         mGesturePill = (SwitchPreference) findPreference(KEY_GESTURE_PILL_SWITCH);
         mGesturePill.setChecked((Settings.System.getInt(getContentResolver(),
@@ -585,10 +585,14 @@ public class Buttons extends SettingsPreferenceFragment
             actionPreferenceReload();
             customAppCheck();
             return true;
-        } else if (preference == mExtendedSwipe) {
-            boolean enabled = ((Boolean) objValue).booleanValue();
-            mExtendedSwipe.setChecked(enabled);
-            mTimeout.setEnabled(!enabled);
+        } else if (preference == mBackSwipeType) {
+            int swipeType = Integer.parseInt((String) objValue);
+            int index = mBackSwipeType.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.BACK_SWIPE_TYPE, swipeType);
+            mBackSwipeType.setSummary(mBackSwipeType.getEntries()[index]);
+            mTimeout.setEnabled(swipeType == 0);
+            return true;
         } else if (preference == mGesturePill) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -596,6 +600,7 @@ public class Buttons extends SettingsPreferenceFragment
             SystemNavigationGestureSettings.setBackGestureOverlaysToUse(getActivity());
             SystemNavigationGestureSettings.setCurrentSystemNavigationMode(getActivity(),
                     getOverlayManager(), SystemNavigationGestureSettings.getCurrentSystemNavigationMode(getActivity()));
+            return true;
         }
         return false;
     }
