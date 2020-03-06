@@ -226,7 +226,7 @@
 
       <!-- Disabling FC notifications -->
     <string name="disable_fc_notifications_title">Diable FC Notifications</string> 
-    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string> 
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
@@ -923,7 +923,7 @@
     <string name="ls_clock_position_right">Right</string>
     <string name="ls_clock_position_left">Left</string>
 
-    <string name="hide_lockicon_title">Hide lock icon</string>
+    <string name="hide_lockicon_title">Show lock icon</string>
     <string name="hide_lockicon_summary">Enable or disable the Lock icon</string>
 
             <!-- Lockscreen Date styles -->
