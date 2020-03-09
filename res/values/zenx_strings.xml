@@ -1014,6 +1014,9 @@
     <string name="battery_bar_location_statusbar_bottom">Status bar bottom</string>
     <string name="battery_bar_location_navbar_top">Navigation bar top</string>
     <string name="battery_bar_location_navbar_bottom">Navigation bar bottom</string>
+    <string name="battery_bar_location_qs_header">Qs header</string>
+    <string name="battery_bar_location_qs_footer">Qs footer</string>
+
     <!-- HW keys -->
     <string name="hardware_keys_title">Hardware</string>
     <string name="hardware_keys_disable_title">Hardware keys</string>

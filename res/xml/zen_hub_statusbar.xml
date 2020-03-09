@@ -96,6 +96,7 @@
     <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
         android:title="@string/battery_bar_title"
         android:key="statusbar_battery_bar"
+        android:summary="@string/battery_bar_summary"
         android:defaultValue="false"
         android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.BatteryBar" />
 
