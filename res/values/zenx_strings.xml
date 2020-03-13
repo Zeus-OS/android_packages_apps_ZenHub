@@ -986,10 +986,10 @@
 
     <!-- Battery Bar -->
     <string name="charging_ls_category">Charging Info</string>
-    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on charging in always on display</string>
+    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar on Doze</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">AlShow battery bar on AOD on display</string>
     <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
-    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging</string>
+    <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging even on lockscreen</string>
     <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
 
     <string name="qs_battery_mode_title">QS Header</string>
@@ -1085,4 +1085,7 @@
     <string name="back_gesture_haptic_title">Haptic feedback</string>
     <string name="back_gesture_haptic_summary">Vibrate when the back gesture is triggered</string>
 
+    <!-- Media AutoPause -->
+    <string name="media_autopause">Media AutoPause</string>
+    <string name="media_autopause_summary"><b>AutoPause</b>, automatically pauses media when volume is muted\n<ul><li>which can be resumed by increasing volume within 30 seconds.</li>\n<li >Else, you have to resume it manually.</li></ul></string>
 </resources>

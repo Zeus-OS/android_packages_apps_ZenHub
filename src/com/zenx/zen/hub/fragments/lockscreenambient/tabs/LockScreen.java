@@ -45,10 +45,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -65,6 +67,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
 
+        mLsBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(SYSUI_KEYGUARD_SHOW_BATTERY_BAR);
+        mLsBatteryBar.setOnPreferenceChangeListener(this);
+        int lsBatteryBar = Settings.System.getInt(resolver,
+                SYSUI_KEYGUARD_SHOW_BATTERY_BAR, 1);
+        mLsBatteryBar.setChecked(lsBatteryBar != 0);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -74,7 +81,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(),
 		            LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
             return true;
-        } 
+        } else if (preference == mLsBatteryBar) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+		            SYSUI_KEYGUARD_SHOW_BATTERY_BAR, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
