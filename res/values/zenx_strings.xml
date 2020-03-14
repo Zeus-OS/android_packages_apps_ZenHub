@@ -339,7 +339,7 @@
 
     <!-- Ambient display battery percentage --> 
     <string name="ambient_battery_percent_title">Battery level on bottom</string> 
-    <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string> 	
+    <string name="ambient_battery_percent_summary">Enable to show battery percent while dozing</string>
 
         <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block per-package</string>
@@ -987,8 +987,8 @@
     <!-- Battery Bar -->
     <string name="charging_ls_category">Charging Info</string>
     <string name="tuner_keyguard_show_battery_bar_title">Show battery bar on Doze</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">AlShow battery bar on AOD on display</string>
-    <string name="tuner_keyguard_show_battery_bar_always_title">Always show battery bar</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on AOD on display</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Show Battery bar on Lockscreen</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging even on lockscreen</string>
     <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
 

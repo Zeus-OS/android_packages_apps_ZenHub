@@ -145,6 +145,7 @@
         <SwitchPreference
             android:key="show_hd_icon"
             android:title="@string/show_hd_icon_title"
+            android:defaultValue="true"
             android:summary="@string/show_hd_icon_summary"/>
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference

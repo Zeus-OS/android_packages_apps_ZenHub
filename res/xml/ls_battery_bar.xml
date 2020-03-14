@@ -19,7 +19,7 @@
             android:key="sysui_keyguard_show_battery_bar_always"
             android:title="@string/tuner_keyguard_show_battery_bar_always_title"
             android:summary="@string/tuner_keyguard_show_battery_bar_always_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.zenx.support.colorpicker.ColorPickerPreference
             android:key="sysui_keyguard_battery_bar_color"
