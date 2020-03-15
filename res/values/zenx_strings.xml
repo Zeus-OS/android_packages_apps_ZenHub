@@ -986,11 +986,15 @@
 
     <!-- Battery Bar -->
     <string name="charging_ls_category">Charging Info</string>
-    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar on Doze</string>
-    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on AOD on display</string>
-    <string name="tuner_keyguard_show_battery_bar_always_title">Show Battery bar on Lockscreen</string>
+    <string name="tuner_keyguard_show_battery_bar_title">Show battery bar on Doze while Charging</string>
+    <string name="tuner_keyguard_show_battery_bar_summary">Show battery bar on AOD on display while charging</string>
+    <string name="tuner_keyguard_show_battery_bar_always_title">Show Battery bar on Lockscreen while charging</string>
     <string name="tuner_keyguard_show_battery_bar_always_summary">Always show battery bar on charging even on lockscreen</string>
     <string name="tuner_keyguard_battery_bar_color_title">Battery bar color</string>
+    <string name="keyguard_show_battery_bar_title">Show Battery bar on lockscreen</string>
+    <string name="keyguard_show_battery_bar_summary">Show battery bar even if you dont charge your device</string>
+    <string name="doze_show_battery_bar_title">Show Battery bar on doze</string>
+    <string name="doze_show_battery_bar_summary">Show battery bar on Doze even if you dont charge your device</string>
 
     <string name="qs_battery_mode_title">QS Header</string>
     <string name="qs_sys_battery_mode_title">QS System</string>
