@@ -815,8 +815,8 @@
     <string-array name="battery_bar_location_entries" translatable="false">
         <item>@string/battery_bar_location_statusbar_top</item>
         <item>@string/battery_bar_location_statusbar_bottom</item>
-        <item>@string/battery_bar_location_qs_header</item>
-        <item>@string/battery_bar_location_qs_footer</item>
+        <item>@string/battery_bar_location_qs_expanded</item>
+        <item>@string/battery_bar_location_qs_non_expanded</item>
         <item>@string/battery_bar_location_navbar_top</item>
         <item>@string/battery_bar_location_navbar_bottom</item>
     </string-array>
@@ -824,8 +824,8 @@
     <string-array name="battery_bar_location_values" translatable="false">
         <item>1</item>
         <item>2</item>
-        <item>5</item>
         <item>6</item>
+        <item>5</item>
         <item>3</item>
         <item>4</item>
     </string-array>
