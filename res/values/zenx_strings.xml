@@ -1092,7 +1092,12 @@
     <string name="back_gesture_haptic_title">Haptic feedback</string>
     <string name="back_gesture_haptic_summary">Vibrate when the back gesture is triggered</string>
 
-    <!-- Media AutoPause -->
-    <string name="media_autopause">Media AutoPause</string>
-    <string name="media_autopause_summary"><b>AutoPause</b>, automatically pauses media when volume is muted\n<ul><li>which can be resumed by increasing volume within 30 seconds.</li>\n<li >Else, you have to resume it manually.</li></ul></string>
+    <!-- Media auto pause -->
+    <string name="media_title">Media</string>
+    <string name="media_auto_pause_title">Auto pause</string>
+    <string name="media_auto_pause_summary">Pause media when volume is muted and resume it by increasing volume within 30 seconds</string>
+
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Show on Ambient Display</string>
+    <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display</string>
 </resources>
