@@ -1100,4 +1100,8 @@
     <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
     <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display</string>
+    <!-- Media heads up -->
+    <string name="show_media_heads_up_title">Media heads up</string>
+    <string name="show_media_heads_up_summary">Show heads up notification when a new track is played</string>
+
 </resources>
