@@ -916,6 +916,8 @@
         <item>@string/lockscreen_charging_animation_drop</item>
         <item>@string/lockscreen_charging_animation_explosion</item>
         <item>@string/lockscreen_charging_animation_water</item>
+        <item>@string/lockscreen_charging_animation_colorful</item>
+        <item>@string/lockscreen_charging_animation_progress</item>
     </string-array>
 
     <string-array name="lockscreen_charging_animation_values" translatable="false">
@@ -925,5 +927,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 </resources>

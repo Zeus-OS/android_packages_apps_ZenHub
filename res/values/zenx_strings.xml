@@ -498,7 +498,9 @@
     <string name="lockscreen_charging_animation_drop">Drop</string>
     <string name="lockscreen_charging_animation_explosion">Explosion</string>
     <string name="lockscreen_charging_animation_water">Water</string>
-
+    <string name="lockscreen_charging_animation_colorful">Colorful</string>
+    <string name="lockscreen_charging_animation_progress">Progress</string>
+    
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
