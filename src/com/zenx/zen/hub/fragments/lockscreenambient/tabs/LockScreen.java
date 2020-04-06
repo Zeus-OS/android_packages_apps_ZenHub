@@ -25,12 +25,16 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceScreen;
+
+import com.android.internal.custom.app.LineageContextConstants;
+import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -40,18 +44,21 @@ import com.zenx.support.preferences.SystemSettingMasterSwitchPreference;
 import com.zenx.support.preferences.SecureSettingMasterSwitchPreference;
 import com.zenx.support.preferences.CustomSeekBarPreference;
 import com.zenx.support.colorpicker.ColorPickerPreference;
+import com.zenx.support.preferences.SystemSettingSwitchPreference;
 
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
+    private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private SystemSettingMasterSwitchPreference mLsBatteryBar;
+    private SystemSettingSwitchPreference mFODAnimationEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -67,6 +74,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
         int lsBatteryBar = Settings.System.getInt(resolver,
                 SYSUI_KEYGUARD_SHOW_BATTERY_BAR, 1);
         mLsBatteryBar.setChecked(lsBatteryBar != 0);
+        PackageManager packageManager = getPackageManager();
+
+        mFODAnimationEnabled = (SystemSettingSwitchPreference) findPreference(FOD_ANIMATION_PREF);
+        if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
+            mFODAnimationEnabled.setVisible(false);
+        }
+
+        updateMasterPrefs();
     }
 
     private void updateMasterPrefs() {
