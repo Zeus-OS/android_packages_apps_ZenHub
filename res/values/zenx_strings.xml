@@ -1117,5 +1117,7 @@
     <string name="lockscreen_animation_google_load">Google loading</string>
     <string name="lockscreen_animation_ball">Ball</string>
     <string name="lockscreen_animation_blueball">Blue balls</string>
+    <string name="lockscreen_animation_on_doze_title">Show on AOD</string>
+    <string name="lockscreen_animation_on_doze_summary">Shows lockscreen animation on doze</string>
 
 </resources>

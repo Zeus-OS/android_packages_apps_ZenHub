@@ -34,7 +34,7 @@
         android:key="ls_animations"
         android:title="@string/ls_animations_title">
 
-    <com.havoc.support.preferences.SystemSettingListPreference
+    <com.zenx.support.preferences.SystemSettingListPreference
         android:key="lockscreen_animation"
         android:dialogTitle="@string/lockscreen_animation_title"
         android:title="@string/lockscreen_animation_title"
@@ -42,6 +42,12 @@
         android:entryValues="@array/lockscreen_animation_values"
         android:summary="%s"
         android:defaultValue="1" />
+
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_animation_on_doze"
+        android:title="@string/lockscreen_animation_on_doze_title"
+        android:summary="@string/lockscreen_animation_on_doze_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 
