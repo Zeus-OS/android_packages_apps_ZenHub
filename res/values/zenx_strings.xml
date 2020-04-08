@@ -1094,12 +1094,7 @@
     <string name="back_gesture_haptic_title">Haptic feedback</string>
     <string name="back_gesture_haptic_summary">Vibrate when the back gesture is triggered</string>
 
-    <!-- Media auto pause -->
-    <string name="media_title">Media</string>
-    <string name="media_auto_pause_title">Auto pause</string>
-    <string name="media_auto_pause_summary">Pause media when volume is muted and resume it by increasing volume within 30 seconds</string>
-
-    <!-- Ambient visualizer -->
+     <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
     <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display</string>
     <!-- Media heads up -->
@@ -1121,5 +1116,16 @@
     <string name="lockscreen_animation_equalizer">Equalizer</string>
     <string name="lockscreen_animation_on_doze_title">Show on AOD</string>
     <string name="lockscreen_animation_on_doze_summary">Shows lockscreen animation on doze</string>
+
+    <!-- Adaptive Playback -->
+    <string name="media_title">Media</string>
+    <string name="adaptive_playback_title">Adaptive playback</string>
+    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
+    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_timeout_30_secs">30 seconds</string>
+    <string name="adaptive_playback_timeout_1_min">1 minute</string>
+    <string name="adaptive_playback_timeout_2_min">2 minutes</string>
+    <string name="adaptive_playback_timeout_5_min">5 minutes</string>
+    <string name="adaptive_playback_timeout_10_min">10 minutes</string>
 
 </resources>
