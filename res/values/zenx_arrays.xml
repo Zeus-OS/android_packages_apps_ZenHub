@@ -935,11 +935,13 @@
     <string-array name="lockscreen_animation_entries" translatable="false">
         <item>@string/lockscreen_animation_off</item>
         <item>@string/lockscreen_animation_siri</item>
-        <item>@string/lockscreen_animation_infinit</item>
+        <item>@string/lockscreen_animation_horizontal_load</item>
         <item>@string/lockscreen_animation_loader</item>
-        <item>@string/lockscreen_animation_google_load</item>
+        <item>@string/lockscreen_animation_pulse</item>
         <item>@string/lockscreen_animation_ball</item>
         <item>@string/lockscreen_animation_blueball</item>
+        <item>@string/lockscreen_animation_load_smile</item>
+        <item>@string/lockscreen_animation_equalizer</item>
     </string-array>
 
     <string-array name="lockscreen_animation_values" translatable="false">
@@ -950,5 +952,7 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </string-array>
 </resources>
