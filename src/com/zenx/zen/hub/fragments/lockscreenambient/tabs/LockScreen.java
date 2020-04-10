@@ -45,6 +45,7 @@ import com.zenx.support.preferences.SecureSettingMasterSwitchPreference;
 import com.zenx.support.preferences.CustomSeekBarPreference;
 import com.zenx.support.colorpicker.ColorPickerPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
+import com.zenx.support.preferences.SwitchPreference;
 
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -52,6 +53,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
     private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
+    private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -59,6 +61,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private SystemSettingMasterSwitchPreference mLsBatteryBar;
     private SystemSettingSwitchPreference mFODAnimationEnabled;
+    private SwitchPreference mScreenOffFOD;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -80,6 +83,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
             mFODAnimationEnabled.setVisible(false);
         }
+
+        boolean mScreenOffFODValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_OFF_FOD, 0) != 0;
+
+        mScreenOffFOD = (SwitchPreference) findPreference(KEY_SCREEN_OFF_FOD);
+        mScreenOffFOD.setChecked(mScreenOffFODValue);
+        mScreenOffFOD.setOnPreferenceChangeListener(this);
 
         updateMasterPrefs();
     }
@@ -103,6 +113,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            SYSUI_KEYGUARD_SHOW_BATTERY_BAR, value ? 1 : 0);
+            return true;
+        } else if (preference == mScreenOffFOD) {
+            int mScreenOffFODValue = (Boolean) newValue ? 1 : 0;
+            Settings.System.putInt(resolver, Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
             return true;
         }
         return false;
