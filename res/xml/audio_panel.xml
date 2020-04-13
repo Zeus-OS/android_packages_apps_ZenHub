@@ -56,4 +56,11 @@
         android:title="@string/audio_panel_view_bt_sco_title"
         android:defaultValue="false"/>
 
+      <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="synthos_hide_things_volumepanel"
+        android:summary="@string/synthos_hide_things_volumepanel_summary"
+        android:title="@string/synthos_hide_things_volumepanel_title"
+        android:defaultValue="true" />
+
+
 </PreferenceScreen>
