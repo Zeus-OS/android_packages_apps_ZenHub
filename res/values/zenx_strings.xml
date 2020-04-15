@@ -1107,7 +1107,7 @@
 
     <string name="lockscreen_animation_off">Off</string>
     <string name="lockscreen_animation_siri">Siri</string>
-    <string name="lockscreen_animation_horizontal_load">horizontal load</string>
+    <string name="lockscreen_animation_horizontal_load">Horizontal load</string>
     <string name="lockscreen_animation_loader">Loader</string>
     <string name="lockscreen_animation_pulse">Pulse</string>
     <string name="lockscreen_animation_ball">Ball</string>
@@ -1127,5 +1127,9 @@
     <string name="adaptive_playback_timeout_2_min">2 minutes</string>
     <string name="adaptive_playback_timeout_5_min">5 minutes</string>
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
+
+    <!-- IME button space -->
+    <string name="navigation_bar_ime_space_title">IME button space</string>
+    <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
 
 </resources>
