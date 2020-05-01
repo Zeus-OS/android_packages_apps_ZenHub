@@ -66,8 +66,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
     private static final String KEY_CARRIER_LABEL = "status_bar_show_carrier";
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
-    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
     private static final String SHOW_HD_ICON = "show_hd_icon";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
@@ -80,8 +78,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mShowDuration;
     private SystemSettingListPreference mShowCarrierLabel;
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
-    private SystemSettingListPreference mStatusbarBatteryStyles;
-    private SystemSettingListPreference mStatusbarBatteryPercentage;
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
     private SwitchPreference mShowHDVolte;
     private boolean mConfigShowHDVolteIcon;
@@ -91,6 +87,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mNetworkTrafficArrow;
     private SystemSettingSeekBarPreference mNetworkTrafficAutohide;
     private SystemSettingMasterSwitchPreference mStatusbarBatteryBar;
+    private ListPreference mBatteryStyle;
+    private ListPreference mBatteryPercent;
+    private int mBatteryPercentValue;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -162,11 +161,20 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.SHOW_HD_ICON, useHDIcon) == 1));
         mShowHDVolte.setOnPreferenceChangeListener(this);
 
-        mStatusbarBatteryPercentage = (SystemSettingListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mStatusbarBatteryPercentage.setValue(String.valueOf(Settings.System.getInt(
-                getContentResolver(), Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0)));
-                mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
-                mStatusbarBatteryPercentage.setOnPreferenceChangeListener(this);
+        mBatteryStyle = (ListPreference) findPreference("status_bar_battery_style");
+        int batterystyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
+        mBatteryStyle.setValue(String.valueOf(batterystyle));
+        mBatteryStyle.setSummary(mBatteryStyle.getEntry());
+        mBatteryStyle.setOnPreferenceChangeListener(this);
+
+        mBatteryPercent = (ListPreference) findPreference("status_bar_show_battery_percent");
+        int batteryPercent = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+        mBatteryPercent.setValue(String.valueOf(batteryPercent));
+        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
+        mBatteryPercent.setOnPreferenceChangeListener(this);
+        mBatteryPercent.setEnabled(batterystyle != 4 && batterystyle != 5);
 
         mConfigUseOldMobileType = getResources().getBoolean(com.android.internal.R.bool.config_useOldMobileIcons);
         int useOldMobileIcons = (!mConfigUseOldMobileType ? 0 : 1);
@@ -187,18 +195,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusbarBatteryStyles) {
-            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_BATTERY_STYLE,
-                    Integer.valueOf((String) newValue));
-                    mStatusbarBatteryStyles.setValue(String.valueOf(newValue));
-                    mStatusbarBatteryStyles.setSummary(mStatusbarBatteryStyles.getEntry());
-            return true;
-        } else if (preference == mStatusbarBatteryPercentage) {
-            Settings.System.putInt(getContentResolver(), Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT,
-                    Integer.valueOf((String) newValue));
-                    mStatusbarBatteryPercentage.setValue(String.valueOf(newValue));
-                    mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
             return true;
 		} else if (preference == mStatusBarLogo) {
             boolean value = (Boolean) newValue;
@@ -228,7 +224,24 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR, value ? 1 : 0);
             return true;
-        }
+    	} else if (preference == mBatteryStyle) {
+            int batterystyle = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_BATTERY_STYLE, batterystyle,
+                UserHandle.USER_CURRENT);
+            int index = mBatteryStyle.findIndexOfValue((String) newValue);
+            mBatteryStyle.setSummary(mBatteryStyle.getEntries()[index]);
+            mBatteryPercent.setEnabled(batterystyle != 4 && batterystyle != 5);
+            return true;
+        } else if (preference == mBatteryPercent) {
+            int batteryPercent = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryPercent,
+                    UserHandle.USER_CURRENT);
+            int index = mBatteryPercent.findIndexOfValue((String) newValue);
+            mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
+            return true;
+		}
         return false;
     }
 
