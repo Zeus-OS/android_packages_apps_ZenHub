@@ -43,7 +43,7 @@
         <com.zenx.support.preferences.CustomSeekBarPreference
             android:key="sysui_rounded_size"
             android:title="@string/corner_radius"
-            android:max="60"
+            android:max="70"
             settings:min="0"
             settings:units="dp"
             android:persistent="false"
