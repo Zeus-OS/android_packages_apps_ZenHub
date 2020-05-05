@@ -137,6 +137,13 @@
             android:defaultValue="false" />
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="screen_off_fod_icon"
+            android:title="@string/screen_off_fod_icon_title"
+            android:summary="@string/screen_off_fod_icon_summary"
+            android:defaultValue="true"
+            android:dependency="screen_off_fod" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="fingerprint_success_vib"
             android:title="@string/fprint_sucess_vib_title"
             android:summary="@string/fprint_sucess_vib_summary"
