@@ -30,7 +30,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
-import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.custom.app.LineageContextConstants;
@@ -54,6 +53,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String SYSUI_KEYGUARD_SHOW_BATTERY_BAR = "sysui_keyguard_show_battery_bar";
     private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
     private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
+    private static final String KEY_SCREEN_OFF_FOD_ICON = "screen_off_fod_icon";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -62,6 +62,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mLsBatteryBar;
     private SystemSettingSwitchPreference mFODAnimationEnabled;
     private SwitchPreference mScreenOffFOD;
+    private SystemSettingSwitchPreference mScreenOffFODIcon;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -88,9 +89,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mScreenOffFOD.setChecked(mScreenOffFODValue);
         mScreenOffFOD.setOnPreferenceChangeListener(this);
 
+        mScreenOffFODIcon = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD_ICON);
+
         if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
             mFODAnimationEnabled.setVisible(false);
             mScreenOffFOD.setVisible(false);
+            mScreenOffFODIcon.setVisible(false);
         }
 
         updateMasterPrefs();
@@ -118,8 +122,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mScreenOffFOD) {
             int mScreenOffFODValue = (Boolean) newValue ? 1 : 0;
-            Settings.System.putInt(resolver, Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
-            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
+            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
             return true;
         }
         return false;
