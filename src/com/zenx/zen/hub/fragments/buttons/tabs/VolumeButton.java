@@ -20,8 +20,10 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.Intent;
 import android.content.pm.UserInfo;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.app.WallpaperManager;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -51,8 +53,10 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VolumeButton extends SettingsPreferenceFragment implements
-    Preference.OnPreferenceChangeListener {
+public class VolumeButton extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
+
+    private ListPreference mVolumePanelTheme;
+    private static final String SYNTHOS_VOLUME_PANEL_THEME = "synthos_volume_panel_theme";
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -61,11 +65,30 @@ public class VolumeButton extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources resources = getResources();
 
+        // set volume panel theme
+        mVolumePanelTheme = (ListPreference) findPreference(SYNTHOS_VOLUME_PANEL_THEME);
+        int style = Settings.System.getInt(resolver,
+                Settings.System.SYNTHOS_VOLUME_PANEL_THEME, 0);
+        mVolumePanelTheme.setValue(String.valueOf(style));
+        mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
+        mVolumePanelTheme.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mVolumePanelTheme) {
+            int style = Integer.valueOf((String) newValue);
+            int index = mVolumePanelTheme.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
+            mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 

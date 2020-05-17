@@ -1563,4 +1563,9 @@
 
         <!-- Show Visualizer in QSPanel -->
     <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
+
+    <string name="synthos_volume_panel_theme_title">Volume Panel Theme</string>
+    <string name="synthos_volume_panel_theme_summary">Reboot SystemUI to apply volume panel theme</string>
+    <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
+    <string name="synthos_volume_panel_theme_aosp">AOSP</string>
 </resources>
