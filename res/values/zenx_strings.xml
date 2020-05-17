@@ -186,4 +186,6 @@
     <string name="statusbar_items_category">Icons</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
     <string name="default_string">Default</string>
+     <!-- Statusbar Tuner -->
+    <string name="statusbar_items_title">Statusbar items</string>
 </resources>
