@@ -23,6 +23,21 @@
         android:key="notification_lights"
         android:title="@string/notification_lights">
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="flash_on_call_waiting"
+            android:title="@string/flash_on_call_title"
+            android:defaultValue="false" />
+
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="flash_on_call_waiting_delay"
+            android:max="1000"
+            android:persistent="false"
+            android:title="@string/flash_on_call_delay_title"
+            settings:min="50"
+            settings:units="ms"
+            settings:interval="50"
+            android:dependency="flash_on_call_waiting"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory
