@@ -39,6 +39,7 @@ public class Notifications extends SettingsPreferenceFragment
 
     public static final String TAG = "Notifications";
     private static final String FLASH_ON_CALL_WAITING_DELAY = "flash_on_call_waiting_delay";
+    
     private CustomSeekBarPreference mFlashOnCallWaitingDelay;
 
     @Override
@@ -51,7 +52,6 @@ public class Notifications extends SettingsPreferenceFragment
         mFlashOnCallWaitingDelay = (CustomSeekBarPreference) findPreference(FLASH_ON_CALL_WAITING_DELAY);
         mFlashOnCallWaitingDelay.setValue(Settings.System.getInt(resolver, Settings.System.FLASH_ON_CALLWAITING_DELAY, 200));
         mFlashOnCallWaitingDelay.setOnPreferenceChangeListener(this);
-
     }
 
     @Override

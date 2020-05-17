@@ -18,5 +18,21 @@
 	android:title="@string/notification_headsup_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <com.zenx.support.preferences.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/heads_up_notifications"
+            android:summary="@string/summary_heads_up_enabled"
+            android:defaultValue="true" />
+
+    <PreferenceCategory
+            android:title="@string/heads_up_stoplist_title"
+            android:key="stoplist_applications" >
+        <Preference
+            android:key="add_stoplist_packages"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/add_heads_up_package"
+            android:dependency="heads_up_notifications_enabled"
+            android:summary="@string/add_heads_up_stoplist_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
