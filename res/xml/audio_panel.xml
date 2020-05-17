@@ -25,6 +25,17 @@
             android:entryValues="@array/volume_panel_values"
             android:defaultValue="@string/volume_panel_aosp_val" />
 
+    <ListPreference
+        android:key="synthos_volume_panel_theme"
+        android:title="@string/synthos_volume_panel_theme_title"
+        android:summary="@string/synthos_volume_panel_theme_summary"
+        android:dialogTitle="@string/synthos_volume_panel_theme_title"
+        android:entries="@array/volume_theme_entries"
+        android:entryValues="@array/volume_theme_values"
+        android:summary="%s"
+        android:defaultValue="0"
+        android:persistent="false" />
+        
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="audio_panel_view_media"
         android:title="@string/audio_panel_view_media_title"

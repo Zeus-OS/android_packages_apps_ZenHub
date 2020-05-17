@@ -1653,4 +1653,10 @@
         <!-- Volume panel Hide Things-->
     <string name="synthos_hide_things_volumepanel_title">Hide Things below volume panel</string>
     <string name="synthos_hide_things_volumepanel_summary">Hide Settings and Ringer Container below volume panel</string>
+
+    <string name="synthos_volume_panel_theme_title">Volume Panel Theme</string>
+    <string name="synthos_volume_panel_theme_summary">Reboot SystemUI to apply volume panel theme</string>
+    <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
+    <string name="synthos_volume_panel_theme_aosp">AOSP</string>
+
 </resources>

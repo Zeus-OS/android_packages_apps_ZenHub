@@ -18,21 +18,22 @@ package com.zenx.zen.hub.fragments.screenanimation.tabs;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContentResolver;
-import android.content.res.Resources;
 import android.database.ContentObserver;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.database.ContentObserver;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import androidx.preference.*;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
+
+import android.app.WallpaperManager;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.net.Uri;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -45,6 +46,8 @@ import java.util.List;
 
 public class AudioPanel extends SettingsPreferenceFragment  implements Preference.OnPreferenceChangeListener {
 
+   private ListPreference mVolumePanelTheme;
+    private static final String SYNTHOS_VOLUME_PANEL_THEME = "synthos_volume_panel_theme";
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -54,11 +57,30 @@ public class AudioPanel extends SettingsPreferenceFragment  implements Preferenc
         final PreferenceScreen prefScreen = getPreferenceScreen();
         mContext = getActivity();
 
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources resources = getResources();
+
+        // set volume panel theme
+        mVolumePanelTheme = (ListPreference) findPreference(SYNTHOS_VOLUME_PANEL_THEME);
+        int style = Settings.System.getInt(resolver,
+                Settings.System.SYNTHOS_VOLUME_PANEL_THEME, 0);
+        mVolumePanelTheme.setValue(String.valueOf(style));
+        mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
+        mVolumePanelTheme.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
+         if (preference == mVolumePanelTheme) {
+            int style = Integer.valueOf((String) newValue);
+            int index = mVolumePanelTheme.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
+            mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
