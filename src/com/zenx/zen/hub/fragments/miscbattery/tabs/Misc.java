@@ -31,6 +31,7 @@ import com.zenx.zen.hub.preferences.Utils;
 
 import com.zenx.zen.hub.utils.SuShell;
 import com.zenx.zen.hub.utils.SuTask;
+import com.zenx.zen.hub.preferences.Utils;
 
 import com.android.internal.logging.nano.MetricsProto; 
 import com.android.settings.SettingsPreferenceFragment;
@@ -48,6 +49,7 @@ public class Misc extends SettingsPreferenceFragment
     private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
+    private static final String SELINUX_EXPLANATION = "selinux_explanation";
 
     private SystemSettingMasterSwitchPreference mGamingMode;
     private SwitchPreference mSelinuxMode;
@@ -66,6 +68,7 @@ public class Misc extends SettingsPreferenceFragment
 
         // SELinux
         Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
+        Preference selinuxExp = findPreference(SELINUX_EXPLANATION);
         mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
         mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
         mSelinuxMode.setOnPreferenceChangeListener(this);
@@ -76,6 +79,15 @@ public class Misc extends SettingsPreferenceFragment
         mSelinuxPersistence.setChecked(getContext()
             .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
             .contains(PREF_SELINUX_MODE));
+
+        // Disabling root required switches if unrooted and letting the user know
+      if (!Utils.isRooted(getContext())) {
+        mSelinuxMode.setEnabled(false);
+        mSelinuxPersistence.setEnabled(false);
+        mSelinuxPersistence.setChecked(false);
+        selinuxExp.setSummary(selinuxExp.getSummary() + "\n" +
+            getResources().getString(R.string.selinux_unrooted_summary));
+      }
     }
 
     @Override
