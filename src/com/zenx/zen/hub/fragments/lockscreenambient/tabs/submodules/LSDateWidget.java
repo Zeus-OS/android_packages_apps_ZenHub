@@ -65,7 +65,7 @@ public class LSDateWidget extends SettingsPreferenceFragment implements
          // Lock Date Size
         mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
         mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.LOCKDATE_FONT_SIZE,16));
+                Settings.System.LOCKDATE_FONT_SIZE,20));
         mDateFontSize.setOnPreferenceChangeListener(this);
 
     }
