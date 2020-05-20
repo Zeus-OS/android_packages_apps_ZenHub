@@ -69,10 +69,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
     private static final String SHOW_HD_ICON = "show_hd_icon";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
-    private static final String KEY_NETWORK_TRAFFIC = "network_traffic_location";
-    private static final String KEY_NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
-    private static final String KEY_NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide_threshold";
     private static final String STATUSBAR_BATTERY_BAR = "statusbar_battery_bar";
+    private static final String NETWORK_TRAFFIC = "network_traffic_state";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
@@ -83,13 +81,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private boolean mConfigShowHDVolteIcon;
     private SwitchPreference mUseOldMobileType;
     private boolean mConfigUseOldMobileType;
-    private ListPreference mNetworkTraffic;
-    private SystemSettingSwitchPreference mNetworkTrafficArrow;
-    private SystemSettingSeekBarPreference mNetworkTrafficAutohide;
     private SystemSettingMasterSwitchPreference mStatusbarBatteryBar;
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
     private int mBatteryPercentValue;
+    private SystemSettingMasterSwitchPreference mNetworkTraffic;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -116,28 +112,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mShowCarrierLabel.setValue(String.valueOf(showCarrierLabel));
         mShowCarrierLabel.setSummary(mShowCarrierLabel.getEntry());
         mShowCarrierLabel.setOnPreferenceChangeListener(this);
-
-        mNetworkTraffic = (ListPreference) findPreference(KEY_NETWORK_TRAFFIC);
-        int networkTraffic = Settings.System.getInt(resolver,
-        Settings.System.NETWORK_TRAFFIC_LOCATION, 2);
-        CharSequence[] NonNotchEntries = { getResources().getString(R.string.network_traffic_disabled),
-                getResources().getString(R.string.network_traffic_statusbar),
-                getResources().getString(R.string.network_traffic_qs_header),
-                getResources().getString(R.string.network_traffic_qs_footer) };
-        CharSequence[] NotchEntries = { getResources().getString(R.string.network_traffic_disabled),
-                getResources().getString(R.string.network_traffic_qs_header),
-                getResources().getString(R.string.network_traffic_qs_footer) };
-        CharSequence[] NonNotchValues = {"0", "1" , "2", "3"};
-        CharSequence[] NotchValues = {"0", "2", "3"};
-        mNetworkTraffic.setEntries(Utils.hasNotch(getActivity()) ? NotchEntries : NonNotchEntries);
-        mNetworkTraffic.setEntryValues(Utils.hasNotch(getActivity()) ? NotchValues : NonNotchValues);
-        mNetworkTraffic.setValue(String.valueOf(networkTraffic));
-        mNetworkTraffic.setSummary(mNetworkTraffic.getEntry());
-        mNetworkTraffic.setOnPreferenceChangeListener(this);
-
-        mNetworkTrafficArrow = (SystemSettingSwitchPreference) findPreference(KEY_NETWORK_TRAFFIC_ARROW);
-        mNetworkTrafficAutohide = (SystemSettingSeekBarPreference) findPreference(KEY_NETWORK_TRAFFIC_AUTOHIDE);
-        updateNetworkTrafficPrefs(networkTraffic);
 
         mStatusBarClockShow = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_CLOCK);
         mStatusBarClockShow.setChecked((Settings.System.getInt(resolver,
@@ -182,6 +156,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mUseOldMobileType.setChecked((Settings.System.getInt(resolver,
                 Settings.System.USE_OLD_MOBILETYPE, useOldMobileIcons) == 1));
         mUseOldMobileType.setOnPreferenceChangeListener(this);
+
+        mNetworkTraffic = (SystemSettingMasterSwitchPreference) findPreference(NETWORK_TRAFFIC);
+        mNetworkTraffic.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NETWORK_TRAFFIC_STATE, 0) == 1));
+        mNetworkTraffic.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -211,14 +190,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.USE_OLD_MOBILETYPE, value ? 1 : 0);
             return true;
-        } else if (preference == mNetworkTraffic) {
-            int networkTraffic = Integer.valueOf((String) newValue);
-            int index = mNetworkTraffic.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_LOCATION, networkTraffic);
-            mNetworkTraffic.setSummary(mNetworkTraffic.getEntries()[index]);
-            updateNetworkTrafficPrefs(networkTraffic);
-            return true;
         } else if (preference == mStatusbarBatteryBar) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -241,20 +212,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
             int index = mBatteryPercent.findIndexOfValue((String) newValue);
             mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
             return true;
-		}
-        return false;
-    }
-
-    private void updateNetworkTrafficPrefs(int networkTraffic) {
-        if (mNetworkTraffic != null) {
-            if (networkTraffic == 0) {
-                mNetworkTrafficArrow.setEnabled(false);
-                mNetworkTrafficAutohide.setEnabled(false);
-            } else {
-                mNetworkTrafficArrow.setEnabled(true);
-                mNetworkTrafficAutohide.setEnabled(true);
-            }
+	} else if (preference == mNetworkTraffic) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_STATE, value ? 1 : 0);
+            return true;
         }
+        return false;
     }
 
     private void updateCarrierLabelSummary(int value) {

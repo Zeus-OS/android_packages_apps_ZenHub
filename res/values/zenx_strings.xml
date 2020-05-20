@@ -584,15 +584,17 @@
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
 
    <!-- Statusbar net monitor -->
-    <string name="network_traffic_state_category">Network</string>
-    <string name="network_traffic_state_title">Network traffic</string>
-    <string name="network_traffic_state_summary">Show net activity in statusbar</string>
-    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-    <string name="network_traffic_arrow_title">Hide arrows</string>
-    <string name="network_traffic_arrow_summary">Hide the network traffic indicator arrows</string>
+    <string name="statusbar_ntraffic">Network</string>
     <string name="network_traffic_disabled">Disabled</string>
     <string name="network_traffic_statusbar">Status bar</string>
     <string name="network_traffic_qs_header">QS header</string>
+    <string name="network_traffic_autohide_threshold_title">Auto-hide threshold</string>
+    <string name="network_traffic_arrow_title">Activity arrows</string>
+    <string name="network_traffic_state_title">Network speed</string>
+    <string name="network_traffic_state_summary">Show network speed in the status bar</string>
+    <string name="network_traffic_location_title">Location</string>
+    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
+    <string name="network_traffic_arrow_summary">Show the network traffic indicator arrows</string>
     <string name="network_traffic_qs_footer">QS footer (recommended for notch devices)</string>
 
     <!-- Roaming indicator icon -->
