@@ -5,21 +5,21 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.zenx.support.preferences.CustomSeekBarPreference
-        android:key="qs_blur_alpha"
+        android:key="qs_background_blur_alpha"
         android:title="@string/qs_blur_alpha_title"
-        android:summary="@string/qs_blur_alpha_summary"
+        android:defaultValue="100"
         android:max="100"
-        settings:min="1"
-        android:persistent="false"
-        android:dependency="qs_blur" />
+        settings:min="5"
+        settings:interval="5"
+        android:persistent="false" />
 
     <com.zenx.support.preferences.CustomSeekBarPreference
-        android:key="qs_blur_intensity"
+        android:key="qs_background_blur_intensity"
         android:title="@string/qs_blur_intensity_title"
-        android:summary="@string/qs_blur_intensity_summary"
+        android:defaultValue="30"
         android:max="100"
-        settings:min="1"
-        android:persistent="false"
-        android:dependency="qs_blur" />
+        settings:min="5"
+        settings:interval="5"
+        android:persistent="false" />
 
 </PreferenceScreen>

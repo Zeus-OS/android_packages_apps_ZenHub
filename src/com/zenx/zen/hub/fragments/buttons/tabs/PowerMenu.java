@@ -66,14 +66,15 @@ public class PowerMenu extends SettingsPreferenceFragment
     private SwitchPreference mPowerMenuScreenshot;
     private SwitchPreference mPowerMenuScreenrecord;
     private SwitchPreference mPowerMenuLSTorch;
+    private ContentResolver resolver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.power_menu);
-		
-        final ContentResolver resolver = getActivity().getContentResolver();
+        addPreferencesFromResource(R.xml.zen_power_menu);
+
+        resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
@@ -143,7 +144,7 @@ public class PowerMenu extends SettingsPreferenceFragment
     }
 	
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
          boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
                     Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1) == 0;
         if (preference == mTorchPowerButton) {
@@ -163,38 +164,38 @@ public class PowerMenu extends SettingsPreferenceFragment
             }
             return true;
         } else if (preference == mPowermenuTorch) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_TORCH, value ? 1 : 0);
             return true;
         } else if (preference == mPowerMenuLockscreen) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LOCKSCREEN, value ? 1 : 0);
             updateLockscreen();
             return true;
         } else if (preference == mPowerMenuReboot) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_REBOOT, value ? 1 : 0);
             return true;
         } else if (preference == mPowerMenuAdvancedReboot) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_ADVANCED_REBOOT, value ? 1 : 0);
             return true;
         } else if (preference == mPowerMenuScreenshot) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_SCREENSHOT, value ? 1 : 0);
             return true;
         } else if (preference == mPowerMenuScreenrecord) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_SCREENRECORD, value ? 1 : 0);
             return true;
         } else if (preference == mPowerMenuLSTorch) {
-            boolean value = (Boolean) objValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWERMENU_LS_TORCH, value ? 1 : 0);
             return true;

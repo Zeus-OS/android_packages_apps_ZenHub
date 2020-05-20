@@ -36,6 +36,7 @@
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_media_metadata"
+             android:summary="@string/media_art_summary"
             android:title="@string/lockscreen_media_art_title"
             android:defaultValue="true" />
 
@@ -80,13 +81,13 @@
         android:key="lockscreen_clock"
         android:title="@string/lockscreen_clock_title"
         android:summary="@string/lockscreen_clock_summary"
-        android:fragment="com.zenx.zen.hub.fragments.LSClockWidget" />
+        android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSClockWidget" />
 
     <PreferenceScreen
         android:key="lockscreen_info"
         android:title="@string/lockscreen_info_title"
         android:summary="@string/lockscreen_info_summary"
-        android:fragment="com.zenx.zen.hub.fragments.LSDateWidget" />
+        android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSDateWidget" />
 
     </PreferenceCategory>
 
@@ -149,7 +150,7 @@
             android:defaultValue="false" />
 
          <com.zenx.support.preferences.SecureSettingSwitchPreference
-            android:key="hide_lockicon"
+            android:key="sysui_keyguard_show_lock_icon"
             android:title="@string/hide_lockicon_title"
             android:summary="@string/hide_lockicon_summary"
             android:defaultValue="true" />

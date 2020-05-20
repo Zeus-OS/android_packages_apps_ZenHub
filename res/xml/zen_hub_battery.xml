@@ -25,23 +25,23 @@
             android:summary="@string/sensor_block_summary"
             android:defaultValue="false" />
 
-     <Preference
-         android:key="smart_pixels"
-         android:title="@string/smart_pixels_title"
-         android:summary="@string/smart_pixels_summary"
-         android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.SmartPixels" />
-
-
     <PreferenceCategory
         android:key="battery_actions"
         android:title="@string/advanced_doze_settings">
 
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="smart_pixels_enable"
+            android:fragment="com.zenx.zen.hub.fragments.SmartPixels"
+            android:title="@string/smart_pixels_title"
+            android:summary="@string/smart_pixels_summary"
+            android:defaultValue="false" />
 
-    <Preference
-        android:key="screenstate_category" 
-        android:title="@string/screen_state_toggles_title"  
-        android:summary="@string/screen_state_toggles_summary"  
-        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.ScreenStateToggles" /> 
+    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="screen_state_toggles_enable_key"
+        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.ScreenStateToggles"
+        android:title="@string/screen_state_toggles_title"
+        android:summary="@string/screen_state_toggles_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 

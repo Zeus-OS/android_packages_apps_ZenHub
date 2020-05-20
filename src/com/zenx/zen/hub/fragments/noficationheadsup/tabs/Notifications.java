@@ -50,8 +50,6 @@ public class Notifications extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.zen_hub_notifications);
-		
-        final ContentResolver resolver = getActivity().getContentResolver();
 
         mBatteryLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_LIGHT_ENABLED);
         mBatteryLightEnabled.setOnPreferenceChangeListener(this);
@@ -89,6 +87,7 @@ public class Notifications extends SettingsPreferenceFragment
                     AMBIENT_NOTIFICATION_LIGHT, value ? 1 : 0);
             return true;
         }
+
         return false;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 ZenX-OS
+ * Copyright (C) 2018 ZenX-OS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zenx.zen.hub.fragments.screenanimation.tabs;
+package com.zenx.zen.hub.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -33,8 +32,6 @@ import com.android.internal.util.zenx.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.zenx.support.preferences.CustomSeekBarPreference;
-import com.zenx.support.preferences.SecureSettingSwitchPreference;
 import com.zenx.zen.hub.preferences.AppMultiSelectListPreference;
 import com.zenx.zen.hub.preferences.ScrollAppsViewPreference;
 import com.zenx.support.preferences.CustomSeekBarPreference;
@@ -49,7 +46,7 @@ import java.util.List;
 public class Screen extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
-     private static final String KEY_FORCE_FULLSCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String KEY_FORCE_FULLSCREEN = "display_cutout_force_fullscreen_settings";
     private static final String KEY_ASPECT_RATIO_APPS_ENABLED = "aspect_ratio_apps_enabled";
     private static final String KEY_ASPECT_RATIO_APPS_LIST = "aspect_ratio_apps_list";
     private static final String KEY_ASPECT_RATIO_CATEGORY = "aspect_ratio_category";

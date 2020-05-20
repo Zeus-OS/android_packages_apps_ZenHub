@@ -38,6 +38,7 @@
         android:title="@string/button_manual_brightness"
         android:max="255"
         settings:min="1"
+        android:defaultValue="128"
         android:persistent="false"
         android:dependency="custom_button_use_screen_brightness" />
 
@@ -47,6 +48,7 @@
         android:max="30"
         settings:min="0"
         android:persistent="false"
+        android:defaultValue="0"
         android:dependency="button_backlight_enable" />
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference

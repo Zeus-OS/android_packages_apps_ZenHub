@@ -37,7 +37,7 @@ import android.util.Log;
 import android.net.ConnectivityManager;
 
 import com.zenx.zen.hub.R;
-import com.zenx.support.preferences.SystemSettingSeekBarPreference;
+import com.zenx.support.preferences.CustomSeekBarPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -46,7 +46,6 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "ScreenStateToggles";
-    private static final String SCREEN_STATE_TOGGLES_ENABLE = "screen_state_toggles_enable_key";
     private static final String SCREEN_STATE_TOGGLES_TWOG = "screen_state_toggles_twog";
     private static final String SCREEN_STATE_TOGGLES_GPS = "screen_state_toggles_gps";
     private static final String SCREEN_STATE_TOGGLES_MOBILE_DATA = "screen_state_toggles_mobile_data";
@@ -57,12 +56,11 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
 
     private Context mContext;
 
-    private SwitchPreference mEnableScreenStateToggles;
     private SwitchPreference mEnableScreenStateTogglesTwoG;
     private SwitchPreference mEnableScreenStateTogglesGps;
     private SwitchPreference mEnableScreenStateTogglesMobileData;
-    private SystemSettingSeekBarPreference mSecondsOffDelay;
-    private SystemSettingSeekBarPreference mSecondsOnDelay;
+    private CustomSeekBarPreference mSecondsOffDelay;
+    private CustomSeekBarPreference mSecondsOnDelay;
     private PreferenceCategory mMobileDateCategory;
     private PreferenceCategory mLocationCategory;
 
@@ -75,22 +73,13 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.screen_state_toggles);
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mEnableScreenStateToggles = (SwitchPreference) findPreference(
-                SCREEN_STATE_TOGGLES_ENABLE);
-
-        int enabled = Settings.System.getIntForUser(resolver,
-                Settings.System.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
-
-        mEnableScreenStateToggles.setChecked(enabled != 0);
-        mEnableScreenStateToggles.setOnPreferenceChangeListener(this);
-
-        mSecondsOffDelay = (SystemSettingSeekBarPreference) findPreference(SCREEN_STATE_OFF_DELAY);
+        mSecondsOffDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_OFF_DELAY);
         int offd = Settings.System.getIntForUser(resolver,
                 Settings.System.SCREEN_STATE_OFF_DELAY, 0, UserHandle.USER_CURRENT);
         mSecondsOffDelay.setValue(offd);
         mSecondsOffDelay.setOnPreferenceChangeListener(this);
 
-        mSecondsOnDelay = (SystemSettingSeekBarPreference) findPreference(SCREEN_STATE_ON_DELAY);
+        mSecondsOnDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_ON_DELAY);
         int ond = Settings.System.getIntForUser(resolver,
                 Settings.System.SCREEN_STATE_ON_DELAY, 0, UserHandle.USER_CURRENT);
         mSecondsOnDelay.setValue(ond);
@@ -145,33 +134,12 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
                 Settings.System.SCREEN_STATE_GPS, 0, UserHandle.USER_CURRENT) == 1));
             mEnableScreenStateTogglesGps.setOnPreferenceChangeListener(this);
         }
-
-        mMobileDateCategory.setEnabled(enabled != 0);
-        mLocationCategory.setEnabled(enabled != 0);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-
-        if (preference == mEnableScreenStateToggles) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.START_SCREEN_STATE_SERVICE, value ? 1 : 0, UserHandle.USER_CURRENT);
-
-            Intent service = (new Intent())
-                .setClassName("com.android.systemui", "com.android.systemui.zenx.screenstate.ScreenStateService");
-            if (value) {
-                getActivity().stopService(service);
-                getActivity().startService(service);
-            } else {
-                getActivity().stopService(service);
-            }
-
-            mMobileDateCategory.setEnabled(value);
-            mLocationCategory.setEnabled(value);
-            return true;
-        } else if (preference == mEnableScreenStateTogglesTwoG) {
+        if (preference == mEnableScreenStateTogglesTwoG) {
             boolean value = (Boolean) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.SCREEN_STATE_TWOG, value ? 1 : 0, UserHandle.USER_CURRENT);
@@ -207,24 +175,7 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
                     Settings.System.SCREEN_STATE_ON_DELAY, delay, UserHandle.USER_CURRENT);
             return true;
         }
-
         return false;
-    }
-
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.START_SCREEN_STATE_SERVICE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_STATE_OFF_DELAY, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_STATE_ON_DELAY, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_STATE_TWOG, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_STATE_MOBILE_DATA, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_STATE_GPS, 0, UserHandle.USER_CURRENT);
     }
 
     private void restartService(){

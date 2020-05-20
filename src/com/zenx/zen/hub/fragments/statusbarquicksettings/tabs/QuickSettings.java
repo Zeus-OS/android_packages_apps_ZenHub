@@ -53,7 +53,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
-    private static final String QS_BLUR = "qs_blur";
+    private static final String QS_BACKGROUND_BLUR = "qs_background_blur";
 
     private CustomSeekBarPreference mQsPanelAlpha;
 //     private CustomSeekBarPreference mSysuiQqsCount;
@@ -147,12 +147,10 @@ public class QuickSettings extends SettingsPreferenceFragment
         mCustomHeader.setOnPreferenceChangeListener(this);
 
         boolean isBlurEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_BLUR, 1, UserHandle.USER_CURRENT) == 1;
-        mQsBlur = (SystemSettingMasterSwitchPreference) findPreference(QS_BLUR);
-        int blur = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_BLUR, 0);
-                mQsBlur.setChecked(blur != 0);
-                mQsBlur.setOnPreferenceChangeListener(this);
+                Settings.System.QS_BACKGROUND_BLUR, 1, UserHandle.USER_CURRENT) == 1;
+        mQsBlur = (SystemSettingMasterSwitchPreference) findPreference(QS_BACKGROUND_BLUR);
+        mQsBlur.setChecked(isBlurEnabled);
+        mQsBlur.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -224,9 +222,11 @@ public class QuickSettings extends SettingsPreferenceFragment
                     Settings.System.STATUS_BAR_CUSTOM_HEADER, header ? 1 : 0);
             return true;
         } else if (preference == mQsBlur) {
-                boolean blur = (Boolean) newValue;
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.QS_BLUR, blur ? 1 : 0);
+                boolean value = (Boolean) newValue;
+                Settings.System.putIntForUser(getActivity().getContentResolver(),
+                        Settings.System.QS_BACKGROUND_BLUR, value ? 1 : 0,
+                        UserHandle.USER_CURRENT);
+                        mQsBlur.setChecked(value);
                 return true;
             }
         return false;

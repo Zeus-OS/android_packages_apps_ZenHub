@@ -46,22 +46,19 @@ import com.zenx.support.preferences.SystemSettingSeekBarPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
 import com.zenx.support.preferences.SystemSettingSeekBarPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
-import com.zenx.zen.hub.preferences.ActionFragment;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VolumeButton extends SettingsPreferenceFragment
+public class VolumeButton extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.zen_hub_volume);
+        addPreferencesFromResource(R.xml.zen_volume_button);
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
 

@@ -73,14 +73,7 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="ticker_category"
-        android:title="@string/status_bar_show_ticker_title">
-
-    </PreferenceCategory>
-
-    
-    <PreferenceCategory
+     <PreferenceCategory
         android:key="notification_messages"
         android:title="@string/notification_messages">
 
