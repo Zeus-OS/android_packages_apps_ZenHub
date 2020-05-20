@@ -51,26 +51,14 @@
 
     <PreferenceCategory
         android:key="network"
-        android:title="@string/network_traffic_state_category">
+        android:title="@string/statusbar_ntraffic">
 
-        <ListPreference
-            android:key="network_traffic_location"
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="network_traffic_state"
+            android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.NetworkTraffic"
             android:title="@string/network_traffic_state_title"
-            android:defaultValue="2" />
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="network_traffic_arrow"
-            android:title="@string/network_traffic_arrow_title"
-            android:summary="@string/network_traffic_arrow_summary"
-            android:defaultValue="true" />
-
-        <com.zenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="network_traffic_autohide_threshold"
-            android:title="@string/network_traffic_autohide_threshold_title"
-            android:max="10"
-            settings:min="0"
-            android:defaultValue="0"
-            settings:units="KB/s" />
+            android:summary="@string/network_traffic_state_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
