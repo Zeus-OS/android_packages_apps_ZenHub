@@ -927,12 +927,12 @@
     <string name="notification_screen_title">Screen</string>
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_light_accent_color_title">Edge light Accent color</string>
-    <string name="pulse_ambient_light_accent_color_summary">Use device accent color for edge light</string>
-    <string name="pulse_ambient_light_auto_color_title">Automatic color</string>
-    <string name="pulse_ambient_light_auto_color_summary">Set edge light color to the primary color of your wallpaper</string>
-    <string name="pulse_ambient_light_duration_title">Lights duration</string>
+    <string name="pulse_ambient_light_color_title">Custom color</string>
+    <string name="pulse_ambient_light_color_mode_title">Light color</string>
+    <string name="pulse_ambient_light_color_mode_wall">Automatic (Wallpaper Based)</string>
+    <string name="pulse_ambient_light_color_mode_accent">Accent</string>
+    <string name="pulse_ambient_light_color_mode_custom">Custom</string>
+    <string name="pulse_ambient_light_duration_title">Light duration</string>
 
     <!-- Heads up timeout -->
     <string name="heads_up_time_out_title">Time out</string>

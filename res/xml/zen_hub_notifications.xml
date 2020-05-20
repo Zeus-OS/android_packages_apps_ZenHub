@@ -65,53 +65,12 @@
         android:key="notification_screen"
         android:title="@string/notification_screen_title" >
 
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="pulse_ambient_light"
+            android:fragment="com.zenx.zen.hub.fragments.noficationheadsup.tabs.submodules.EdgeLight"
             android:title="@string/pulse_ambient_light_title"
             android:summary="@string/pulse_ambient_light_summary"
             android:defaultValue="false" />
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="pulse_ambient_light_accent_color"
-            android:title="@string/pulse_ambient_light_accent_color_title"
-            android:summary="@string/pulse_ambient_light_accent_color_summary"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="false" />
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="pulse_ambient_light_auto_color"
-            android:title="@string/pulse_ambient_light_auto_color_title"
-            android:summary="@string/pulse_ambient_light_auto_color_summary"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="false" />
-
-        <com.zenx.support.colorpicker.ColorPickerPreference
-            android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
-            android:dependency="pulse_ambient_light"
-            settings:defaultColorValue="0xFF3980FF" />
-
-        <com.zenx.support.preferences.CustomSeekBarPreference
-            android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:persistent="false"
-            android:defaultValue="2"
-            android:max="10"
-            settings:min="1"
-            settings:units="sec"
-            android:dependency="pulse_ambient_light" />
-
-        <com.zenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="pulse_ambient_light_repeat_count"
-            android:title="@string/pulse_ambient_light_repeat_count_title"
-            android:summary="@string/pulse_ambient_light_repeat_count_summary"
-            android:persistent="false"
-            android:defaultValue="0"
-            android:max="10"
-            settings:min="0"
-            settings:interval="1"
-            android:dependency="pulse_ambient_light" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
