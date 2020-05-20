@@ -70,6 +70,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
     private static final String SHOW_HD_ICON = "show_hd_icon";
+    private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
 
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
@@ -81,6 +82,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
     private SwitchPreference mShowHDVolte;
     private boolean mConfigShowHDVolteIcon;
+    private SwitchPreference mUseOldMobileType;
+    private boolean mConfigUseOldMobileType;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -141,6 +144,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0)));
                 mStatusbarBatteryPercentage.setSummary(mStatusbarBatteryPercentage.getEntry());
                 mStatusbarBatteryPercentage.setOnPreferenceChangeListener(this);
+
+        mConfigUseOldMobileType = getResources().getBoolean(com.android.internal.R.bool.config_useOldMobileIcons);
+        int useOldMobileIcons = (!mConfigUseOldMobileType ? 0 : 1);
+        mUseOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
+        mUseOldMobileType.setChecked((Settings.System.getInt(resolver,
+                Settings.System.USE_OLD_MOBILETYPE, useOldMobileIcons) == 1));
+        mUseOldMobileType.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -183,6 +193,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SHOW_HD_ICON, value ? 1 : 0);
+            return true;
+        } else if (preference == mUseOldMobileType) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.USE_OLD_MOBILETYPE, value ? 1 : 0);
             return true;
 		}
         return false;
