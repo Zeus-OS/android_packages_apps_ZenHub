@@ -19,14 +19,27 @@
     android:title="@string/screen_animation_title" >
 
     <PreferenceCategory
-        android:key="cutout_settings"
-        android:title="@string/cutout_main" >
+        android:key="cutout_category"
+        android:title="@string/cutout_category_title">
 
-    <Preference
-        android:key="display_cutout_force_fullscreen_settings"
-        android:title="@string/display_cutout_force_fullscreen_title"
-        android:summary="@string/display_cutout_force_fullscreen_summary"
-        android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.DisplayCutoutForceFullscreenSettings" />
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="display_cutout_mode"
+            android:title="@string/display_cutout_mode_title"
+            android:entries="@array/display_cutout_mode_entries"
+            android:entryValues="@array/display_cutout_mode_values"
+            android:defaultValue="0" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="stock_statusbar_in_hide"
+            android:title="@string/stock_statusbar_in_hide"
+            android:summary="@string/stock_statusbar_in_hide_summary"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="display_cutout_force_fullscreen_settings"
+            android:title="@string/display_cutout_force_fullscreen_title"
+            android:summary="@string/display_cutout_force_fullscreen_summary"
+            android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.DisplayCutoutForceFullscreenSettings" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -57,6 +70,8 @@
             settings:units="dp"
             android:persistent="false"
             android:dependency="sysui_rounded_fwvals" />
+
+
     </PreferenceCategory>
 
     <PreferenceCategory
