@@ -214,7 +214,6 @@
     <string name="statusbar_gestures">Gestures</string>
     <string name="statusbar_clock">Clock</string>
     <string name="statusbar_battery">Battery</string>
-    <string name="statusbar_ntraffic">Network</string>
     <string name="statusbar_logo">Logo</string>
     <string name="statusbar_items_category">Icons</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
@@ -595,7 +594,7 @@
     <string name="network_traffic_location_title">Location</string>
     <string name="network_traffic_refresh_interval_title">Refresh interval</string>
     <string name="network_traffic_arrow_summary">Show the network traffic indicator arrows</string>
-    <string name="network_traffic_qs_footer">QS footer (recommended for notch devices)</string>
+    <string name="network_traffic_qs_footer">QS footer (OOS style)</string>
 
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
