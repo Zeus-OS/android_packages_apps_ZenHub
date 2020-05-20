@@ -930,4 +930,25 @@
         <item>6</item>
         <item>7</item>
     </string-array>
+
+    <!-- Lockscreen Animation options -->
+    <string-array name="lockscreen_animation_entries" translatable="false">
+        <item>@string/lockscreen_animation_off</item>
+        <item>@string/lockscreen_animation_siri</item>
+        <item>@string/lockscreen_animation_infinit</item>
+        <item>@string/lockscreen_animation_loader</item>
+        <item>@string/lockscreen_animation_google_load</item>
+        <item>@string/lockscreen_animation_ball</item>
+        <item>@string/lockscreen_animation_blueball</item>
+    </string-array>
+
+    <string-array name="lockscreen_animation_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>
