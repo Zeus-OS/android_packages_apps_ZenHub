@@ -1661,4 +1661,6 @@
     <string name="synthos_volume_panel_theme_aosp">AOSP</string>
     <string name="synthos_volume_panel_theme_aosp_rounded">AOSP (Rounded)</string>
 
+    <string name="synthos_music_volume_panel_text_title">Music Text</string>
+    <string name="synthos_music_volume_panel_text_summary">Show Music Text in left of VolumePanel</string>
 </resources>
