@@ -1558,8 +1558,10 @@
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 
         <!-- Volume panel Hide Things-->
-    <string name="synthos_hide_things_volumepanel_title">Hide Things below volume panel</string>
-    <string name="synthos_hide_things_volumepanel_summary">Hide Settings and Ringer Container below volume panel</string>
+    <string name="synthos_hide_ringer_volumepanel_title">Hide Ringer below volume panel</string>
+    <string name="synthos_hide_ringer_volumepanel_summary">Hide Ringer Container below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_title">Hide Extended below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_summary">Hide Extended Container below volume panel</string>
 
         <!-- Show Visualizer in QSPanel -->
     <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
@@ -1573,4 +1575,12 @@
 
     <string name="synthos_music_volume_panel_text_title">Music Text</string>
     <string name="synthos_music_volume_panel_text_summary">Show Music Text in left of VolumePanel</string>
+
+    <string name="synthos_volume_panel_padding_top_title">Volume Panel Padding Top</string>
+    <string name="synthos_volume_panel_padding_bottom_title">Volume Panel Padding Bottom</string>
+
+    <string name="synthos_volume_panel_alignment_title">Volume Panel Alignment</string>
+    <string name="volume_panel_alignment_top">Top</string>
+    <string name="volume_panel_alignment_center">Center</string>
+    <string name="volume_panel_alignment_bottom">Bottom</string>
 </resources>

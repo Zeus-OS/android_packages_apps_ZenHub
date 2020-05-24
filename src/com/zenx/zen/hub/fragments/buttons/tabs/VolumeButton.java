@@ -56,7 +56,9 @@ import java.util.List;
 public class VolumeButton extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     private ListPreference mVolumePanelTheme;
+    private ListPreference mVolumeAlignment;
     private static final String SYNTHOS_VOLUME_PANEL_THEME = "synthos_volume_panel_theme";
+    private static final String VOLUME_PANEL_ALIGNMENT = "volume_panel_alignment";
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -66,7 +68,6 @@ public class VolumeButton extends SettingsPreferenceFragment implements Preferen
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
         // set volume panel theme
@@ -76,10 +77,18 @@ public class VolumeButton extends SettingsPreferenceFragment implements Preferen
         mVolumePanelTheme.setValue(String.valueOf(style));
         mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntry());
         mVolumePanelTheme.setOnPreferenceChangeListener(this);
+
+        // set volume alignment
+        mVolumeAlignment = (ListPreference) findPreference(VOLUME_PANEL_ALIGNMENT);
+        int align = Settings.System.getInt(resolver,
+                Settings.System.VOLUME_PANEL_ALIGNMENT, 1);
+        mVolumeAlignment.setValue(String.valueOf(align));
+        mVolumeAlignment.setSummary(mVolumeAlignment.getEntry());
+        mVolumeAlignment.setOnPreferenceChangeListener(this);
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mVolumePanelTheme) {
             int style = Integer.valueOf((String) newValue);
@@ -87,6 +96,13 @@ public class VolumeButton extends SettingsPreferenceFragment implements Preferen
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
             mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
+            return true;
+        } else if (preference == mVolumeAlignment) {
+            int align = Integer.valueOf((String) newValue);
+            int index = mVolumeAlignment.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_PANEL_ALIGNMENT, align);
+            mVolumeAlignment.setSummary(mVolumeAlignment.getEntries()[index]);
             return true;
         }
         return false;

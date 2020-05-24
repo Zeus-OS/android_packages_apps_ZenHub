@@ -72,11 +72,43 @@
             android:defaultValue="0"
             android:persistent="false" />
 
-     <com.zenx.support.preferences.SystemSettingSwitchPreference
-        android:key="synthos_hide_things_volumepanel"
-        android:summary="@string/synthos_hide_things_volumepanel_summary"
-        android:title="@string/synthos_hide_things_volumepanel_title"
-        android:defaultValue="true" />
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="synthos_hide_ringer_volumepanel"
+            android:summary="@string/synthos_hide_ringer_volumepanel_summary"
+            android:title="@string/synthos_hide_ringer_volumepanel_title"
+            android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="synthos_hide_extended_volumepanel"
+            android:summary="@string/synthos_hide_extended_volumepanel_summary"
+            android:title="@string/synthos_hide_extended_volumepanel_title"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="volume_panel_alignment"
+            android:title="@string/synthos_volume_panel_alignment_title"
+            android:summary="%s"
+            android:dialogTitle="@string/synthos_volume_panel_alignment_title"
+            android:entries="@array/volume_alignment_entries"
+            android:entryValues="@array/volume_alignment_values"
+            android:defaultValue="1"
+            android:persistent="false" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="synthos_volume_panel_padding_top"
+            android:title="@string/synthos_volume_panel_padding_top_title"
+            android:max="100"
+            android:min="0"
+            settings:units="dp"
+            android:defaultValue="20" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="synthos_volume_panel_padding_bottom"
+            android:title="@string/synthos_volume_panel_padding_bottom_title"
+            android:max="100"
+            android:min="0"
+            settings:units="dp"
+            android:defaultValue="20" />
 
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference

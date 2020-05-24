@@ -1470,4 +1470,16 @@
         <item>2</item>
     </string-array>
 
+        <!-- Volume Panel Alignment -->
+    <string-array name="volume_alignment_entries" translatable="false">
+        <item>@string/volume_panel_alignment_top</item>
+        <item>@string/volume_panel_alignment_center</item>
+        <item>@string/volume_panel_alignment_bottom</item>
+    </string-array>
+     <string-array name="volume_alignment_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
