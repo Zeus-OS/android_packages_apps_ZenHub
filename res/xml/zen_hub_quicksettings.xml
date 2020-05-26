@@ -235,6 +235,12 @@
         android:key="footer" >
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_always_show_settings"
+            android:title="@string/qs_always_show_settings_title"
+            android:summary="@string/qs_always_show_settings_summary"
+            android:defaultValue="false" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_datausage"
             android:title="@string/qs_datausage_title"
             android:summary="@string/qs_datausage_subtitle"
