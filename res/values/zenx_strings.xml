@@ -1153,4 +1153,7 @@
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
     <string name="selinux_unrooted_summary">Couldn\'t detect root. You must have root to use these switches</string>
 
+    <!-- QS settings icon -->
+    <string name="qs_always_show_settings_title">Always show settings icon</string>
+    <string name="qs_always_show_settings_summary">Show settings icon on non expanded QS</string>
 </resources>
