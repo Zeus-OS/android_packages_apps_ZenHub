@@ -52,9 +52,9 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String QS_BACKGROUND_BLUR = "qs_background_blur";
+    private static final String QS_ALWAYS_SHOW_SETINGS = "qs_always_show_settings";
 
     private CustomSeekBarPreference mQsPanelAlpha;
-//     private CustomSeekBarPreference mSysuiQqsCount;
     private CustomSeekBarPreference mQsClockSize;
     private ListPreference mClockFontStyle;
     private CustomSeekBarPreference mQsColumnsPortrait;
@@ -65,6 +65,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsRowsLandscape;
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private SystemSettingMasterSwitchPreference mQsBlur;
+    private SystemSettingSwitchPreference mShowAlwaysSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -133,6 +134,11 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsBlur = (SystemSettingMasterSwitchPreference) findPreference(QS_BACKGROUND_BLUR);
         mQsBlur.setChecked(isBlurEnabled);
         mQsBlur.setOnPreferenceChangeListener(this);
+
+        mShowAlwaysSettings = (SystemSettingSwitchPreference) findPreference(QS_ALWAYS_SHOW_SETINGS);
+        mShowAlwaysSettings.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_ALWAYS_SHOW_SETINGS, 0) == 1));
+        mShowAlwaysSettings.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -198,7 +204,13 @@ public class QuickSettings extends SettingsPreferenceFragment
                         UserHandle.USER_CURRENT);
                         mQsBlur.setChecked(value);
                 return true;
-            }
+        } else if (preference == mShowAlwaysSettings) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_ALWAYS_SHOW_SETINGS, value ? 1 : 0);
+            Utils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
