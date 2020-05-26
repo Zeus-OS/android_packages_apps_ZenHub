@@ -29,6 +29,29 @@
             android:title="@string/powermenu_reboot_title"
             android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:key="powermenu_category_background"
+        android:title="@string/powermenu_category_background">
+
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="blur_powermenu_background"
+            android:title="@string/blur_powermenu_title"
+            android:summary="@string/blur_powermenu_summary"
+            android:defaultValue="false" />
+
+    <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="powermenu_background_blur_intensity"
+            android:title="@string/blur_powermenu_intensity_title"
+            android:min="1"
+            android:max="100"
+            android:defaultValue="30" />
+     </PreferenceCategory>
+
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="powermenu_reboot"
+        android:title="@string/powermenu_reboot_title"
+        android:defaultValue="true" />
+
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_advanced_reboot"
         android:title="@string/powermenu_advanced_reboot_title"
