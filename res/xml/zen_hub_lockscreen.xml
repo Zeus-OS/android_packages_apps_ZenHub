@@ -19,6 +19,35 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="ls_gestures"
+        android:title="@string/gestures_title">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_media_category"
+        android:title="@string/lockscreen_media_category" >
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ls_clock"
+        android:title="@string/ls_clock">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="weather_lockscreen_key"
+        android:title="@string/weather_title" >
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ls_unlocking"
+        android:title="@string/ls_unlocking">
+    </PreferenceCategory>
+    <PreferenceCategory
         android:key="ls_disable_elements"
         android:title="@string/ls_disable_elements">
 
