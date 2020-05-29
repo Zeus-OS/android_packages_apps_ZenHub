@@ -154,7 +154,6 @@
 
     <!-- Notification Categories -->
     <string name="notification_lights">Lights</string>
-    <string name="notification_stat">Statusbar</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="notification_messages">System</string>
     <string name="notification_misc">Misc</string>
