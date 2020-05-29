@@ -34,6 +34,12 @@
         android:key="gaming_category"
         android:title="@string/gaming_category">
 
+    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+        android:key="gaming_mode_enabled"
+        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.GamingMode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 
