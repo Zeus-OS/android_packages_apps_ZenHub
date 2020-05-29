@@ -18,5 +18,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/screen_animation_title" >
 
-    
+    <PreferenceCategory
+        android:title="@string/corners_category" >
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cutout_settings"
+        android:title="@string/cutout_main" >
+
+
+    </PreferenceCategory>
 </PreferenceScreen>
