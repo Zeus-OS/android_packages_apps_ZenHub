@@ -18,5 +18,42 @@
     android:title="@string/statusbar_quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory 
+        android:key="qs_layout_category" 
+        android:title="@string/qs_layout_category">
+
+
+    </PreferenceCategory> 
+
+    <PreferenceCategory 
+        android:title="@string/brightness_category_title"
+        android:key="brightness_slider_cat" >
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/qs_element_title"
+        android:key="element" >
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/qs_clock_title"
+        android:key="clock" >
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/header_title"
+        android:key="header" >
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/footer_title"
+        android:key="footer" >
+
+    </PreferenceCategory>
    
 </PreferenceScreen>
