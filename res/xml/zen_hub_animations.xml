@@ -18,4 +18,30 @@
     android:title="@string/screen_animation_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:title="@string/system_animation_title">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+        android:title="@string/list_animation_title"
+        android:key="list_animation"  >
+
+
+    </PreferenceCategory>
+ 
+    <PreferenceCategory
+         android:title="@string/tile_animation_title"
+         android:key="tile_animation">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/toast_animation_cat_title"
+        android:key="toast_animation_cat" >
+
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
