@@ -19,6 +19,39 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="statusbar_gestures"
+        android:title="@string/statusbar_gestures">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_clock"
+        android:title="@string/statusbar_clock">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_battery"
+        android:title="@string/statusbar_battery">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_ntraffic"
+        android:title="@string/statusbar_ntraffic">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="statusbar_logo"
+        android:title="@string/statusbar_logo">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="statusbar_tuner"
         android:title="@string/statusbar_items_category">
 
