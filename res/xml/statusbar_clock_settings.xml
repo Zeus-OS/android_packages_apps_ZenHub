@@ -57,6 +57,7 @@
             android:title="@string/status_bar_clock_style_title"
             android:dialogTitle="@string/status_bar_clock_style_title"
             android:entries="@array/status_bar_clock_style_entries"
+            android:summary="%s"
             android:entryValues="@array/status_bar_clock_style_values" />
 
         <ListPreference

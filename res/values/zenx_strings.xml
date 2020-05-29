@@ -463,6 +463,11 @@
     <string name="lock_clock_font_medium_italic">Medium Italic</string>
     <string name="lock_clock_font_black">Black</string>
     <string name="lock_clock_font_black_italic">Black Italic</string>
+    <string name="lockscreen_info_title ">Info widget</string>
+    <string name="lockscreen_clock_title ">Clock widget</string>
+    <string name="lockscreen_info_summary">Info widget styling</string>
+    <string name="lockscreen_clock_summary">Clock widget styling</string>
+    <string name="lock_date_font_dialog_title">Select lock date font</string>
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>

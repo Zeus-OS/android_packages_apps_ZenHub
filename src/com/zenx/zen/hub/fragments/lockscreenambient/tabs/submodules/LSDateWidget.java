@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Zenx-OS
+ * Copyright (C) 2018 zenx-OS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.zenx.zen.hub.fragments.lockscreenambient.tabs;
+package com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -34,42 +34,53 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.zenx.support.preferences.SystemSettingSeekBarPreference;
-
-import com.zenx.support.preferences.SystemSettingMasterSwitchPreference;
-import com.zenx.support.preferences.SecureSettingMasterSwitchPreference;
 import com.zenx.support.preferences.CustomSeekBarPreference;
-import com.zenx.support.colorpicker.ColorPickerPreference;
 
-public class LockScreen extends SettingsPreferenceFragment implements
+import com.zenx.support.preferences.SecureSettingMasterSwitchPreference;
+
+public class LSDateWidget extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
+    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
 
-    private SecureSettingMasterSwitchPreference mVisualizerEnabled;
+    ListPreference mLockDateFonts;
+    private CustomSeekBarPreference mDateFontSize;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.zen_hub_lockscreen);
+        addPreferencesFromResource(R.xml.ls_date_widget);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
 
-        mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
-        mVisualizerEnabled.setOnPreferenceChangeListener(this);
-        int visualizerEnabled = Settings.Secure.getInt(resolver,
-                LOCKSCREEN_VISUALIZER_ENABLED, 0);
-        mVisualizerEnabled.setChecked(visualizerEnabled != 0);
+         // Lockscren Date Fonts
+         mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
+         mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
+                 getContentResolver(), Settings.System.LOCK_DATE_FONTS, 0)));
+         mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+         mLockDateFonts.setOnPreferenceChangeListener(this);
+         // Lock Date Size
+        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
+        mDateFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKDATE_FONT_SIZE,16));
+        mDateFontSize.setOnPreferenceChangeListener(this);
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
-        if (preference == mVisualizerEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(),
-		            LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
+        if (preference == mLockDateFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockDateFonts.setValue(String.valueOf(newValue));
+            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+            return true;
+        } else if (preference == mDateFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
             return true;
         }
         return false;
@@ -77,6 +88,6 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ZENX_SETTINGS;
+        return MetricsProto.MetricsEvent.zenx_SETTINGS;
     }
 }
