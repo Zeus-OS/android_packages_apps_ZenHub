@@ -18,5 +18,23 @@
 	android:title="@string/misc_battery_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="connector_category"
+        android:title="@string/connector_category">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="gaming_category"
+        android:title="@string/gaming_category">
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="screenshot_category"
+        android:title="@string/screenshot_category">
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
