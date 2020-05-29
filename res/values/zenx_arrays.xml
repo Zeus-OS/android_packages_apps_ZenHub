@@ -384,50 +384,6 @@
 	    <item>35</item>
     </string-array>
 
-
-    <!--- Buttons backlight timeout -->
-    <string-array name="backlight_timeout_entries">
-        <item>@string/backlight_timeout_on</item>
-        <item>@string/backlight_timeout_1s</item>
-        <item>@string/backlight_timeout_3s</item>
-        <item>@string/backlight_timeout_5s</item>
-        <item>@string/backlight_timeout_10s</item>
-        <item>@string/backlight_timeout_15s</item>
-        <item>@string/backlight_timeout_20s</item>
-        <item>@string/backlight_timeout_30s</item>
-    </string-array>
-
-    <string-array name="backlight_timeout_values">
-        <item>0</item>
-        <item>1000</item>
-        <item>3000</item>
-        <item>5000</item>
-        <item>10000</item>
-        <item>15000</item>
-        <item>20000</item>
-        <item>30000</item>
-    </string-array>
-
-    <!-- HW Keys customization -->
-    <string-array name="action_dialog_entries">
-        <item>@string/action_entry_default_action</item>
-        <item>@string/action_entry_custom_action</item>
-        <item>@string/action_entry_select_app</item>
-    </string-array>
-     <string-array name="action_dialog_values" translatable="false">
-        <item>@string/action_value_default_action</item>
-        <item>@string/action_value_custom_action</item>
-        <item>@string/action_value_select_app</item>
-    </string-array>
-     <string-array name="action_dialog_no_default_entries">
-        <item>@string/action_entry_custom_action</item>
-        <item>@string/action_entry_select_app</item>
-    </string-array>
-     <string-array name="action_dialog_no_default_values" translatable="false">
-        <item>@string/action_value_custom_action</item>
-        <item>@string/action_value_select_app</item>
-    </string-array>
-
     <!-- Torch Power button gestures -->
     <string-array name="torch_power_button_gesture_entries">
         <item>@string/torch_power_button_gesture_none</item>

@@ -19,48 +19,54 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.om.IOverlayManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.ServiceManager;
 import android.os.SystemProperties;
-import android.os.UserHandle;
 import android.provider.Settings;
 import android.widget.Toast;
-
-import androidx.preference.PreferenceCategory;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto; 
-import com.android.internal.util.zenx.Utils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.gestures.SystemNavigationGestureSettings;
-
-import com.zenx.support.preferences.SystemSettingListPreference;
-import com.zenx.support.preferences.SecureSettingSwitchPreference;
-import com.zenx.support.preferences.SystemSettingSwitchPreference;
 
 public class Buttons extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Buttons";
 
+    private static final String NAV_BAR_LAYOUT = "nav_bar_layout";
+    private static final String SYSUI_NAV_BAR = "sysui_nav_bar";
+
+    private ContentResolver resolver;
+    private ListPreference mNavBarLayout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.zen_hub_buttons);
-        final PreferenceScreen prefSet = getPreferenceScreen();
+        resolver = getActivity().getContentResolver();
+
+        mNavBarLayout = (ListPreference) findPreference(NAV_BAR_LAYOUT);
+        mNavBarLayout.setOnPreferenceChangeListener(this);
+        String navBarLayoutValue = Settings.Secure.getString(resolver, SYSUI_NAV_BAR);
+        if (navBarLayoutValue != null) {
+            mNavBarLayout.setValue(navBarLayoutValue);
+        } else {
+            mNavBarLayout.setValueIndex(0);
+        }
 
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
+        resolver = getActivity().getContentResolver();
+        boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
+                    Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 1) == 0;
+        if (preference == mNavBarLayout) {
+            Settings.Secure.putString(resolver, SYSUI_NAV_BAR, (String) objValue);
+            return true;
+        }
         return false;
     }
 
@@ -68,15 +74,4 @@ public class Buttons extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.ZENX_SETTINGS;
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
 }
