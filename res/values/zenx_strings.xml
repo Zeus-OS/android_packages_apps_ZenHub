@@ -185,6 +185,7 @@
     <string name="screenshot_category">Screenshot</string>
 
     <!-- Notification Categories -->
+    <string name="notification_flashlight">Flashlight</string>
     <string name="notification_lights">Lights</string>
     <string name="status_bar_show_ticker_title">Ticker</string>
     <string name="notification_messages">System</string>
