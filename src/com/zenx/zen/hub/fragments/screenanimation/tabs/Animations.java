@@ -48,9 +48,12 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
+
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mToastAnimation;
 
     protected Context mContext;
 
@@ -60,6 +63,7 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
 
         addPreferencesFromResource(R.xml.zen_hub_animations);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        mContext = getActivity();
 
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
         int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
@@ -82,6 +86,13 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         mTileAnimationInterpolator.setValue(String.valueOf(tileAnimationInterpolator));
         updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
+
+        mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.Global.getInt(getContentResolver(), Settings.Global.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+        mToastAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -104,6 +115,12 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_INTERPOLATOR,
                     tileAnimationInterpolator, UserHandle.USER_CURRENT);
             updateTileAnimationInterpolatorSummary(tileAnimationInterpolator);
+            return true;
+        } else if (preference == mToastAnimation) {
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.Global.putString(getContentResolver(), Settings.Global.TOAST_ANIMATION, (String) newValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
             return true;
         }
         return false;
