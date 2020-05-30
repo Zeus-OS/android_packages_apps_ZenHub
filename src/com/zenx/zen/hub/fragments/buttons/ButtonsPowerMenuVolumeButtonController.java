@@ -83,7 +83,7 @@ public class ButtonsPowerMenuVolumeButtonController extends SettingsPreferenceFr
                         viewPager.setCurrentItem(1);
                         break;
                      case R.id.volumebutton:
-                        viewPager.setCurrentItem(1);
+                        viewPager.setCurrentItem(2);
                         break;
                    }
                 return true;

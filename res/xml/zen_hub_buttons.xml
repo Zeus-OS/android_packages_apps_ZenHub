@@ -18,18 +18,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/buttons_powermenu_volumebutton_title" >
 
-    <!-- Gestures -->
-    <Preference
-        android:key="gesture_settings"
-        android:title="@string/gesture_preference_title"
-        android:icon="@drawable/ic_settings_gesture"
-        android:fragment="com.android.settings.gestures.GestureSettings"
-        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
-
-    <com.zenx.support.preferences.SecureSettingSwitchPreference
-            android:key="sysui_nav_bar_inverse"
-            android:title="@string/navbar_invert_layout_title"
-            android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="hw_keys"
@@ -73,12 +61,6 @@
             android:title="@string/navigation_bar_title"
             android:summary="@string/navigation_bar_summary" />
 
-        <Preference
-            android:key="gesture_system_navigation"
-            android:title="@string/system_navigation_title"
-            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
-            settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
-
         <ListPreference
             android:key="nav_bar_layout"
             android:title="@string/nav_bar_layout"
@@ -105,6 +87,21 @@
             android:title="@string/navigation_bar_arrow_keys_title"
             android:summary="@string/navigation_bar_arrow_keys_summary"
             android:defaultValue="false" />
+
+
+        <Preference
+            android:key="gesture_system_navigation"
+            android:title="@string/system_navigation_title"
+            android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+            settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+
+            <!-- Gestures -->
+        <Preference
+            android:key="gesture_settings"
+            android:title="@string/gesture_preference_title"
+            android:summary="@string/gesture_preference_summary"
+            android:fragment="com.android.settings.gestures.GestureSettings"
+            settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
     </PreferenceCategory>
 
       <PreferenceCategory
