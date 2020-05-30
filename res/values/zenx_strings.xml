@@ -675,6 +675,7 @@
 
         <!-- Title text for system navigation [CHAR LIMIT=60] -->
     <string name="system_navigation_title">System navigation</string>
+    <string name="gesture_preference_summary">Jump to Camera, Three finger gesture, Lift to check</string>
 
     <string name="qs_running_service_title">Running service icon</string>
     <string name="qs_running_service_summary">Enable or disable running service icon</string>
@@ -1135,6 +1136,7 @@
     <string name="smart_pulldown_ongoing">No ongoing notifications</string>
 
      <!-- Blur Power menu -->
+    <string name="powermenu_category_items">Items</string>
     <string name="powermenu_category_background">Background</string>
     <string name="blur_powermenu_intensity_title">Blur Intensity</string>
     <string name="blur_powermenu_title">Blur Powermenu</string>

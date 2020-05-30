@@ -18,17 +18,6 @@
 	android:title="@string/buttons_powermenu_volumebutton_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <ListPreference
-        android:key="torch_power_button_gesture"
-        android:title="@string/torch_power_button_gesture_title"
-        android:entries="@array/torch_power_button_gesture_entries"
-        android:entryValues="@array/torch_power_button_gesture_values" />
-
-    <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="powermenu_reboot"
-            android:title="@string/powermenu_reboot_title"
-            android:defaultValue="true" />
-
     <PreferenceCategory
         android:key="powermenu_category_background"
         android:title="@string/powermenu_category_background">
@@ -45,7 +34,12 @@
             android:min="1"
             android:max="100"
             android:defaultValue="30" />
+
      </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="powermenu_category_items"
+        android:title="@string/powermenu_category_items">
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="powermenu_reboot"
@@ -78,9 +72,17 @@
         android:title="@string/powermenu_torch"
         android:persistent="false" />
 
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="powermenu_category_visibility"
         android:title="@string/powermenu_category_visibility">
+
+        <ListPreference
+            android:key="torch_power_button_gesture"
+            android:title="@string/torch_power_button_gesture_title"
+            android:entries="@array/torch_power_button_gesture_entries"
+            android:entryValues="@array/torch_power_button_gesture_values" />
 
         <SwitchPreference
             android:key="powermenu_lockscreen"
