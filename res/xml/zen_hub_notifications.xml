@@ -21,7 +21,7 @@
 
     <PreferenceCategory
         android:key="notification_lights_flash"
-        android:title="@string/notification_lights">
+        android:title="@string/notification_flashlight">
 
         <com.zenx.support.preferences.SystemSettingListPreference
             android:key="flashlight_on_call"
