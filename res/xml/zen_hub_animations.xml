@@ -28,13 +28,13 @@
          android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.SystemAnimation" />
 
     </PreferenceCategory>
-
-    <PreferenceCategory 
+<!-- 
+    <PreferenceCategory
         android:title="@string/list_animation_title"
         android:key="list_animation"  >
 
 
-    </PreferenceCategory>
+    </PreferenceCategory> -->
  
     <PreferenceCategory
          android:title="@string/tile_animation_title"
@@ -67,6 +67,12 @@
         android:title="@string/toast_animation_cat_title"
         android:key="toast_animation_cat" >
 
+    <ListPreference
+        android:key="toast_animation"
+        android:title="@string/toast_animation_title"
+        android:entries="@array/toast_animation_entries"
+        android:entryValues="@array/toast_animation_values"
+        android:persistent="false" />
 
     </PreferenceCategory>
 
