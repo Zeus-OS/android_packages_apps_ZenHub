@@ -48,7 +48,7 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.zenx.zen.hub.fragments.lockscreenambient.tabs.LockScreen;
 import com.zenx.zen.hub.fragments.lockscreenambient.tabs.Ambient;
 
-public class LockScreenAmbientController extends SettingsPreferenceFragment implements
+public class LockscreenAmbientController extends SettingsPreferenceFragment implements
        Preference.OnPreferenceChangeListener {
 
     private MenuItem mMenuItem;
