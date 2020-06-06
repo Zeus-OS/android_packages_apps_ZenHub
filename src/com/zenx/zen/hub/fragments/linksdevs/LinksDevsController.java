@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zenx.zen.hub.fragments.noficationdevs;
+package com.zenx.zen.hub.fragments.linksdevs;
 
 import android.os.Bundle;
 import android.content.Context;
