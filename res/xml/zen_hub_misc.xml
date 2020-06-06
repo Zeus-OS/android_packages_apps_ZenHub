@@ -51,19 +51,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="screenshot_category"
-        android:title="@string/screenshot_category">
-
-        <com.zenx.support.preferences.SystemSettingListPreference
-            android:key="screenshot_type"
-            android:entries="@array/screenshot_type_entries"
-            android:entryValues="@array/screenshot_type_values"
-            android:title="@string/screenshot_type_title"
-            android:defaultValue="0" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="media"
         android:title="@string/media_title">
 
@@ -80,6 +67,19 @@
             android:entryValues="@array/adaptive_playback_timeout_values"
             android:defaultValue="30000"
             android:dependency="adaptive_playback_enabled" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="screenshot_category"
+        android:title="@string/screenshot_category">
+
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="screenshot_type"
+            android:entries="@array/screenshot_type_entries"
+            android:entryValues="@array/screenshot_type_values"
+            android:title="@string/screenshot_type_title"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
