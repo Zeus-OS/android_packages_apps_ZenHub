@@ -98,8 +98,6 @@
     <string name="ambient_display_custom_title">Ambient Display</string>
     <string name="ambient_display_custom_summary">Always on, music ticker, gestures</string>
     <string name="screen_summary">Rounded corners, legacy app scaling</string>
-    <string name="changelog_title">Changelog</string>
-    <string name="changelog_title_summary">View recent changes in ROM</string>
     <string name="volume_summary">Customize settings for volume buttons</string>
     <string name="volume_title">Volume Buttons</string>
 
@@ -121,7 +119,7 @@
 
     <!-- Battery Categories -->
     <string name="battery_wakelock">Wakelocks</string>
-    <string name="advanced_doze_settings">Doze</string>
+    <string name="advanced_doze_settings">Saving Actions</string>
 
     <!-- Display Categories -->
     <string name="corners_category">Corners</string>
@@ -134,7 +132,6 @@
     <!-- Interface Categories -->
      <string name="qs_themes_category_title">QS Themes</string>
      <string name="custom_header_category">QS Header</string>
-     <string name="dashboard_category">Settings</string>
 
     <!-- Custom actions -->
     <string name="action_nothing">No action</string>
@@ -676,7 +673,6 @@
 
         <!-- Title text for system navigation [CHAR LIMIT=60] -->
     <string name="system_navigation_title">System navigation</string>
-    <string name="gesture_preference_summary">Jump to Camera, Three finger gesture, Lift to check</string>
 
     <string name="qs_running_service_title">Running service icon</string>
     <string name="qs_running_service_summary">Enable or disable running service icon</string>
@@ -1113,8 +1109,6 @@
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
-
-    <string name="custom_doze_settings">Custom Doze</string>
 
     <!-- Show QS on lockscreen -->
     <string name="show_qs_on_secure_keyguard_title">Quick settings</string>
