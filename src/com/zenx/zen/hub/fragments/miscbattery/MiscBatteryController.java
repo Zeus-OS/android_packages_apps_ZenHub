@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zenx.zen.hub.fragments.noficationbattery;
+package com.zenx.zen.hub.fragments.miscbattery;
 
 import android.os.Bundle;
 import android.content.Context;

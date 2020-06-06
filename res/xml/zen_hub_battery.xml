@@ -31,17 +31,17 @@
 
         <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="smart_pixels_enable"
-            android:fragment="com.zenx.zen.hub.fragments.SmartPixels"
+            android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.SmartPixels"
             android:title="@string/smart_pixels_title"
             android:summary="@string/smart_pixels_summary"
             android:defaultValue="false" />
 
-    <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
-        android:key="screen_state_toggles_enable_key"
-        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.ScreenStateToggles"
-        android:title="@string/screen_state_toggles_title"
-        android:summary="@string/screen_state_toggles_summary"
-        android:defaultValue="false" />
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="screen_state_toggles_enable_key"
+            android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.ScreenStateToggles"
+            android:title="@string/screen_state_toggles_title"
+            android:summary="@string/screen_state_toggles_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
