@@ -44,7 +44,8 @@
     <string name="bottom_nav_statusbar_title">Statusbar</string>
     <string name="bottom_nav_quicksettings_title">Quicksettings</string>
     <string name="bottom_nav_animations_title">Animation</string>
-    <string name="bottom_nav_screen_title">UI</string>
+    <string name="bottom_nav_screen_title">Screen</string>
+    <string name="bottom_nav_ui_title">Style</string>
     <string name="bottom_nav_notification_title">Notification</string>
     <string name="bottom_nav_headsupsettings_title">HeadsUp</string>
     <string name="bottom_nav_misc_title">Misc</string>
@@ -72,7 +73,6 @@
     <string name="battery_title">Battery Saving</string>
     <string name="animations_title">Animations</string>
     <string name="ambient_title">Ambient</string>
-    <string name="device_maintainers_title">Maintainers</string>
 
         <!-- About -->
 	<string name="developers_category_title">Developers</string>
@@ -80,7 +80,7 @@
     <string name="maintainers_category_title">Maintainers</string>
     <string name="zenx_developers_zenixxx" translatable="false">• Founder \n• Core Developer\n• Maintainer</string>
     <string name="zenx_support_summary" translatable="false">• Support Group Moderator</string>
-    <string name="device_maintainers_title">Official Devices</string>
+    <string name="device_maintainers_title">Maintainers</string>
     <string name="device_maintainers_title_summary">List of official devices and their maintainers</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in ROM</string>
@@ -1196,4 +1196,15 @@
     <string name="toast_Translucent_animation">Translucent</string>
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
+
+    <!-- Dashboard conditions-->
+    <string name="dashboard_category">Settings</string>
+    <string name="dashboard_conditions_title">Dashboard conditions</string>
+    <string name="summary_dashboard_conditions_enabled">Dashboard conditions are enabled</string>
+    <string name="summary_dashboard_conditions_disabled">Dashboard conditions are disabled</string>
+    <string name="dashboard_suggestions_title">Dashboard suggestions</string>
+    <string name="summary_dashboard_suggestions_enabled">Dashboard suggestions are enabled</string>
+    <string name="summary_dashboard_suggestions_disabled">Dashboard suggestions are disabled</string>
+
+    <string name="custom_doze_settings">Custom Doze</string>
 </resources>
