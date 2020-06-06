@@ -18,5 +18,86 @@
     android:title="@string/links_devs_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="information_updates"
+        android:title="@string/update_title">
+
+        <Preference
+            android:key="changelog"
+            android:title="@string/changelog_title"
+            android:summary="@string/changelog_title_summary"
+            android:icon="@drawable/zenx_changelog"
+            android:fragment="com.android.settings.zenx.Changelog">
+        </Preference>
+
+        <Preference
+            android:key="system_updates"
+            android:persistent="false"
+            android:title="@string/system_updates_title"
+            android:icon="@drawable/zenx_update"
+            android:summary="@string/system_updates_summary" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.opendelta"
+                android:targetClass="eu.chainfire.opendelta.MainActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="information_links"
+        android:title="@string/links_title">
+
+        <Preference
+            android:key="zenx_announcements"
+            android:title="@string/zenx_announcements_title"
+            android:summary="@string/zenx_announcements_summary"
+            android:icon="@drawable/zenx_announcements">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/Zenx_OS"/>
+        </Preference>
+
+        <Preference
+            android:key="zenx_telegram"
+            android:title="@string/zenx_telegram_title"
+            android:summary="@string/zenx_telegram_summary"
+            android:icon="@drawable/zenx_telegram">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://t.me/zenxofficial"/>
+        </Preference>
+
+        <Preference
+            android:key="zenx_donate"
+            android:title="@string/zenx_donate"
+            android:summary="@string/zenx_donate_summary"
+            android:icon="@drawable/zenx_donate">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.paypal.me/vhermann"/>
+        </Preference>
+
+        <Preference
+            android:key="zenx_website"
+            android:title="@string/website_title"
+            android:summary="@string/website_title_summary"
+            android:icon="@drawable/zenx_website">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://sourceforge.net/projects/zenx-os/"/>
+        </Preference>
+
+        <Preference
+            android:key="zenx_source"
+            android:title="@string/zenx_source_title"
+            android:summary="@string/zenx_source_summary"
+            android:icon="@drawable/zenx_github">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Zenx-OS"/>
+        </Preference>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

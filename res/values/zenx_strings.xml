@@ -65,7 +65,7 @@
     <string name="quicksettings_title">Quick Settings</string>
     <string name="notifications_title">Notifications</string>
     <string name="lockscreen_title">Lock Screen</string>
-    <string name="links_title">Links &#38; Community </string>
+    <string name="links_title">Links Community </string>
     <string name="headsup_title">Heads Up </string>
     <string name="devs_title">Developers</string>
     <string name="buttons_title">Buttons</string>
@@ -73,6 +73,31 @@
     <string name="animations_title">Animations</string>
     <string name="ambient_title">Ambient</string>
     <string name="device_maintainers_title">Maintainers</string>
+
+        <!-- About -->
+	<string name="developers_category_title">Developers</string>
+	<string name="support_category_title">Support Team</string>
+    <string name="maintainers_category_title">Maintainers</string>
+    <string name="zenx_developers_zenixxx" translatable="false">• Founder \n• Core Developer\n• Maintainer</string>
+    <string name="zenx_support_summary" translatable="false">• Support Group Moderator</string>
+    <string name="device_maintainers_title">Official Devices</string>
+    <string name="device_maintainers_title_summary">List of official devices and their maintainers</string>
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="zenx_announcements_title">Announcements</string>
+    <string name="zenx_announcements_summary">Official announcements channel</string>
+    <string name="zenx_telegram_title">Telegram</string>
+    <string name="zenx_telegram_summary">Support group for Official builds</string>
+    <string name="zenx_discord_title">Discord</string>
+    <string name="zenx_discord_summary">Official server for ROM support</string>
+    <string name="zenx_source_title">Github</string>
+    <string name="zenx_source_summary">Zenx-OS source code</string>
+    <string name="zenx_donate">Donate</string>
+    <string name="zenx_donate_summary">Show your support to Zenx-OS Team</string>
+	<string name="zenx_links">Links</string>
+    <string name="website_title">Website</string>
+    <string name="website_title_summary">Download Zenx-OS for your device</string>
     
      <!-- Zenx-Categories -->
     <string name="about_summary">Learn more about ZenX-OS</string>
@@ -108,7 +133,6 @@
     <string name="save">Save</string>
     <string name="attention">Attention</string>
     <string name="default_string">Default</string>
-
 
     <!-- Animation Categories -->
 	<string name="system_animation_title">System</string>

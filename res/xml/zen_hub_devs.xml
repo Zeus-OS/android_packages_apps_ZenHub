@@ -19,4 +19,37 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
+    <PreferenceCategory
+        android:key="developer_category"
+        android:title="@string/developers_category_title">
+        <Preference
+            android:title="Viktor Hermann (ZeNiXxX)"
+            android:summary="@string/zenx_developers_zenixxx"
+            android:icon="@drawable/zenx_developer">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.paypal.me/vhermann"/>
+        </Preference>
+
+    </PreferenceCategory>
+
+    <!-- <PreferenceCategory
+        android:key="support_category"
+        android:title="@string/support_category_title">
+
+    </PreferenceCategory> -->
+
+    <PreferenceCategory
+        android:key="maintainer_category" 
+        android:title="@string/maintainers_category_title"> 
+
+        <Preference
+            android:key="maintainers"
+            android:fragment="com.zenx.zen.hub.fragments.DeviceMaintainers"
+            android:summary="@string/device_maintainers_title_summary"
+            android:title="@string/device_maintainers_title"
+            android:icon="@drawable/zenx_maintainer" />
+    </PreferenceCategory>
+
+
 </PreferenceScreen>
