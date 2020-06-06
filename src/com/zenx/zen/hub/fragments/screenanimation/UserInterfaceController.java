@@ -47,6 +47,7 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 import com.zenx.zen.hub.fragments.screenanimation.tabs.Animations;
 import com.zenx.zen.hub.fragments.screenanimation.tabs.Screen;
+import com.zenx.zen.hub.fragments.screenanimation.tabs.Ui;
 
 public class UserInterfaceController extends SettingsPreferenceFragment implements
        Preference.OnPreferenceChangeListener {
@@ -75,11 +76,14 @@ public class UserInterfaceController extends SettingsPreferenceFragment implemen
               return false;
               } else {
                 switch(item.getItemId()){
-                    case R.id.screen:
+                    case R.id.ui:
                         viewPager.setCurrentItem(0);
                         break;
-                     case R.id.animations:
+                    case R.id.screen:
                         viewPager.setCurrentItem(1);
+                        break;
+                     case R.id.animations:
+                        viewPager.setCurrentItem(2);
                         break;
                    }
                 return true;
@@ -110,7 +114,7 @@ public class UserInterfaceController extends SettingsPreferenceFragment implemen
         });
 
         setHasOptionsMenu(true);
-        navigation.setSelectedItemId(R.id.screen);
+        navigation.setSelectedItemId(R.id.ui);
         navigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
         return view;
     }
@@ -122,8 +126,9 @@ public class UserInterfaceController extends SettingsPreferenceFragment implemen
 
         PagerAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new Screen();
-            frags[1] = new Animations();
+            frags[0] = new Ui();
+            frags[1] = new Screen();
+            frags[2] = new Animations();
         }
 
         @Override
@@ -145,6 +150,7 @@ public class UserInterfaceController extends SettingsPreferenceFragment implemen
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
+                getString(R.string.bottom_nav_ui_title),
                 getString(R.string.bottom_nav_screen_title),
                 getString(R.string.bottom_nav_animations_title)};
 

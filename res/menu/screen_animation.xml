@@ -18,6 +18,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/ui"
+        android:icon="@drawable/bottom_nav_ui"
+        android:title="@string/bottom_nav_ui_title"/>
+
+    <item
         android:id="@+id/screen"
         android:icon="@drawable/bottom_nav_screen"
         android:title="@string/bottom_nav_screen_title"/>
