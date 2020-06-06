@@ -991,4 +991,14 @@
     <string name="lockscreen_tuner_title">Bottom shortcuts</string>
     <string name="lockscreen_tuner_summary">Change the bottom left/right shortcuts</string>
 
+        <!-- QS blur -->
+    <string name="qs_style_category">Style</string>
+    <string name="qs_blur_title">QS Blur</string>
+    <string name="blur_quicksettings">Blur behind quick settings</string>
+    <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
+    <string name="qs_blur_alpha_title">Blur alpha</string>
+    <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
+    <string name="qs_blur_intensity_title">Blur intensity</string>
+    <string name="qs_blur_intensity_summary">Sets the blur intensity/radius</string>
+
 </resources>

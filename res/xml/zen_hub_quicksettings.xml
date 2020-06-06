@@ -95,13 +95,26 @@
             settings:units=""
             android:persistent="false" />
 
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qs_style_category"
+        android:title="@string/qs_style_category">
+
+         <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="qs_blur"
+            android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.QsBlur"
+            android:title="@string/blur_quicksettings"
+            android:summary="@string/blur_quicksettings_subtitle"
+            android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_accent_header_switch"
             android:title="@string/qs_accent_header_switch_title"
             android:summary="@string/qs_accent_header_switch_summary"
             android:defaultValue="true" />
 
-    </PreferenceCategory>
+   </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/brightness_category_title"
