@@ -1214,13 +1214,12 @@
     <string name="screen_off_fod_icon_title">Show icon</string>
     <string name="screen_off_fod_icon_summary">Show fingerprint icon when the screen is off</string>
 
-    <!-- FOD animation -->
-    <string name="fod_recognizing_animation_title">Recognizing animation</string>
-    <string name="fod_recognizing_animation_summary">Show an animation while reading your fingerprint</string>
-
     <!-- FOD icon picker -->
     <string name="fod_icon_picker_title">FOD icon picker</string>
     <string name="fod_icon_picker_summary">Choose your favorite fingerprint icon</string>
     <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
 
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">FOD recognizing animation</string>
+    <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
 </resources>
