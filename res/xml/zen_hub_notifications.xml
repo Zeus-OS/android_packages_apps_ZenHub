@@ -62,6 +62,18 @@
     </PreferenceCategory>
 
      <PreferenceCategory
+        android:key="notification_ticker"
+        android:title="@string/status_bar_show_ticker_title">
+
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_show_ticker"
+            android:fragment="com.zenx.zen.hub.fragments.noficationheadsup.tabs.submodules.Ticker"
+            android:title="@string/ticker_screen_title"
+            android:summary="@string/ticker_screen_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+     <PreferenceCategory
         android:key="notification_messages"
         android:title="@string/notification_messages">
 
@@ -71,11 +83,11 @@
             android:summary="@string/hide_smart_replies_summary"
             android:defaultValue="false"/>
         
-     <com.zenx.support.preferences.SystemSettingSwitchPreference  
+     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="disable_fc_notifications" 
-        android:title="@string/disable_fc_notifications_title" 
-        android:summary="@string/disable_fc_notifications_summary" 
-        android:defaultValue="false" /> 
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 
