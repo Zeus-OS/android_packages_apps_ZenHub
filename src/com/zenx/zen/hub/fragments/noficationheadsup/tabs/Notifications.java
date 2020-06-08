@@ -33,6 +33,7 @@ import com.zenx.support.preferences.CustomSeekBarPreference;
 import com.zenx.support.preferences.GlobalSettingMasterSwitchPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
 import com.zenx.support.preferences.SystemSettingMasterSwitchPreference;
+import com.android.internal.util.zenx.Utils;
 
 public class Notifications extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -40,9 +41,14 @@ public class Notifications extends SettingsPreferenceFragment
     public static final String TAG = "Notifications";
     private static final String LIGHTS_CATEGORY = "notification_lights";
     private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
+    private static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
+    private static final String STATUS_BAR_SHOW_TICKER_CATEGORY = "notification_ticker";
+
 
     private PreferenceCategory mLightsCategory;
+    private PreferenceCategory mTickerPreference;
     private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
+    private SystemSettingMasterSwitchPreference mTickerEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +65,18 @@ public class Notifications extends SettingsPreferenceFragment
         if (!getResources().getBoolean(com.android.internal.R.bool.config_hasNotificationLed)) {
             getPreferenceScreen().removePreference(mLightsCategory);
         }
+
+
+        mTickerPreference = (PreferenceCategory) findPreference(STATUS_BAR_SHOW_TICKER_CATEGORY);
+        mTickerEnabled = (SystemSettingMasterSwitchPreference) findPreference(STATUS_BAR_SHOW_TICKER);
+        mTickerEnabled.setOnPreferenceChangeListener(this);
+        int tickerEnabled = Settings.System.getInt(getContentResolver(),
+                STATUS_BAR_SHOW_TICKER, 0);
+        mTickerEnabled.setChecked(tickerEnabled != 0);
+
+        if (Utils.hasNotch(getActivity())) {
+            mTickerPreference.setVisible(false);
+        }
     }
 
     @Override
@@ -72,6 +90,11 @@ public class Notifications extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
 		            BATTERY_LIGHT_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mTickerEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    STATUS_BAR_SHOW_TICKER, value ? 1 : 0);
             return true;
         }
         return false;
