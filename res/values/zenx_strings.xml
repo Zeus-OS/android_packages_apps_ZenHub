@@ -1217,4 +1217,16 @@
     <string name="fod_recognizing_animation_title">Recognizing animation</string>
     <string name="fod_recognizing_animation_summary">Show an animation while reading your fingerprint</string>
 
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Ticker</string>
+    <string name="ticker_screen_summary">Ticker-style status bar notifications</string>
+    <string name="ticker_screen_footer">Ticker is visible only when heads-up notifications are not shown</string>
+    <string name="ticker_mode_title">Show ticker for</string>
+    <string name="ticker_notifications">Notifications</string>
+    <string name="ticker_media">Notifications and music</string>
+    <string name="ticker_animation_mode_title">Animation style</string>
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
+    <string name="ticker_animation_mode_scroll">Scroll</string>
+    <string name="ticker_tick_duration_title">Duration</string>
+
 </resources>
