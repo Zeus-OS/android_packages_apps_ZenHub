@@ -55,7 +55,7 @@
             android:icon="@drawable/zenx_announcements">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/Zenx_OS"/>
+                android:data="https://t.me/ZenXOSAnnoucement"/>
         </Preference>
 
         <Preference
@@ -65,7 +65,7 @@
             android:icon="@drawable/zenx_telegram">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://t.me/zenxofficial"/>
+                android:data="https://t.me/zenXOSGroup"/>
         </Preference>
 
         <Preference
