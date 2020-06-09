@@ -62,7 +62,6 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
     private static final String CLOCK_DATE_AUTO_HIDE_HDUR = "status_bar_clock_auto_hide_hduration";
     private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
-    private static final String STATUS_BAR_CLOCK_COLOR = "status_bar_clock_color";
     private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
     private static final String STATUS_BAR_CLOCK_FONT_STYLE  = "status_bar_clock_font_style";
     private static final String STATUS_BAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
@@ -75,7 +74,6 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
     private ListPreference mClockDateFormat;
     private CustomSeekBarPreference mHideDuration;
     private CustomSeekBarPreference mShowDuration;
-    private ColorPickerPreference mClockColor;
     private CustomSeekBarPreference mClockSize;
     private ListPreference mClockFontStyle;
     private ListPreference mClockDatePosition;
@@ -90,9 +88,6 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-        int intColor;
-        String hexColor;
 
 	    // clock settings
         mStatusBarSecondsShow = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
@@ -160,14 +155,6 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
         } else {
             mClockDateFormat.setValue(value);
         }
-
-        mClockColor = (ColorPickerPreference) findPreference(STATUS_BAR_CLOCK_COLOR);
-            mClockColor.setOnPreferenceChangeListener(this);
-            intColor = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
-            hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mClockColor.setSummary(hexColor);
-            mClockColor.setNewPreviewColor(intColor);
 
         mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
         int clockSize = Settings.System.getInt(resolver,
@@ -308,14 +295,6 @@ public class StatusbarClockSettings extends SettingsPreferenceFragment implement
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, value, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mClockColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(resolver,
-                    Settings.System.STATUS_BAR_CLOCK_COLOR, intHex);
             return true;
         }  else if (preference == mClockSize) {
             int width = ((Integer)newValue).intValue();

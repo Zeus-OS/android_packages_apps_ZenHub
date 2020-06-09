@@ -51,6 +51,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
+    private SystemSettingMasterSwitchPreference mLsBatteryBar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -61,17 +62,19 @@ public class LockScreen extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         Resources resources = getResources();
 
-        mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
-        mVisualizerEnabled.setOnPreferenceChangeListener(this);
-        int visualizerEnabled = Settings.Secure.getInt(resolver,
-                LOCKSCREEN_VISUALIZER_ENABLED, 0);
-        mVisualizerEnabled.setChecked(visualizerEnabled != 0);
-
         mLsBatteryBar = (SystemSettingMasterSwitchPreference) findPreference(SYSUI_KEYGUARD_SHOW_BATTERY_BAR);
         mLsBatteryBar.setOnPreferenceChangeListener(this);
         int lsBatteryBar = Settings.System.getInt(resolver,
                 SYSUI_KEYGUARD_SHOW_BATTERY_BAR, 1);
         mLsBatteryBar.setChecked(lsBatteryBar != 0);
+    }
+
+    private void updateMasterPrefs() {
+        mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
+        mVisualizerEnabled.setOnPreferenceChangeListener(this);
+        int visualizerEnabled = Settings.Secure.getInt(getActivity().getContentResolver(),
+                LOCKSCREEN_VISUALIZER_ENABLED, 0);
+        mVisualizerEnabled.setChecked(visualizerEnabled != 0);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -88,6 +91,18 @@ public class LockScreen extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateMasterPrefs();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        updateMasterPrefs();
     }
 
     @Override

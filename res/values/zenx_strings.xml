@@ -490,7 +490,7 @@
     <string name="lock_clock_font_black">Black</string>
     <string name="lock_clock_font_black_italic">Black Italic</string>
 
-    <string name="lockscreen_charging_animation_title">LS Charging animation</string>
+    <string name="lockscreen_charging_animation_title">Charging animation</string>
     <string name="lockscreen_charging_animation_summary">Display a Lottie animation when the device is charging</string>
     <string name="lockscreen_charging_animation_off">Off</string>
     <string name="lockscreen_charging_animation_flash">Flash</string>
@@ -875,7 +875,7 @@
     <string name="swap_navigation_keys_title_summary">Invert back and recents hardware keys</string>
 
     <!-- Ambient edge lighting -->
-    <string name="notification_screen_title">Screen</string>
+    <string name="notification_screen_title">Ambient light</string>
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Custom color</string>
@@ -914,32 +914,10 @@
     <string name="qs_show_brightness_buttons_title">Adjustment control buttons</string>
     <string name="qs_show_brightness_buttons_summary">Show buttons beside the brightness slider to adjust brightness</string>
 
-    <string name="lockscreen_accent_color_title">Use Accent Color</string>
-    <string name="lockscreen_accent_color_info">SystemUi restart requiered!</string>
-    
-    <!-- Lockscreen clock style -->
-    <string name="lockscreen_clock_dialog_title">Select clock style</string>
-    <string name="lockscreen_clock_selection_hidden">Hidden</string>
-    <string name="lockscreen_clock_selection_digital">Default</string>
-    <string name="lockscreen_clock_selection_digital_bold">Bold (digital)</string>
-    <string name="lockscreen_clock_selection_digital_small">Small (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent">Full accent (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_min">Accent minutes (digital)</string>
-    <string name="lockscreen_clock_selection_digital_accent_hour">Accent hours (digital)</string>
-    <string name="lockscreen_clock_selection_sammy">Sammy</string>
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
-    <string name="lockscreen_clock_selection_sammy_accent">Sammy accent</string>
-    <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy accent (darker hour)</string>
-    <string name="ls_clock_position_title">Digital Clock position</string>
-    <string name="ls_clock_position_summary">Change position fo digital clock on lockscreen(horizontal)</string>
-    <string name="ls_clock_position_center">Center</string>
-    <string name="ls_clock_position_right">Right</string>
-    <string name="ls_clock_position_left">Left</string>
-
     <string name="hide_lockicon_title">Show lock icon</string>
     <string name="hide_lockicon_summary">Enable or disable the Lock icon</string>
-
-            <!-- Lockscreen Date styles -->
+    
+    <!-- Lockscreen Date styles -->
     <string name="lockscreen_date_selection_title">Date style</string>
     <string name="lockscreen_date_selection_default">Default</string>
     <string name="lockscreen_date_selection_str_box">Semi-transparent box</string>
@@ -1131,5 +1109,7 @@
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
+
+    <string name="custom_doze_settings">Custom Doze</string>
 
 </resources>
