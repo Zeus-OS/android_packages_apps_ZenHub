@@ -49,7 +49,7 @@ import com.zenx.zen.hub.fragments.statusbarquicksettings.StatusbarQuicksettingsC
 import com.zenx.zen.hub.fragments.screenanimation.UserInterfaceController;
 import com.zenx.zen.hub.fragments.noficationheadsup.NotificationsHeadsUpSettingsController;
 import com.zenx.zen.hub.fragments.miscbattery.MiscBatteryController;
-import com.zenx.zen.hub.fragments.lockscreenambient.LockScreenAmbientController;
+import com.zenx.zen.hub.fragments.lockscreenambient.LockscreenAmbientController;
 import com.zenx.zen.hub.fragments.linksdevs.LinksDevsController;
 import com.zenx.zen.hub.fragments.buttons.ButtonsPowerMenuVolumeButtonController;
 
@@ -124,7 +124,7 @@ public class ZenHub extends Fragment implements View.OnClickListener {
                 transaction1.commit();
                 break;
             case R.id.lockscreen_card:
-                LockScreenAmbientController lockscreenfragment = new LockScreenAmbientController();
+                LockscreenAmbientController lockscreenfragment = new LockscreenAmbientController();
                 FragmentTransaction transaction2 = getFragmentManager().beginTransaction();
                 transaction2.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 transaction2.replace(this.getId(), lockscreenfragment);

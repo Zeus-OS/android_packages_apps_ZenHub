@@ -42,9 +42,7 @@ public class QuickSettings extends SettingsPreferenceFragment
 
     private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String QS_HEADER_CLOCK_SIZE  = "qs_header_clock_size";
-    static final int DEFAULT_STATUS_CLOCK_COLOR = 0xFFFFFFFF;
     private static final String QS_HEADER_CLOCK_FONT_STYLE  = "qs_header_clock_font_style";
-    private static final String QS_HEADER_CLOCK_COLOR = "qs_header_clock_color";
     public static final String TAG = "QuickSettings";
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
@@ -58,7 +56,6 @@ public class QuickSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mQsPanelAlpha;
 //     private CustomSeekBarPreference mSysuiQqsCount;
     private CustomSeekBarPreference mQsClockSize;
-    private ColorPickerPreference mClockColor;
     private ListPreference mClockFontStyle;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
@@ -95,26 +92,11 @@ public class QuickSettings extends SettingsPreferenceFragment
                 mQsClockSize.setValue(qsClockSize / 1);
         mQsClockSize.setOnPreferenceChangeListener(this);
 
-        int intColor;
-        String hexColor;
-
         mClockFontStyle = (ListPreference) findPreference(QS_HEADER_CLOCK_FONT_STYLE);
         int showClockFont = Settings.System.getInt(resolver,
                 Settings.System.QS_HEADER_CLOCK_FONT_STYLE, 14);
         mClockFontStyle.setValue(String.valueOf(showClockFont));
         mClockFontStyle.setOnPreferenceChangeListener(this);
-
-        mClockColor = (ColorPickerPreference) findPreference(QS_HEADER_CLOCK_COLOR);
-        mClockColor.setOnPreferenceChangeListener(this);
-        intColor = Settings.System.getInt(resolver,
-                Settings.System.QS_HEADER_CLOCK_COLOR, DEFAULT_STATUS_CLOCK_COLOR);
-        hexColor = String.format("#%08x", (0xFFFFFFFF & intColor));
-        if (hexColor.equals("#ffffffff")) {
-            mClockColor.setSummary(R.string.default_string);
-        } else {
-            mClockColor.setSummary(hexColor);
-        }
-        mClockColor.setNewPreviewColor(intColor);
 
         mQsColumnsPortrait = (CustomSeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
         int columnsPortrait = Settings.System.getIntForUser(resolver,
@@ -170,18 +152,6 @@ public class QuickSettings extends SettingsPreferenceFragment
                 int width = ((Integer)newValue).intValue();
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.QS_HEADER_CLOCK_SIZE, width);
-                return true;
-        } else if (preference == mClockColor) {
-                String hex = ColorPickerPreference.convertToARGB(
-                        Integer.valueOf(String.valueOf(newValue)));
-                if (hex.equals("#ffffffff")) {
-                    preference.setSummary(R.string.default_string);
-                } else {
-                    preference.setSummary(hex);
-                }
-                int intHex = ColorPickerPreference.convertToColorInt(hex);
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.QS_HEADER_CLOCK_COLOR, intHex);
                 return true;
         } else if (preference == mClockFontStyle) {
                 int showClockFont = Integer.valueOf((String) newValue);

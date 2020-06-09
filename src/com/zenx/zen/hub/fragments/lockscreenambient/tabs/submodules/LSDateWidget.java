@@ -88,6 +88,6 @@ public class LSDateWidget extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.zenx_SETTINGS;
+        return MetricsProto.MetricsEvent.ZENX_SETTINGS;
     }
 }
