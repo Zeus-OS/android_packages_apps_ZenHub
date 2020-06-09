@@ -31,7 +31,7 @@
             android:key="lockscreen_ambient_category"
             android:title="@string/lockscreen_ambient_title"
             android:summary="@string/lockscreen_ambient_summary"
-            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.LockScreenAmbientController"
+            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.LockscreenAmbientController"
             android:icon="@drawable/ic_settings_lockscreen"/>
 
         <!-- Buttons + Gestures -->

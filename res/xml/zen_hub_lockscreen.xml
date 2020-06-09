@@ -31,27 +31,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="ls_animations"
-        android:title="@string/ls_animations_title">
-
-    <com.zenx.support.preferences.SystemSettingListPreference
-        android:key="lockscreen_animation"
-        android:dialogTitle="@string/lockscreen_animation_title"
-        android:title="@string/lockscreen_animation_title"
-        android:entries="@array/lockscreen_animation_entries"
-        android:entryValues="@array/lockscreen_animation_values"
-        android:summary="%s"
-        android:defaultValue="0" />
-
-    <com.zenx.support.preferences.SystemSettingSwitchPreference
-        android:key="lockscreen_animation_on_doze"
-        android:title="@string/lockscreen_animation_on_doze_title"
-        android:summary="@string/lockscreen_animation_on_doze_summary"
-        android:defaultValue="false" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="lockscreen_media_category"
         android:title="@string/lockscreen_media_category" >
 
@@ -84,26 +63,6 @@
         android:key="ls_clock"
         android:title="@string/ls_clock">
 
-        <!-- <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
-            android:key="lockscreen_clock"
-            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSClockWidget"
-            android:title="@string/lockscreen_clock_title"
-            android:summary="@string/lockscreen_clock_summary"
-            android:defaultValue="true" />
-
-        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
-            android:key="lockscreen_info"
-            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSDateWidget"
-            android:title="@string/lockscreen_info_title"
-            android:summary="@string/lockscreen_info_summary"
-            android:defaultValue="true" /> -->
-
-    <PreferenceScreen
-        android:key="lockscreen_clock"
-        android:title="@string/lockscreen_clock_title"
-        android:summary="@string/lockscreen_clock_summary"
-        android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSClockWidget" />
-
     <PreferenceScreen
         android:key="lockscreen_info"
         android:title="@string/lockscreen_info_title"
@@ -112,19 +71,62 @@
 
     </PreferenceCategory>
 
-    <!-- <PreferenceCategory
-        android:key="weather_lockscreen_key"
-        android:title="@string/weather_title" >
+    <PreferenceCategory
+        android:key="ls_animations"
+        android:title="@string/ls_animations_title">
 
-    </PreferenceCategory> -->
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="lockscreen_animation"
+            android:dialogTitle="@string/lockscreen_animation_title"
+            android:title="@string/lockscreen_animation_title"
+            android:entries="@array/lockscreen_animation_entries"
+            android:entryValues="@array/lockscreen_animation_values"
+            android:summary="%s"
+            android:defaultValue="0" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_animation_on_doze"
+            android:title="@string/lockscreen_animation_on_doze_title"
+            android:summary="@string/lockscreen_animation_on_doze_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="charging_ls"
+        android:title="@string/charging_ls_category">
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
+            android:key="sysui_keyguard_show_battery_bar"
+            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSBatteryBar"
+            android:title="@string/tuner_keyguard_show_battery_bar_title"
+            android:summary="@string/tuner_keyguard_show_battery_bar_summary"
+            android:defaultValue="true" />
+
+    <com.zenx.support.preferences.SystemSettingListPreference
+        android:key="lockscreen_charging_animation"
+        android:dialogTitle="@string/lockscreen_charging_animation_title"
+        android:title="@string/lockscreen_charging_animation_title"
+        android:entries="@array/lockscreen_charging_animation_entries"
+        android:entryValues="@array/lockscreen_charging_animation_values"
+        android:summary="%s"
+        android:defaultValue="1" />
+
+ </PreferenceCategory>
+
+     <PreferenceCategory
         android:key="ls_unlocking"
         android:title="@string/ls_unlocking">
 
      <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge" 
-            android:title="@string/pocket_judge_title" 
+            android:title="@string/pocket_judge_title"
             android:summary="@string/pocket_judge_summary"
             android:defaultValue="false" />
 
@@ -141,34 +143,6 @@
             android:defaultValue="true" />
 
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="charging_ls"
-        android:title="@string/charging_ls_category">
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_battery_info"
-            android:title="@string/lockscreen_battery_info_title"
-            android:summary="@string/lockscreen_battery_info_summary"
-            android:defaultValue="true" />
-
-    <com.zenx.support.preferences.SystemSettingListPreference
-        android:key="lockscreen_charging_animation"
-        android:dialogTitle="@string/lockscreen_charging_animation_title"
-        android:title="@string/lockscreen_charging_animation_title"
-        android:entries="@array/lockscreen_charging_animation_entries"
-        android:entryValues="@array/lockscreen_charging_animation_values"
-        android:summary="%s"
-        android:defaultValue="1" />
-
-        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
-            android:key="sysui_keyguard_show_battery_bar"
-            android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSBatteryBar"
-            android:title="@string/tuner_keyguard_show_battery_bar_title"
-            android:summary="@string/tuner_keyguard_show_battery_bar_summary"
-            android:defaultValue="true" />
-
- </PreferenceCategory>
 
     <PreferenceCategory
         android:key="ls_disable_elements"

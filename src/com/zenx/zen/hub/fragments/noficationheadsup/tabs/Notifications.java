@@ -40,11 +40,9 @@ public class Notifications extends SettingsPreferenceFragment
     public static final String TAG = "Notifications";
     private static final String LIGHTS_CATEGORY = "notification_lights";
     private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
-    private static final String AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
 
     private PreferenceCategory mLightsCategory;
     private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
-    private SystemSettingMasterSwitchPreference mEdgeLightEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,12 +59,6 @@ public class Notifications extends SettingsPreferenceFragment
         if (!getResources().getBoolean(com.android.internal.R.bool.config_hasNotificationLed)) {
             getPreferenceScreen().removePreference(mLightsCategory);
         }
-
-        mEdgeLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(AMBIENT_NOTIFICATION_LIGHT);
-        mEdgeLightEnabled.setOnPreferenceChangeListener(this);
-        int edgeLightEnabled = Settings.System.getInt(getContentResolver(),
-                AMBIENT_NOTIFICATION_LIGHT, 0);
-        mEdgeLightEnabled.setChecked(edgeLightEnabled != 0);
     }
 
     @Override
@@ -81,13 +73,7 @@ public class Notifications extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
 		            BATTERY_LIGHT_ENABLED, value ? 1 : 0);
             return true;
-        } else if (preference == mEdgeLightEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-                    AMBIENT_NOTIFICATION_LIGHT, value ? 1 : 0);
-            return true;
         }
-
         return false;
     }
 
