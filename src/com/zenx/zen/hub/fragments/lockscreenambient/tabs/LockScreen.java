@@ -28,9 +28,7 @@ import android.net.Uri;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.preference.Preference;
-import androidx.preference.ListPreference;
-import androidx.preference.PreferenceScreen;
+import androidx.preference.*;
 import android.content.pm.PackageManager;
 
 import com.android.internal.custom.app.LineageContextConstants;
@@ -56,6 +54,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
     private static final String KEY_SCREEN_OFF_FOD_ICON = "screen_off_fod_icon";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
+    private static final String FOD_CATEGORY = "fod_category";
 
     private static final int DEFAULT_COLOR = 0xffffffff;
 
@@ -66,6 +65,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SwitchPreference mScreenOffFOD;
     private SystemSettingSwitchPreference mScreenOffFODIcon;
     private Preference mFODIconPicker;
+    private PreferenceCategory mFODCategory;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -94,15 +94,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mScreenOffFOD.setChecked(mScreenOffFODValue);
         mScreenOffFOD.setOnPreferenceChangeListener(this);
 
+        mFODCategory = (PreferenceCategory) findPreference(FOD_CATEGORY);
         mScreenOffFODIcon = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD_ICON);
 
         if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
             mFODAnimationEnabled.setVisible(false);
             mScreenOffFOD.setVisible(false);
             mScreenOffFODIcon.setVisible(false);
+            prefSet.removePreference(mFODCategory);
         }
-
-        updateMasterPrefs();
 
         boolean hasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
 
@@ -110,6 +110,8 @@ public class LockScreen extends SettingsPreferenceFragment implements
         if (mFODIconPicker != null && !hasFod) {
             prefSet.removePreference(mFODIconPicker);
         }
+
+        updateMasterPrefs();
     }
 
     private void updateMasterPrefs() {
