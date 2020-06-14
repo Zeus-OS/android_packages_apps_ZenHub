@@ -233,11 +233,14 @@
     <string name="system_tuner">System Tuner</string>
 
     <!-- Statusbar Categories -->
-    <string name="statusbar_gestures">Gestures</string>
-    <string name="statusbar_clock">Clock</string>
+    <string name="statusbar_gestures_title">Gestures</string>
+    <string name="statusbar_gestures_summary">Enable several statusbar gestures</string>
+    <string name="battery_category_title">Battery</string>
+    <string name="statusbar_info_title">Info</string>
+    <string name="statusbar_info_summary">Setup Clock, Battery and network info</string>
     <string name="statusbar_battery">Battery</string>
-    <string name="statusbar_logo">Logo</string>
-    <string name="statusbar_items_category">Icons</string>
+    <string name="statusbar_items_category_title">Icons</string>
+    <string name="statusbar_items_category_summary">Change icon visibility</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
      <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar items</string>
@@ -605,7 +608,6 @@
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
 
    <!-- Statusbar net monitor -->
-    <string name="statusbar_ntraffic">Network</string>
     <string name="network_traffic_disabled">Disabled</string>
     <string name="network_traffic_statusbar">Status bar</string>
     <string name="network_traffic_qs_header">QS header</string>
@@ -752,7 +754,6 @@
     <string name="use_old_mobiletype_summary">Use p mobiletype icons for signal</string>
 
     <!-- Battery -->
-    <string name="battery_category_title">Battery</string>
     <string name="status_bar_battery_style_title">Icon style</string>
     <string name="status_bar_battery_style_icon_portrait">Portrait</string>
     <string name="status_bar_battery_style_circle">Circle</string>
