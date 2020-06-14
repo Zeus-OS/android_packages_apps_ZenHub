@@ -1249,4 +1249,7 @@
     <string name="fod_icon_picker_summary">Choose your favorite fingerprint icon</string>
     <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
 
+    <!-- Statusbar dual row -->
+    <string name="statusbar_dual_row_title">Dual Row</string>
+    <string name="statusbar_dual_row_summary">Enable dual row statusbar for notifications</string>
 </resources>

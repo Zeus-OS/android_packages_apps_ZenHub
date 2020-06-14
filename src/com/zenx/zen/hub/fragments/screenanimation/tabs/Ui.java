@@ -19,6 +19,10 @@ package com.zenx.zen.hub.fragments.screenanimation.tabs;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.UserHandle;
+import androidx.preference.*;
+import android.provider.Settings;
+import com.android.internal.util.zenx.Utils;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -29,11 +33,16 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.zenx.support.preferences.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ui extends DashboardFragment {
+public class Ui extends DashboardFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplaySettings";
+    private static final String STATUSBAR_DUAL_ROW = "statusbar_dual_row";
+
+    private SystemSettingSwitchPreference mStatusbarDualRow;
 
     @Override
     public int getMetricsCategory() {
@@ -53,6 +62,11 @@ public class Ui extends DashboardFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mStatusbarDualRow = (SystemSettingSwitchPreference) findPreference(STATUSBAR_DUAL_ROW);
+        mStatusbarDualRow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_DUAL_ROW, 0) == 1));
+        mStatusbarDualRow.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -67,5 +81,18 @@ public class Ui extends DashboardFragment {
         controllers.add(new ThemePreferenceController(context));
         return controllers;
     }
+
+        @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mStatusbarDualRow) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_DUAL_ROW, value ? 1 : 0);
+            Utils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
+        return false;
+    }
+
 
 }

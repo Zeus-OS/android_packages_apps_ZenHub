@@ -43,6 +43,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="statusbar_category"
+        android:title="@string/statusbar_quicksettings_title">
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_dual_row"
+            android:title="@string/statusbar_dual_row_title"
+            android:summary="@string/statusbar_dual_row_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="settings_category"
         android:title="@string/dashboard_category">
 
@@ -50,7 +62,7 @@
             android:key="enable_conditions" 
             android:title="@string/dashboard_conditions_title" 
             android:summaryOn="@string/summary_dashboard_conditions_enabled" 
-            android:summaryOff="@string/summary_dashboard_conditions_disabled" 
+            android:summaryOff="@string/summary_dashboard_conditions_disabled"
             android:defaultValue="true" /> 
         
         <com.zenx.support.preferences.SystemSettingSwitchPreference
@@ -58,7 +70,7 @@
             android:title="@string/dashboard_suggestions_title" 
             android:summaryOn="@string/summary_dashboard_suggestions_enabled" 
             android:summaryOff="@string/summary_dashboard_suggestions_disabled"
-            android:defaultValue="true" /> 
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
