@@ -26,12 +26,14 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 import com.zenx.support.colorpicker.ColorPickerPreference;
+import com.android.internal.util.zenx.ZenxUtils;
 
 import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.util.TypedValue;
 
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
@@ -42,6 +44,8 @@ import androidx.preference.SwitchPreference;
 
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
+import com.android.settings.R;
 
 @SearchIndexable
 public class PulseSettings extends SettingsPreferenceFragment implements
@@ -59,6 +63,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     private static final int COLOR_TYPE_ACCENT = 0;
     private static final int COLOR_TYPE_USER = 1;
     private static final int COLOR_TYPE_LAVALAMP = 2;
+    private static final int COLOR_TYPE_AUTO = 3;
 
     private Preference mRenderMode;
     private ListPreference mColorModePref;
@@ -79,7 +84,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         mColorModePref.setOnPreferenceChangeListener(this);
         int colorMode = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.PULSE_COLOR_TYPE, COLOR_TYPE_ACCENT, UserHandle.USER_CURRENT);
-        mColorPickerPref.setDefaultValue(getContext().getResources().getColor(R.color.qs_header_accent_color));
+        mColorPickerPref.setDefaultValue(getThemeAccentColor(getContext()));
         updateColorPrefs(colorMode);
 
         mRenderMode = findPreference(PULSE_RENDER_MODE_KEY);
@@ -101,6 +106,12 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         return false;
     }
 
+    public static int getThemeAccentColor(final Context context) {
+        final TypedValue value = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorAccent, value, true);
+        return value.data;
+    }
+
     private void updateColorPrefs(int val) {
         switch (val) {
             case COLOR_TYPE_ACCENT:
@@ -114,6 +125,10 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             case COLOR_TYPE_LAVALAMP:
                 mColorPickerPref.setEnabled(false);
                 mLavaSpeedPref.setEnabled(true);
+                break;
+            case COLOR_TYPE_AUTO:
+                mColorPickerPref.setEnabled(false);
+                mLavaSpeedPref.setEnabled(false);
                 break;
         }
     }
@@ -129,7 +144,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.DIRTYTWEAKS;
+        return MetricsProto.MetricsEvent.ZENX_SETTINGS;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER = new BaseSearchIndexProvider() {

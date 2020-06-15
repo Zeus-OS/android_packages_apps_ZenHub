@@ -19,13 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/pulse_settings" >
 
-    <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="navbar_pulse_enabled"
         android:title="@string/show_pulse_title"
         android:summary="@string/show_pulse_summary"
         android:defaultValue="false" />
 
-    <com.dirtyunicorns.support.preferences.SystemSettingListPreference
+    <com.zenx.support.preferences.SystemSettingListPreference
         android:key="navbar_pulse_render_style"
         android:title="@string/pulse_render_mode_title"
         android:entries="@array/pulse_render_mode_entries"
@@ -33,7 +33,7 @@
         android:defaultValue="0"
         android:dependency="navbar_pulse_enabled" />
 
-    <com.dirtyunicorns.support.preferences.SystemSettingSwitchPreference
+    <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="pulse_smoothing_enabled"
         android:title="@string/smoothing_enabled_title"
         android:summary="@string/smoothing_enabled_summary"
@@ -45,20 +45,18 @@
         android:title="@string/pulse_color"
         android:dependency="navbar_pulse_enabled">
 
-        <com.dirtyunicorns.support.preferences.SystemSettingListPreference
+        <com.zenx.support.preferences.SystemSettingListPreference
             android:key="navbar_pulse_color_type"
             android:title="@string/pulse_color_mode"
             android:entries="@array/pulse_color_mode_entries"
             android:entryValues="@array/pulse_color_mode_values"
             android:defaultValue="1"/>
 
-        <com.dirtyunicorns.support.colorpicker.ColorPickerSystemPreference
+        <com.zenx.support.colorpicker.ColorPickerPreference
             android:key="navbar_pulse_color_user"
-            android:title="@string/pulse_color_chooser"
-            settings:showReset="false"
-            settings:showPreview="true"/>
+            android:title="@string/pulse_color_chooser"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="navbar_pulse_lavalamp_speed"
             android:title="@string/lavamp_speed_title"
             android:max="30000"
@@ -73,7 +71,7 @@
         android:title="@string/pulse_legacy_mode_advanced_category"
         android:dependency="navbar_pulse_enabled">
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_custom_dimen"
             android:title="@string/pulse_custom_dimen"
             android:max="30"
@@ -81,7 +79,7 @@
             settings:min="1"
             settings:units="dp"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_custom_div"
             android:title="@string/pulse_custom_div"
             android:max="44"
@@ -90,7 +88,7 @@
             settings:interval="2"
             settings:units="dp"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_filled_block_size"
             android:title="@string/pulse_filled_block_size"
             android:max="8"
@@ -98,7 +96,7 @@
             settings:min="4"
             settings:units="dp"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_empty_block_size"
             android:title="@string/pulse_empty_block_size"
             android:max="4"
@@ -106,7 +104,7 @@
             settings:min="0"
             settings:units="dp"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_custom_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="6"
@@ -119,14 +117,14 @@
         android:title="@string/pulse_solid_dimen_category"
         android:dependency="navbar_pulse_enabled">
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_solid_units_opacity"
             android:title="@string/pulse_solid_units_opacity"
             android:max="255"
             android:defaultValue="200"
             settings:min="0"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_solid_units_count"
             android:title="@string/pulse_solid_units_count"
             android:max="128"
@@ -134,7 +132,7 @@
             settings:interval="16"
             settings:min="32"/>
 
-        <com.dirtyunicorns.support.preferences.SystemSettingSeekBarPreference
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
             android:max="7"
