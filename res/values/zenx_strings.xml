@@ -1570,7 +1570,8 @@
     <string name="synthos_volume_panel_theme_summary">Volume Theme - Reboot to apply</string>
     <string name="synthos_volume_panel_theme_default">MIUI (Default) (ExtendedUI)</string>
     <string name="synthos_volume_panel_theme_aosp">AOSP</string>
-    <string name="synthos_volume_panel_theme_aosp_rounded">AOSP (Rounded)</string>
+    <string name="synthos_volume_panel_theme_aosp_rounded">AOSP Rounded</string>
+    <string name="synthos_volume_panel_theme_aospa">Paranoid Android</string>
     <string name="volume_title_icons">Items</string>
 
     <string name="synthos_music_volume_panel_text_title">Music Text</string>
