@@ -18,8 +18,8 @@
     <!-- App Title -->
     <string name="config_center_title">Настройки ZenX OS</string>
     <!-- Preferences -->
-    <string name="about_title">О Havos OS</string>
-    <string name="about_summary">Узнайте больше о Havos-OS</string>
+    <string name="about_title">О ZenX OS</string>
+    <string name="about_summary">Узнайте больше о ZenX OS</string>
     <string name="animations_title">Анимации</string>
     <string name="animations_summary">Системные анимации, анимации плиток быстрых настроек</string>
     <string name="buttons_title">Кнопки</string>
