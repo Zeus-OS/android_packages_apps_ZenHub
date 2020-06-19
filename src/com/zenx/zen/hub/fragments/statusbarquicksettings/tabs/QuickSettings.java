@@ -52,7 +52,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String QS_BACKGROUND_BLUR = "qs_background_blur";
-    private static final String QS_ALWAYS_SHOW_SETINGS = "qs_always_show_settings";
+    private static final String QS_ALWAYS_SHOW_SETTINGS = "qs_always_show_settings";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsClockSize;
@@ -135,9 +135,9 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsBlur.setChecked(isBlurEnabled);
         mQsBlur.setOnPreferenceChangeListener(this);
 
-        mShowAlwaysSettings = (SystemSettingSwitchPreference) findPreference(QS_ALWAYS_SHOW_SETINGS);
+        mShowAlwaysSettings = (SystemSettingSwitchPreference) findPreference(QS_ALWAYS_SHOW_SETTINGS);
         mShowAlwaysSettings.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.QS_ALWAYS_SHOW_SETINGS, 0) == 1));
+                Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1));
         mShowAlwaysSettings.setOnPreferenceChangeListener(this);
     }
 
@@ -207,7 +207,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         } else if (preference == mShowAlwaysSettings) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.QS_ALWAYS_SHOW_SETINGS, value ? 1 : 0);
+                    Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
             Utils.showSystemUiRestartDialog(getContext());
             return true;
         }

@@ -241,7 +241,7 @@
             android:entries="@array/qs_datausage_entries"
             android:entryValues="@array/qs_datausage_values"
             android:defaultValue="0" />
-            
+
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_always_show_settings"
             android:title="@string/qs_always_show_settings_title"
