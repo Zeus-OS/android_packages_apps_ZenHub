@@ -981,8 +981,10 @@
     <string name="flashlight_on_call_wait_title">Blink for call waiting</string>
     <string name="flashlight_on_call_wait_summary">Pulse flash when there\'s a call waiting</string>
 
-    <string name="qs_datausage_title">Show data usage in qs header</string>
-    <string name="qs_datausage_subtitle">Shows data usage in the QS  header of sim used for data</string>
+    <string name="qs_datausage_title">Data Usage in QS Footer</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
 
         <!-- Smart replies -->
     <string name="hide_smart_replies_title">Hide smart replies</string>
