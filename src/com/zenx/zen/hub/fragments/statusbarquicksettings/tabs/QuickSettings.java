@@ -36,6 +36,7 @@ import com.zenx.support.preferences.SystemSettingSeekBarPreference;
 import com.zenx.support.colorpicker.ColorPickerPreference;
 import com.zenx.support.preferences.SystemSettingMasterSwitchPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
+import com.zenx.support.preferences.SystemSettingListPreference;
 
 public class QuickSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -53,6 +54,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String QS_BACKGROUND_BLUR = "qs_background_blur";
     private static final String QS_ALWAYS_SHOW_SETTINGS = "qs_always_show_settings";
+    private static final String QS_BATTERY_MODE = "qs_battery_mode";
+    private static final String QS_SYS_BATTERY_MODE = "qs_sys_battery_mode";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsClockSize;
@@ -66,6 +69,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private SystemSettingMasterSwitchPreference mQsBlur;
     private SystemSettingSwitchPreference mShowAlwaysSettings;
+    private SystemSettingListPreference mQsBatteryMode;
+    private SystemSettingListPreference mQsSysBatteryMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -139,6 +144,20 @@ public class QuickSettings extends SettingsPreferenceFragment
         mShowAlwaysSettings.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QS_ALWAYS_SHOW_SETTINGS, 0) == 1));
         mShowAlwaysSettings.setOnPreferenceChangeListener(this);
+
+        mQsBatteryMode = (SystemSettingListPreference) findPreference(QS_BATTERY_MODE);
+        int qsBatteryMode = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_BATTERY_MODE, 0, UserHandle.USER_CURRENT);
+        mQsBatteryMode.setValue(String.valueOf(qsBatteryMode));
+        mQsBatteryMode.setSummary(mQsBatteryMode.getEntry());
+        mQsBatteryMode.setOnPreferenceChangeListener(this);
+
+        mQsSysBatteryMode = (SystemSettingListPreference) findPreference(QS_SYS_BATTERY_MODE);
+        int qsSysBatteryMode = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_SYS_BATTERY_MODE, 0, UserHandle.USER_CURRENT);
+        mQsSysBatteryMode.setValue(String.valueOf(qsSysBatteryMode));
+        mQsSysBatteryMode.setSummary(mQsSysBatteryMode.getEntry());
+        mQsSysBatteryMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -209,6 +228,20 @@ public class QuickSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.QS_ALWAYS_SHOW_SETTINGS, value ? 1 : 0);
             Utils.showSystemUiRestartDialog(getContext());
+            return true;
+        } else if (preference == mQsBatteryMode) {
+            int qsBatteryMode = Integer.parseInt((String) newValue);
+            int qsBatteryModeIndex = mQsBatteryMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_BATTERY_MODE, qsBatteryMode);
+            mQsBatteryMode.setSummary(mQsBatteryMode.getEntries()[qsBatteryModeIndex]);
+            return true;
+        } else if (preference == mQsSysBatteryMode) {
+            int qsSysBatteryMode = Integer.parseInt((String) newValue);
+            int qsSysBatteryModeIndex = mQsSysBatteryMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_SYS_BATTERY_MODE, qsSysBatteryMode);
+            mQsSysBatteryMode.setSummary(mQsSysBatteryMode.getEntries()[qsSysBatteryModeIndex]);
             return true;
         }
         return false;
