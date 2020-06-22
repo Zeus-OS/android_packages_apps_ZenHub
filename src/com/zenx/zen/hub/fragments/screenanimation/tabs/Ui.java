@@ -33,16 +33,16 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.zenx.support.preferences.SystemSettingSwitchPreference;
+import com.zenx.support.preferences.SystemSettingListPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ui extends DashboardFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplaySettings";
-    private static final String STATUSBAR_DUAL_ROW = "statusbar_dual_row";
+    private static final String DUAL_STATUSBAR_ROW_MODE = "dual_statusbar_row_mode";
 
-    private SystemSettingSwitchPreference mStatusbarDualRow;
+    private SystemSettingListPreference mStatusbarDualRowMode;
 
     @Override
     public int getMetricsCategory() {
@@ -63,10 +63,12 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        mStatusbarDualRow = (SystemSettingSwitchPreference) findPreference(STATUSBAR_DUAL_ROW);
-        mStatusbarDualRow.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUSBAR_DUAL_ROW, 0) == 1));
-        mStatusbarDualRow.setOnPreferenceChangeListener(this);
+        mStatusbarDualRowMode = (SystemSettingListPreference) findPreference(DUAL_STATUSBAR_ROW_MODE);
+        int statusbarDualRowMode = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.DUAL_STATUSBAR_ROW_MODE, 0, UserHandle.USER_CURRENT);
+        mStatusbarDualRowMode.setValue(String.valueOf(statusbarDualRowMode));
+        mStatusbarDualRowMode.setSummary(mStatusbarDualRowMode.getEntry());
+        mStatusbarDualRowMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -84,10 +86,12 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
 
         @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mStatusbarDualRow) {
-            boolean value = (Boolean) newValue;
+        if (preference == mStatusbarDualRowMode) {
+            int statusbarDualRowMode = Integer.parseInt((String) newValue);
+            int statusbarDualRowModeIndex = mStatusbarDualRowMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_DUAL_ROW, value ? 1 : 0);
+                    Settings.System.QS_BATTERY_MODE, statusbarDualRowMode);
+            mStatusbarDualRowMode.setSummary(mStatusbarDualRowMode.getEntries()[statusbarDualRowModeIndex]);
             Utils.showSystemUiRestartDialog(getContext());
             return true;
         }

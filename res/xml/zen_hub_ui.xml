@@ -46,11 +46,14 @@
         android:key="statusbar_category"
         android:title="@string/statusbar_quicksettings_title">
 
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="statusbar_dual_row"
+
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="dual_statusbar_row_mode"
             android:title="@string/statusbar_dual_row_title"
-            android:summary="@string/statusbar_dual_row_summary"
-            android:defaultValue="false" />
+            android:entries="@array/statusbar_dual_row_entries"
+            android:entryValues="@array/statusbar_dual_row_values"
+            android:defaultValue="0"
+            android:summary="%s" />
 
     </PreferenceCategory>
 
