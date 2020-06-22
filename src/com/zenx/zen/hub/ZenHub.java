@@ -78,6 +78,8 @@ public class ZenHub extends Fragment implements View.OnClickListener {
 
         getActivity().setTitle("ZenHub");
 
+        lockCurrentOrientation(getActivity());
+
         mDevicePartsIntent = new Intent().setComponent(new ComponentName(
             getContext().getResources().getString(com.android.internal.R.string.config_device_parts_package_name), getContext().getResources().getString(com.android.internal.R.string.config_device_parts_package_activity)));
 
