@@ -32,6 +32,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.internal.logging.nano.MetricsProto;
 
 import com.zenx.support.preferences.SystemSettingListPreference;
 
@@ -41,12 +42,14 @@ import java.util.List;
 public class Ui extends DashboardFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplaySettings";
     private static final String DUAL_STATUSBAR_ROW_MODE = "dual_statusbar_row_mode";
+    private static final String DUAL_ROW_DATAUSAGE = "dual_row_datausage";
 
     private SystemSettingListPreference mStatusbarDualRowMode;
+    private SystemSettingListPreference mDualRowDataUsageMode;
 
     @Override
     public int getMetricsCategory() {
-        return SettingsEnums.DISPLAY;
+        return MetricsProto.MetricsEvent.ZENX_SETTINGS;
     }
 
     @Override
@@ -69,6 +72,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         mStatusbarDualRowMode.setValue(String.valueOf(statusbarDualRowMode));
         mStatusbarDualRowMode.setSummary(mStatusbarDualRowMode.getEntry());
         mStatusbarDualRowMode.setOnPreferenceChangeListener(this);
+        handleDataUsePreferences();
     }
 
     @Override
@@ -84,7 +88,41 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         return controllers;
     }
 
-        @Override
+    @Override
+    public void onResume() {
+        super.onResume();
+        handleDataUsePreferences();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        handleDataUsePreferences();
+    }
+
+    private void handleDataUsePreferences() {
+
+        int dualRowMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DUAL_STATUSBAR_ROW_MODE, 0);
+
+        if(dualRowMode == 3) {
+            mDualRowDataUsageMode = (SystemSettingListPreference) findPreference(DUAL_ROW_DATAUSAGE);
+            int dualRowDataUsageMode = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                    Settings.System.DUAL_ROW_DATAUSAGE, 0, UserHandle.USER_CURRENT);
+            mDualRowDataUsageMode.setValue(String.valueOf(dualRowDataUsageMode));
+            mDualRowDataUsageMode.setSummary(mDualRowDataUsageMode.getEntry());
+            mDualRowDataUsageMode.setOnPreferenceChangeListener(this);
+            mDualRowDataUsageMode.setVisible(true);
+        } else {
+            mDualRowDataUsageMode = (SystemSettingListPreference) findPreference(DUAL_ROW_DATAUSAGE);
+            if(mDualRowDataUsageMode != null) {
+                mDualRowDataUsageMode.setVisible(false);
+            }
+        }
+
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mStatusbarDualRowMode) {
             int statusbarDualRowMode = Integer.parseInt((String) newValue);
@@ -93,6 +131,14 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
                     Settings.System.QS_BATTERY_MODE, statusbarDualRowMode);
             mStatusbarDualRowMode.setSummary(mStatusbarDualRowMode.getEntries()[statusbarDualRowModeIndex]);
             Utils.showSystemUiRestartDialog(getContext());
+            handleDataUsePreferences();
+            return true;
+        } else if (preference == mDualRowDataUsageMode) {
+            int dualRowDataUsageMode = Integer.parseInt((String) newValue);
+            int dualRowDataUsageModeIndex = mDualRowDataUsageMode.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_ROW_DATAUSAGE, dualRowDataUsageMode);
+            mDualRowDataUsageMode.setSummary(mDualRowDataUsageMode.getEntries()[dualRowDataUsageModeIndex]);
             return true;
         }
         return false;

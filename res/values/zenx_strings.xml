@@ -1257,4 +1257,8 @@
     <string name="statusbar_dual_row_notification">Notification bar</string>
     <string name="statusbar_dual_row_network_speed">Notification + System bar (Networktraffic)</string>
     <string name="statusbar_dual_row_used_data">Notification + System bar (Used Data)</string>
+
+    <string name="dual_row_datausage_title">Dual row used data</string>
+    <string name="dual_row_datausage_monthly">Monthly usage</string>
+    <string name="dual_row_datausage_daily">Daily usage</string>
 </resources>

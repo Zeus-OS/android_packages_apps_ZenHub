@@ -55,6 +55,13 @@
             android:defaultValue="0"
             android:summary="%s" />
 
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="dual_row_datausage"
+            android:title="@string/dual_row_datausage_title"
+            android:entries="@array/dual_row_datausage_entries"
+            android:entryValues="@array/dual_row_datausage_values"
+            android:defaultValue="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

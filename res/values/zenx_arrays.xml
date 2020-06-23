@@ -1095,4 +1095,15 @@
         <item>3</item>
     </string-array>
 
+    <!-- Statusbar dual row Data Usage -->
+    <string-array name="dual_row_datausage_entries" translatable="false">
+        <item>@string/dual_row_datausage_daily</item>
+        <item>@string/dual_row_datausage_monthly</item>
+    </string-array>
+    <string-array name="dual_row_datausage_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+
 </resources>
