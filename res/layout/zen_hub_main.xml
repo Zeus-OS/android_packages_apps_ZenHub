@@ -28,34 +28,37 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_quicksettings" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_quicksettings" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/statusbar_quicksettings_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -63,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/statusbar_quicksettings_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -75,34 +78,38 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_notifications" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_notifications" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -110,7 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -122,34 +129,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_lockscreen" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_lockscreen" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -157,7 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -169,34 +178,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_navigation" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_navigation" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/buttons_powermenu_volumebutton_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -204,7 +215,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/buttons_powermenu_volumebutton_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -216,34 +227,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_screen" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_screen" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/screen_animation_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -251,7 +264,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/screen_animation_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -263,34 +276,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+               <ImageView
+                  android:layout_gravity="center"
+                  android:layout_marginBottom="18dp"
+                  android:layout_width="28dp"
+                  android:layout_height="28dp"
+                  android:scaleType="fitXY"
+                  android:tint="?android:attr/colorAccent"
+                  android:src="@drawable/ic_settings_misc" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_misc" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/misc_battery_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -298,7 +313,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/misc_battery_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -310,33 +325,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_device_parts" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_device_parts" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -344,7 +362,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -356,33 +374,36 @@
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginBottom="48dp"
-            app:rippleColor="?android:attr/colorAccent"
-            app:cardCornerRadius="8dp"
+            style="@style/ContextualCardStyle"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:clickable="true"
             app:cardElevation="8dp">
+
+             <ImageView
+                android:layout_gravity="center"
+                android:layout_marginBottom="18dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:scaleType="fitXY"
+                android:tint="?android:attr/colorAccent"
+                android:src="@drawable/ic_settings_about" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
                 android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:src="@drawable/ic_settings_about" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_title"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="18sp" />
 
@@ -390,7 +411,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_summary"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
