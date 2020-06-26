@@ -1408,7 +1408,6 @@
     <string name="qs_tile_style_default">Default</string>
     <string name="qs_tile_style_square">Square</string>
     <string name="qs_tile_style_squircletrim">Squircle with trim</string>
-    <string name="qs_tile_style_teardrop">Teardrop</string>
     <string name="qs_tile_style_diamond">Diamond</string>
     <string name="qs_tile_style_star">Star</string>
     <string name="qs_tile_style_gear">Gear</string>

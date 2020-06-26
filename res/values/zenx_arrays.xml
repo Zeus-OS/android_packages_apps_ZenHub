@@ -1003,7 +1003,6 @@
         <item>2</item>
     </string-array>
 
-<<<<<<< HEAD:res/values/zenx_arrays.xml
         <!-- Toast Animation -->
     <string-array name="toast_animation_entries">
         <item>@string/toast_none_animation</item>
@@ -1251,7 +1250,6 @@
         <item>@string/qs_tile_style_default</item>
         <item>@string/qs_tile_style_square</item>
         <item>@string/qs_tile_style_squircletrim</item>
-        <item>@string/qs_tile_style_teardrop</item>
         <item>@string/qs_tile_style_diamond</item>
         <item>@string/qs_tile_style_star</item>
         <item>@string/qs_tile_style_gear</item>
@@ -1259,8 +1257,8 @@
         <item>@string/qs_tile_style_badgetwo</item>
         <item>@string/qs_tile_style_circletrim</item>
         <item>@string/qs_tile_style_dualtonecircletrim</item>
-        <item>@string/qs_tile_style_circleoutline</item>
         <item>@string/qs_tile_style_cookie</item>
+        <item>@string/qs_tile_style_circleoutline</item>
         <item>@string/qs_tile_style_wavey</item>
         <item>@string/qs_tile_style_ninja</item>
         <item>@string/qs_tile_style_dottedcircle</item>
