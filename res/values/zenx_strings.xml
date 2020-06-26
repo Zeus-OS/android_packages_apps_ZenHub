@@ -1417,5 +1417,6 @@
     <string name="qs_tile_style_circletrim">Circle with trim</string>
     <string name="qs_tile_style_dualtonecircletrim">Dual-toned circle</string>
     <string name="qs_tile_style_cookie">Cookie</string>
+    <string name="qs_tile_style_circleoutline">Circle Outline</string>
 
 </resources>
