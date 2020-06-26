@@ -1417,6 +1417,13 @@
     <string name="qs_tile_style_circletrim">Circle with trim</string>
     <string name="qs_tile_style_dualtonecircletrim">Dual-toned circle</string>
     <string name="qs_tile_style_cookie">Cookie</string>
-    <string name="qs_tile_style_circleoutline">Circle Outline</string>
+    <string name="qs_tile_style_circleoutline">Circle outline</string>
+    <string name="qs_tile_style_wavey">Wavey</string>
+    <string name="qs_tile_style_ninja">Ninja</string>
+    <string name="qs_tile_style_dottedcircle">Dotted circle</string>
+    <string name="qs_tile_style_attemptmountain">Attempt mountain</string>
+    <string name="qs_tile_style_inkdrop">Ink drop</string>
+    <string name="qs_tile_style_neonlike">Neon light</string>
+    <string name="qs_tile_style_triangles">Triangles</string>
 
 </resources>

@@ -1259,8 +1259,15 @@
         <item>@string/qs_tile_style_badgetwo</item>
         <item>@string/qs_tile_style_circletrim</item>
         <item>@string/qs_tile_style_dualtonecircletrim</item>
-        <item>@string/qs_tile_style_cookie</item>
         <item>@string/qs_tile_style_circleoutline</item>
+        <item>@string/qs_tile_style_cookie</item>
+        <item>@string/qs_tile_style_wavey</item>
+        <item>@string/qs_tile_style_ninja</item>
+        <item>@string/qs_tile_style_dottedcircle</item>
+        <item>@string/qs_tile_style_attemptmountain</item>
+        <item>@string/qs_tile_style_inkdrop</item>
+        <item>@string/qs_tile_style_neonlike</item>
+        <item>@string/qs_tile_style_triangles</item>
     </string-array>
 
     <string-array name="qs_tile_style_selector_values" translatable="false">
@@ -1277,5 +1284,12 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
     </string-array>
 </resources>
