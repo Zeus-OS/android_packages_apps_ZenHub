@@ -1406,8 +1406,15 @@
         <!-- QS tile styles -->
     <string name="qs_tile_style_title">QS tile style</string>
     <string name="qs_tile_style_default">Default</string>
+    <string name="qs_tile_style_square">Square</string>
+    <string name="qs_tile_style_squircletrim">Squircle with trim</string>
+    <string name="qs_tile_style_teardrop">Teardrop</string>
+    <string name="qs_tile_style_diamond">Diamond</string>
+    <string name="qs_tile_style_star">Star</string>
+    <string name="qs_tile_style_gear">Gear</string>
+    <string name="qs_tile_style_badge">Badge</string>
+    <string name="qs_tile_style_badgetwo">Badge two</string>
     <string name="qs_tile_style_circletrim">Circle with trim</string>
     <string name="qs_tile_style_dualtonecircletrim">Dual-toned circle</string>
-    <string name="qs_tile_style_squircletrim">Squircle with trim</string>
 
 </resources>

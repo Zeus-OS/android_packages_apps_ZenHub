@@ -1249,9 +1249,16 @@
         <!-- QS tile styles -->
     <string-array name="qs_tile_style_selector_entries" translatable="false">
         <item>@string/qs_tile_style_default</item>
+        <item>@string/qs_tile_style_square</item>
+        <item>@string/qs_tile_style_squircletrim</item>
+        <item>@string/qs_tile_style_teardrop</item>
+        <item>@string/qs_tile_style_diamond</item>
+        <item>@string/qs_tile_style_star</item>
+        <item>@string/qs_tile_style_gear</item>
+        <item>@string/qs_tile_style_badge</item>
+        <item>@string/qs_tile_style_badgetwo</item>
         <item>@string/qs_tile_style_circletrim</item>
         <item>@string/qs_tile_style_dualtonecircletrim</item>
-        <item>@string/qs_tile_style_squircletrim</item>
     </string-array>
 
     <string-array name="qs_tile_style_selector_values" translatable="false">
@@ -1259,5 +1266,12 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 </resources>
