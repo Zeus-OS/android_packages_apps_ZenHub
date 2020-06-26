@@ -15,6 +15,8 @@
  */
 package com.zenx.zen.hub.fragments.statusbarquicksettings.tabs;
 
+import static com.zenx.zen.hub.utils.Utils.handleOverlays;
+
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,7 +27,10 @@ import android.os.UserHandle;
 import androidx.preference.*;
 import android.provider.Settings;
 import com.android.internal.util.zenx.Utils;
+import com.android.internal.util.zenx.ThemesUtils;
 import android.content.res.Resources;
+import android.content.om.IOverlayManager;
+import android.os.ServiceManager;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
@@ -60,6 +65,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String QS_HEADER_STYLE_COLOR = "qs_header_style_color";
     private static final String QS_BACKGROUND_STYLE = "qs_background_style";
     private static final String QS_BACKGROUND_STYLE_COLOR = "qs_background_style_color";
+    private static final String PREF_TILE_STYLE = "qs_tile_style";
+    private static final String PREF_R_NOTIF_HEADER = "notification_headers";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsClockSize;
@@ -79,12 +86,19 @@ public class QuickSettings extends SettingsPreferenceFragment
     private ColorPickerPreference mQsHeaderStyleColor;
     private ListPreference mQsBackgroundStyle;
     private ColorPickerPreference mQsBackgroundStyleColor;
+    private ListPreference mQsTileStyle;
+    private SystemSettingSwitchPreference mNotifHeader;
+
+    private IOverlayManager mOverlayManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.zen_hub_quicksettings);
+
+        mOverlayManager = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
 
         mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
         int qsPanelAlpha = Settings.System.getIntForUser(getContentResolver(),
@@ -166,6 +180,41 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsSysBatteryMode.setValue(String.valueOf(qsSysBatteryMode));
         mQsSysBatteryMode.setSummary(mQsSysBatteryMode.getEntry());
         mQsSysBatteryMode.setOnPreferenceChangeListener(this);
+
+        mQsTileStyle = (ListPreference) findPreference(PREF_TILE_STYLE);
+        int qsTileStyle = Settings.System.getInt(resolver,
+                Settings.System.QS_TILE_STYLE, 0);
+        int qsTileStyleValue = getOverlayPosition(ThemesUtils.QS_TILE_THEMES);
+        if (qsTileStyleValue != 0) {
+            mQsTileStyle.setValue(String.valueOf(qsTileStyle));
+        }
+        mQsTileStyle.setSummary(mQsTileStyle.getEntry());
+        mQsTileStyle.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (preference == mQsTileStyle) {
+                    String value = (String) newValue;
+                    Settings.System.putInt(resolver, Settings.System.QS_TILE_STYLE, Integer.valueOf(value));
+                    int valueIndex = mQsTileStyle.findIndexOfValue(value);
+                    mQsTileStyle.setSummary(mQsTileStyle.getEntries()[valueIndex]);
+                    String overlayName = getOverlayName(ThemesUtils.QS_TILE_THEMES);
+                    if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                    }
+                    if (valueIndex > 0) {
+                        handleOverlays(ThemesUtils.QS_TILE_THEMES[valueIndex],
+                                true, mOverlayManager);
+                    }
+                    return true;
+                }
+                return false;
+            }
+       });
+
+        mNotifHeader = (SystemSettingSwitchPreference) findPreference(PREF_R_NOTIF_HEADER);
+        mNotifHeader.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_HEADERS, 1) == 1));
+        mNotifHeader.setOnPreferenceChangeListener(this);
 
         getQsHeaderStylePref();
         getQsBackgroundStylePref();
@@ -286,8 +335,36 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.QS_BACKGROUND_STYLE_COLOR, intHexBackground);
             return true;
+        } else if (preference == mNotifHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_HEADERS, value ? 1 : 0);
+            Utils.showSystemUiRestartDialog(getContext());
+            return true;
         }
         return false;
+    }
+
+   private String getOverlayName(String[] overlays) {
+        String overlayName = null;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (Utils.isThemeEnabled(overlay)) {
+                overlayName = overlay;
+            }
+        }
+        return overlayName;
+    }
+
+ private int getOverlayPosition(String[] overlays) {
+        int position = -1;
+        for (int i = 0; i < overlays.length; i++) {
+            String overlay = overlays[i];
+            if (Utils.isThemeEnabled(overlay)) {
+                position = i;
+            }
+        }
+        return position;
     }
 
     private void getQsHeaderStylePref() {
