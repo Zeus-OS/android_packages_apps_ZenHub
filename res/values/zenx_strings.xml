@@ -98,6 +98,57 @@
 	<string name="zenx_links">Links</string>
     <string name="website_title">Website</string>
     <string name="website_title_summary">Download Zenx-OS for your device</string>
+
+     <string name="device_maintainers_x00t_title_summary">Asus ZenFone Max Pro M1 (X00T)</string>
+     <string name="device_maintainers_x00t_title">Lokesh Kasamneni (l_o_k_e)</string>
+
+     <string name="device_maintainers_s2_title_summary">LeEco Le 2 (S2)</string>
+     <string name="device_maintainers_s2_title">Oleg Kiryazov (CakesTwix)</string>
+
+     <string name="device_maintainers_jd2019_title_summary">Lenovo Z5s (jd2019)</string>
+     <string name="device_maintainers_jd2019_title">Victor Koshelev (merser2005)</string>
+
+     <string name="device_maintainers_h930_title_summary">LG v30(H930)</string>
+     <string name="device_maintainers_h930_title">@kherio</string>
+
+     <string name="device_maintainers_oneplus3_title_summary">OnePlus 3</string>
+     <string name="device_maintainers_oneplus3_title">Deepak jr (The_real_Deepakjr)</string>
+
+     <string name="device_maintainers_rmx1921_title_summary">Realme XT (RMX1921)</string>
+     <string name="device_maintainers_rmx1921_title">Agung Pratama (skylarkAurora)</string>
+
+     <string name="device_maintainers_raphael_title_summary">Xiaomi K20/MI9T - Pro (Raphael)</string>
+     <string name="device_maintainers_raphael_title">Kunal Shah (kunalshah)</string>
+
+     <string name="device_maintainers_wayne_title_summary">Xiaomi Mi 6X (Wayne)</string>
+     <string name="device_maintainers_wayne_title">@jullian14</string>
+
+     <string name="device_maintainers_dipper_title_summary">Xiaomi Mi 8 (dipper)</string>
+     <string name="device_maintainers_dipper_title">Viktor Hermann (ZeNiXxXx)</string>
+
+     <string name="device_maintainers_platina_title_summary">Xiaomi Mi 8 Lite (Platina)</string>
+     <string name="device_maintainers_platina_title">Hanif Ardhani (hanifardhani)</string>
+
+     <string name="device_maintainers_jasmine_sprout_title_summary">Xiaomi Mi A2 (jasmine_sprout)</string>
+     <string name="device_maintainers_jasmine_sprout_title">@jullian14</string>
+
+     <string name="device_maintainers_laurel_sprout_title_summary">Xiaomi MI A3 (Laurel_sprout)</string>
+     <string name="device_maintainers_laurel_sprout_title">@Jason</string>
+
+     <string name="device_maintainers_kenzo_title_summary">Xiaomi Redmi Note 3 Pro (Kenzo)</string>
+     <string name="device_maintainers_kenzo_title">@Yuu_ak12</string>
+
+     <string name="device_maintainers_mido_title_summary">Xiaomi Redmi Note 4 (Mido)</string>
+     <string name="device_maintainers_mido_title">@G_H_0_5_7</string>
+
+     <string name="device_maintainers_lavender_title_summary">Xiaomi Redmi Note 7 (Lavender)</string>
+     <string name="device_maintainers_lavender_title">Zugeng Owen (tukangcaribug)</string>
+
+     <string name="device_maintainers_curtana_title_summary">Xiaomi Redmi Note 9S/Pro (Curtana)</string>
+     <string name="device_maintainers_curtana_title">@ahmed_tohamy</string>
+
+     <string name="device_maintainers_whyred_title_summary">Xiaomi Redmi Note 5 Pro (Whyred)</string>
+     <string name="device_maintainers_whyred_title">Agung Pratama</string>
     
      <!-- Zenx-Categories -->
     <string name="about_summary">Learn more about ZenX-OS</string>

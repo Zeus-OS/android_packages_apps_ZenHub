@@ -44,11 +44,107 @@
         android:title="@string/maintainers_category_title"> 
 
         <Preference
-            android:key="maintainers"
-            android:fragment="com.zenx.zen.hub.fragments.DeviceMaintainers"
-            android:summary="@string/device_maintainers_title_summary"
-            android:title="@string/device_maintainers_title"
+            android:key="maintainers_x00t"
+            android:summary="@string/device_maintainers_x00t_title_summary"
+            android:title="@string/device_maintainers_x00t_title"
             android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_s2"
+            android:summary="@string/device_maintainers_s2_title_summary"
+            android:title="@string/device_maintainers_s2_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_jd2019"
+            android:summary="@string/device_maintainers_jd2019_title_summary"
+            android:title="@string/device_maintainers_jd2019_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_h930"
+            android:summary="@string/device_maintainers_h930_title_summary"
+            android:title="@string/device_maintainers_h930_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_oneplus3"
+            android:summary="@string/device_maintainers_oneplus3_title_summary"
+            android:title="@string/device_maintainers_oneplus3_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_rmx1921"
+            android:summary="@string/device_maintainers_rmx1921_title_summary"
+            android:title="@string/device_maintainers_rmx1921_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_raphael"
+            android:summary="@string/device_maintainers_raphael_title_summary"
+            android:title="@string/device_maintainers_raphael_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_jasmine_sprout"
+            android:summary="@string/device_maintainers_jasmine_sprout_title_summary"
+            android:title="@string/device_maintainers_jasmine_sprout_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_dipper"
+            android:summary="@string/device_maintainers_dipper_title_summary"
+            android:title="@string/device_maintainers_dipper_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_platina"
+            android:summary="@string/device_maintainers_platina_title_summary"
+            android:title="@string/device_maintainers_platina_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_wayne"
+            android:summary="@string/device_maintainers_wayne_title_summary"
+            android:title="@string/device_maintainers_wayne_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_laurel_sprout"
+            android:summary="@string/device_maintainers_laurel_sprout_title_summary"
+            android:title="@string/device_maintainers_laurel_sprout_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_kenzo"
+            android:summary="@string/device_maintainers_kenzo_title_summary"
+            android:title="@string/device_maintainers_kenzo_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_mido"
+            android:summary="@string/device_maintainers_mido_title_summary"
+            android:title="@string/device_maintainers_mido_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_lavender"
+            android:summary="@string/device_maintainers_lavender_title_summary"
+            android:title="@string/device_maintainers_lavender_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_curtana"
+            android:summary="@string/device_maintainers_curtana_title_summary"
+            android:title="@string/device_maintainers_curtana_title"
+            android:icon="@drawable/zenx_maintainer" />
+
+        <Preference
+            android:key="maintainers_whyred"
+            android:summary="@string/device_maintainers_whyred_title_summary"
+            android:title="@string/device_maintainers_whyred_title"
+            android:icon="@drawable/zenx_maintainer" />
+
     </PreferenceCategory>
 
 
