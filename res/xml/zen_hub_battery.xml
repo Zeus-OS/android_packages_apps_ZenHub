@@ -18,9 +18,9 @@
     android:title="@string/misc_battery_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
+        <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="sensor_block"
+            android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.SensorBlockSettings"
             android:title="@string/sensor_block_title"
             android:summary="@string/sensor_block_summary"
             android:defaultValue="false" />
