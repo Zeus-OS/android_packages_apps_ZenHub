@@ -1312,4 +1312,8 @@
     <string name="dual_row_datausage_title">Dual row used data</string>
     <string name="dual_row_datausage_monthly">Monthly usage</string>
     <string name="dual_row_datausage_daily">Daily usage</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Launch music app on headset connection</string>
+    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
 </resources>

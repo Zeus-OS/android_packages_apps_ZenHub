@@ -54,6 +54,13 @@
         android:key="media"
         android:title="@string/media_title">
 
+        <!-- Launch music player when headset is connected -->
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="headset_connect_player"
+            android:title="@string/headset_connect_player_title"
+            android:summary="@string/headset_connect_player_summary"
+            android:defaultValue="false" />
+
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="adaptive_playback_enabled"
             android:title="@string/adaptive_playback_title"
