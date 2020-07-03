@@ -88,18 +88,25 @@
             android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.QsBlur"
             android:defaultValue="false" />
 
-         <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="qs_accent_header_switch"
-            android:title="@string/qs_accent_header_switch_title"
-            android:summary="@string/qs_accent_header_switch_summary"
-            android:defaultValue="true" />
-
         <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="status_bar_custom_header"
             android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.QsHeader"
             android:title="@string/status_bar_custom_header_title"
             android:summary="@string/status_bar_custom_header_summary"
             android:defaultValue="false" />
+
+        <ListPreference
+            android:key="qs_header_style"
+            android:title="@string/qs_header_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_header_style_entries"
+            android:entryValues="@array/qs_header_style_values" />
+
+        <com.zenx.support.colorpicker.ColorPickerPreference
+            android:key="qs_header_style_color"
+            android:title="@string/qs_header_style_color_title"
+            android:summary="@string/qs_header_style_color_summary"
+            android:defaultValue="0x00000000" />
 
    </PreferenceCategory>
 

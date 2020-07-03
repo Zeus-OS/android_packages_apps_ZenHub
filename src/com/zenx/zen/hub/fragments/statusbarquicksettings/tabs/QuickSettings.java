@@ -56,6 +56,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String QS_ALWAYS_SHOW_SETTINGS = "qs_always_show_settings";
     private static final String QS_BATTERY_MODE = "qs_battery_mode";
     private static final String QS_SYS_BATTERY_MODE = "qs_sys_battery_mode";
+    private static final String QS_HEADER_STYLE = "qs_header_style";
+    private static final String QS_HEADER_STYLE_COLOR = "qs_header_style_color";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsClockSize;
@@ -71,6 +73,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingSwitchPreference mShowAlwaysSettings;
     private SystemSettingListPreference mQsBatteryMode;
     private SystemSettingListPreference mQsSysBatteryMode;
+    private ListPreference mQsHeaderStyle;
+    private ColorPickerPreference mQsHeaderStyleColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -158,6 +162,8 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsSysBatteryMode.setValue(String.valueOf(qsSysBatteryMode));
         mQsSysBatteryMode.setSummary(mQsSysBatteryMode.getEntry());
         mQsSysBatteryMode.setOnPreferenceChangeListener(this);
+
+        getQsHeaderStylePref();
     }
 
     @Override
@@ -243,9 +249,70 @@ public class QuickSettings extends SettingsPreferenceFragment
                     Settings.System.QS_SYS_BATTERY_MODE, qsSysBatteryMode);
             mQsSysBatteryMode.setSummary(mQsSysBatteryMode.getEntries()[qsSysBatteryModeIndex]);
             return true;
+        } else if (preference == mQsHeaderStyle) {
+            String value = (String) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+			    Settings.System.QS_HEADER_STYLE, Integer.valueOf(value));
+            int newIndex = mQsHeaderStyle.findIndexOfValue(value);
+            mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntries()[newIndex]);
+            updateQsHeaderStyleColor();
+            return true;
+        } else if (preference == mQsHeaderStyleColor) {
+                String hex = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hex);
+                int intHex = ColorPickerPreference.convertToColorInt(hex);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.QS_HEADER_STYLE_COLOR, intHex);
+            return true;
         }
         return false;
     }
+
+    private void getQsHeaderStylePref() {
+        mQsHeaderStyle = (ListPreference) findPreference(QS_HEADER_STYLE);
+        int qsHeaderStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_HEADER_STYLE, 0);
+        int valueIndex = mQsHeaderStyle.findIndexOfValue(String.valueOf(qsHeaderStyle));
+        mQsHeaderStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsHeaderStyle.setSummary(mQsHeaderStyle.getEntry());
+        mQsHeaderStyle.setOnPreferenceChangeListener(this);
+        updateQsHeaderStyleColor();
+    }
+
+    private void updateQsHeaderStyleColor() {
+        int qsHeaderStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_HEADER_STYLE, 0);
+
+        if(qsHeaderStyle == 3) {
+                mQsHeaderStyleColor = (ColorPickerPreference) findPreference(QS_HEADER_STYLE_COLOR);
+                int qsHeaderStyleColor = Settings.System.getInt(getContentResolver(),
+                        Settings.System.QS_HEADER_STYLE_COLOR, 0x0000000);
+                mQsHeaderStyleColor.setNewPreviewColor(qsHeaderStyleColor);
+                String qsHeaderStyleColorHex = String.format("#%08x", (0x0000000 & qsHeaderStyleColor));
+                mQsHeaderStyleColor.setSummary(qsHeaderStyleColorHex);
+                mQsHeaderStyleColor.setOnPreferenceChangeListener(this);
+                mQsHeaderStyleColor.setVisible(true);
+        } else {
+                mQsHeaderStyleColor = (ColorPickerPreference) findPreference(QS_HEADER_STYLE_COLOR);
+                if(mQsHeaderStyleColor != null) {
+                        mQsHeaderStyleColor.setVisible(false);
+                }
+        }
+    }
+
+   @Override
+    public void onResume() {
+        super.onResume();
+        updateQsHeaderStyleColor();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        updateQsHeaderStyleColor();
+    }
+
 
     private void updatePulldownSummary(int value) {
         Resources res = getResources();
