@@ -108,6 +108,19 @@
             android:summary="@string/qs_header_style_color_summary"
             android:defaultValue="0x00000000" />
 
+        <ListPreference
+            android:key="qs_background_style"
+            android:title="@string/qs_background_style_title"
+            android:persistent="false"
+            android:entries="@array/qs_background_style_entries"
+            android:entryValues="@array/qs_background_style_values" />
+
+        <com.zenx.support.colorpicker.ColorPickerPreference
+            android:key="qs_background_style_color"
+            android:title="@string/qs_background_style_color_title"
+            android:summary="@string/qs_background_style_color_summary"
+            android:defaultValue="0x00000000" />
+
    </PreferenceCategory>
 
     <PreferenceCategory

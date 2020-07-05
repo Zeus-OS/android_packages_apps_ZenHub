@@ -58,6 +58,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String QS_SYS_BATTERY_MODE = "qs_sys_battery_mode";
     private static final String QS_HEADER_STYLE = "qs_header_style";
     private static final String QS_HEADER_STYLE_COLOR = "qs_header_style_color";
+    private static final String QS_BACKGROUND_STYLE = "qs_background_style";
+    private static final String QS_BACKGROUND_STYLE_COLOR = "qs_background_style_color";
 
     private CustomSeekBarPreference mQsPanelAlpha;
     private CustomSeekBarPreference mQsClockSize;
@@ -75,6 +77,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingListPreference mQsSysBatteryMode;
     private ListPreference mQsHeaderStyle;
     private ColorPickerPreference mQsHeaderStyleColor;
+    private ListPreference mQsBackgroundStyle;
+    private ColorPickerPreference mQsBackgroundStyleColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -164,6 +168,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsSysBatteryMode.setOnPreferenceChangeListener(this);
 
         getQsHeaderStylePref();
+        getQsBackgroundStylePref();
     }
 
     @Override
@@ -265,6 +270,22 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.QS_HEADER_STYLE_COLOR, intHex);
             return true;
+        } else if (preference == mQsBackgroundStyle) {
+            String valueBackground = (String) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+			    Settings.System.QS_BACKGROUND_STYLE, Integer.valueOf(valueBackground));
+            int newIndex = mQsBackgroundStyle.findIndexOfValue(valueBackground);
+            mQsBackgroundStyle.setSummary(mQsBackgroundStyle.getEntries()[newIndex]);
+            updateQsBackgroundStyleColor();
+            return true;
+        } else if (preference == mQsBackgroundStyleColor) {
+                String hexBackground = ColorPickerPreference.convertToARGB(
+                        Integer.valueOf(String.valueOf(newValue)));
+                preference.setSummary(hexBackground);
+                int intHexBackground = ColorPickerPreference.convertToColorInt(hexBackground);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.QS_BACKGROUND_STYLE_COLOR, intHexBackground);
+            return true;
         }
         return false;
     }
@@ -301,16 +322,50 @@ public class QuickSettings extends SettingsPreferenceFragment
         }
     }
 
+    private void getQsBackgroundStylePref() {
+        mQsBackgroundStyle = (ListPreference) findPreference(QS_BACKGROUND_STYLE);
+        int qsBackgroundStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_BACKGROUND_STYLE, 0);
+        int valueIndex = mQsBackgroundStyle.findIndexOfValue(String.valueOf(qsBackgroundStyle));
+        mQsBackgroundStyle.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
+        mQsBackgroundStyle.setSummary(mQsBackgroundStyle.getEntry());
+        mQsBackgroundStyle.setOnPreferenceChangeListener(this);
+        updateQsBackgroundStyleColor();
+    }
+
+    private void updateQsBackgroundStyleColor() {
+        int qsBackgroundStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_BACKGROUND_STYLE, 0);
+
+        if(qsBackgroundStyle == 3) {
+                mQsBackgroundStyleColor = (ColorPickerPreference) findPreference(QS_BACKGROUND_STYLE_COLOR);
+                int qsBackgroundStyleColor = Settings.System.getInt(getContentResolver(),
+                        Settings.System.QS_BACKGROUND_STYLE_COLOR, 0x0000000);
+                mQsBackgroundStyleColor.setNewPreviewColor(qsBackgroundStyleColor);
+                String qsBackgroundStyleColorHex = String.format("#%08x", (0x0000000 & qsBackgroundStyleColor));
+                mQsBackgroundStyleColor.setSummary(qsBackgroundStyleColorHex);
+                mQsBackgroundStyleColor.setOnPreferenceChangeListener(this);
+                mQsBackgroundStyleColor.setVisible(true);
+        } else {
+                mQsBackgroundStyleColor = (ColorPickerPreference) findPreference(QS_BACKGROUND_STYLE_COLOR);
+                if(mQsBackgroundStyleColor != null) {
+                        mQsBackgroundStyleColor.setVisible(false);
+                }
+        }
+    }
+
    @Override
     public void onResume() {
         super.onResume();
         updateQsHeaderStyleColor();
+        updateQsBackgroundStyleColor();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         updateQsHeaderStyleColor();
+        updateQsBackgroundStyleColor();
     }
 
 

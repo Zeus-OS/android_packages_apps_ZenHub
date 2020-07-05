@@ -1344,4 +1344,13 @@
     <string name="qs_header_custom_color">Custom color</string>
     <string name="qs_header_style_color_title">Header color</string>
     <string name="qs_header_style_color_summary">Choose QS Header color</string>
+
+    <!-- QS Background styles -->
+    <string name="qs_background_style_title">QS Background style</string>
+    <string name="qs_background_default">Default </string>
+    <string name="qs_background_accent">Accent Based</string>
+    <string name="qs_background_transparent">Transparent</string>
+    <string name="qs_background_custom_color">Custom color</string>
+    <string name="qs_background_style_color_title">Background color</string>
+    <string name="qs_background_style_color_summary">Choose QS Background color</string>
 </resources>
