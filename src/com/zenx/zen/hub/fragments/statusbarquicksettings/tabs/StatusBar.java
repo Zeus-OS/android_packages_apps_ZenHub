@@ -128,12 +128,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUSBAR_BATTERY_BAR, 0) == 1));
                 mStatusbarBatteryBar.setOnPreferenceChangeListener(this);
 
-        mConfigShowHDVolteIcon = getResources().getBoolean(com.android.internal.R.bool.config_display_hd_volte);
-        int useHDIcon = (mConfigShowHDVolteIcon ? 1 : 0);
-        mShowHDVolte = (SwitchPreference) findPreference(SHOW_HD_ICON);
-        mShowHDVolte.setChecked((Settings.System.getInt(resolver,
-                Settings.System.SHOW_HD_ICON, useHDIcon) == 1));
-        mShowHDVolte.setOnPreferenceChangeListener(this);
+        // mConfigShowHDVolteIcon = getResources().getBoolean(com.android.internal.R.bool.config_display_hd_volte);
+        // int useHDIcon = (mConfigShowHDVolteIcon ? 1 : 0);
+        // mShowHDVolte = (SwitchPreference) findPreference(SHOW_HD_ICON);
+        // mShowHDVolte.setChecked((Settings.System.getInt(resolver,
+        //         Settings.System.SHOW_HD_ICON, useHDIcon) == 1));
+        // mShowHDVolte.setOnPreferenceChangeListener(this);
 
         mBatteryStyle = (ListPreference) findPreference("status_bar_battery_style");
         int batterystyle = Settings.System.getIntForUser(resolver,
@@ -180,11 +180,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
             return true;
-        } else if (preference == mShowHDVolte) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SHOW_HD_ICON, value ? 1 : 0);
-            return true;
+        // } else if (preference == mShowHDVolte) {
+        //     boolean value = (Boolean) newValue;
+        //     Settings.System.putInt(getActivity().getContentResolver(),
+        //             Settings.System.SHOW_HD_ICON, value ? 1 : 0);
+        //     return true;
         } else if (preference == mUseOldMobileType) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
