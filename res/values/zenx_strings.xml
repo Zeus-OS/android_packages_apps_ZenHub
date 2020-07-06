@@ -1362,4 +1362,11 @@
     <string name="volte_icon_volte">VoLTE Icon</string>
     <string name="volte_icon_oos">VoLTE OOS Icon</string>
     <string name="volte_icon_hd">HD Icon</string>
+
+        <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi icon</string>
+    <string name="vowifi_icon_enabled">Enabled</string>
+    <string name="vowifi_icon_disabled">Disabled</string>
+    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi instead of VoLTE</string>
+
 </resources>
