@@ -95,6 +95,12 @@
             android:summary="@string/status_bar_custom_header_summary"
             android:defaultValue="false" />
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_accent_tint"
+            android:title="@string/qs_tile_accent_tint_title"
+            android:summary="@string/qs_tile_accent_tint_summary"
+            android:defaultValue="false"/>
+
         <ListPreference
             android:key="qs_header_style"
             android:title="@string/qs_header_style_title"
