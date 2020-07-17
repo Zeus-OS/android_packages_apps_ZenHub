@@ -1211,4 +1211,19 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <!-- ZenHub Icon size -->
+    <string-array name="zenhub_icon_size_entries" translatable="false">
+        <item>@string/zenhub_icon_size_small</item>
+        <item>@string/zenhub_icon_size_medium</item>
+        <item>@string/zenhub_icon_size_default</item>
+        <item>@string/zenhub_icon_size_big</item>
+    </string-array>
+
+    <string-array name="zenhub_icon_size_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>

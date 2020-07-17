@@ -25,7 +25,7 @@
     <string name="notification_headsup_title">Notifications</string>
     <string name="notification_headsup_summary">Notification LED, Clear button, Headsup settings</string>
     <string name="misc_battery_title">Miscellaneous</string>
-    <string name="misc_battery_summary">Gaming Mode, Screenshot, Suspend Actions, Battery options</string>
+    <string name="misc_battery_summary">Gaming Mode, Screenshot, Battery options</string>
     <string name="lockscreen_ambient_title">Lockscreen</string>
     <string name="lockscreen_ambient_summary">Media cover art, Charging Info, Always on, Doze gestures</string>
     <string name="links_devs_title">Rom Information</string>
@@ -1378,5 +1378,19 @@
         <!-- QS tile tint -->
     <string name="qs_tile_accent_tint_title">Tint tiles</string>
     <string name="qs_tile_accent_tint_summary">Apply accent color tint to QS tiles</string>
+
+    <string name="zenhub_settings_category">ZenHub Settings</string>
+    <string name="zenhub_position_title">Center Cardtitle position</string>
+    <string name="zenhub_position_summary">Switch title position in zenhub between left and center</string>
+    <string name="zenhub_show_description_title">Show description</string>
+    <string name="zenhub_show_description_summary">Enable or disable Card description</string>
+    <string name="zenhub_description_center_title">Center Card description position</string>
+    <string name="zenhub_description_center_summary">Switch description position in zenhub between left and center</string>
+
+    <string name="zenhub_icon_size_title">Icon Size</string>
+    <string name="zenhub_icon_size_small">Small</string>
+    <string name="zenhub_icon_size_medium">Medium</string>
+    <string name="zenhub_icon_size_default">Large</string>
+    <string name="zenhub_icon_size_big">Massive</string>
 
 </resources>

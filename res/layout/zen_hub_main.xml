@@ -37,16 +37,16 @@
             app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/statusbar_card_image"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="21dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_quicksettings" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -55,20 +55,21 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/statusbar_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/statusbar_quicksettings_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/statusbar_card_description"
                     android:text="@string/statusbar_quicksettings_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -84,20 +85,20 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
-            app:cardElevation="8dp">
+            app:cardElevation="2dp">
 
 
                 <ImageView
+                    android:id="@+id/notification_card_image"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="21dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_notifications" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -106,20 +107,21 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/notification_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/notification_card_description"
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -137,16 +139,16 @@
             app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/lockscreen_card_image"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="21dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_lockscreen" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -155,18 +157,18 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/lockscreen_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/lockscreen_card_description"
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -186,16 +188,16 @@
             app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/navigation_card_image"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="21dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_navigation" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -205,17 +207,17 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/navigation_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/buttons_powermenu_volumebutton_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/navigation_card_description"
                     android:text="@string/buttons_powermenu_volumebutton_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -236,15 +238,15 @@
 
                 <ImageView
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:id="@+id/screen_card_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="21dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_screen" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -254,19 +256,20 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/screen_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/screen_animation_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/screen_card_description"
                     android:text="@string/screen_animation_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -285,15 +288,15 @@
 
                <ImageView
                   android:layout_gravity="center"
-                  android:layout_marginBottom="18dp"
-                  android:layout_width="28dp"
-                  android:layout_height="28dp"
-                  android:scaleType="fitXY"
+                  android:id="@+id/misc_card_image"
+                  android:layout_marginBottom="21dp"
+                  android:layout_width="50dp"
+                  android:layout_height="50dp"
                   android:tint="?android:attr/colorAccent"
                   android:src="@drawable/ic_settings_misc" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -304,16 +307,16 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/misc_card_title"
                     android:text="@string/misc_battery_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/misc_card_description"
                     android:text="@string/misc_battery_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -334,15 +337,15 @@
 
                 <ImageView
                     android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:scaleType="fitXY"
+                    android:id="@+id/device_parts_card_image"
+                    android:layout_marginBottom="21dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:tint="?android:attr/colorAccent"
                     android:src="@drawable/ic_settings_device_parts" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -352,17 +355,17 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/device_parts_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/device_parts_card_description"
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -383,15 +386,15 @@
 
              <ImageView
                 android:layout_gravity="center"
-                android:layout_marginBottom="18dp"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:scaleType="fitXY"
+                android:id="@+id/rom_info_card_image"
+                android:layout_marginBottom="21dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:tint="?android:attr/colorAccent"
                 android:src="@drawable/ic_settings_about" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|left"
                 android:layout_margin="4dp"
@@ -401,17 +404,17 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/rom_info_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_title"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/rom_info_card_description"
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_summary"
-                    android:gravity="center"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>

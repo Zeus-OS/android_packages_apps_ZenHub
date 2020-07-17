@@ -84,15 +84,15 @@
         android:title="@string/dashboard_category">
 
         <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="enable_conditions" 
-            android:title="@string/dashboard_conditions_title" 
+            android:key="enable_conditions"
+            android:title="@string/dashboard_conditions_title"
             android:summaryOn="@string/summary_dashboard_conditions_enabled"
             android:summaryOff="@string/summary_dashboard_conditions_disabled"
-            android:defaultValue="true" /> 
+            android:defaultValue="true" />
         
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="enable_suggestions" 
-            android:title="@string/dashboard_suggestions_title" 
+            android:title="@string/dashboard_suggestions_title"
             android:summaryOn="@string/summary_dashboard_suggestions_enabled" 
             android:summaryOff="@string/summary_dashboard_suggestions_disabled"
             android:defaultValue="true" />
@@ -103,6 +103,41 @@
             android:entries="@array/theming_settings_dashboard_icons_entries"
             android:entryValues="@array/theming_settings_dashboard_icons_values"
             android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="zenhub_settings_category"
+        android:title="@string/zenhub_settings_category">
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="zenhub_title_center"
+            android:title="@string/zenhub_position_title"
+            android:summary="@string/zenhub_position_summary"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="zenhub_show_description"
+            android:title="@string/zenhub_show_description_title"
+            android:summary="@string/zenhub_show_description_summary"
+            android:defaultValue="false" />
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="zenhub_description_center"
+            android:title="@string/zenhub_description_center_title"
+            android:dependency="zenhub_show_description"
+            android:summary="@string/zenhub_description_center_summary"
+            android:defaultValue="false" />
+
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="zenhub_icon_size"
+            android:title="@string/zenhub_icon_size_title"
+            android:dialogTitle="@string/zenhub_icon_size_title"
+            android:entries="@array/zenhub_icon_size_entries"
+            android:entryValues="@array/zenhub_icon_size_values"
+            android:summary="%s"
+            android:defaultValue="1" />
+
 
     </PreferenceCategory>
 
