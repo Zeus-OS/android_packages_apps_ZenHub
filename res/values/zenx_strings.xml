@@ -1393,4 +1393,7 @@
     <string name="zenhub_icon_size_default">Large</string>
     <string name="zenhub_icon_size_big">Massive</string>
 
+    <string name="qs_footer_security_information_title">Footer security info</string>
+    <string name="qs_footer_security_information_summary">Show or hide QS Footer security information</string>
+
 </resources>
