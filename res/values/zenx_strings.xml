@@ -114,12 +114,6 @@
      <string name="device_maintainers_oneplus3_title_summary">OnePlus 3</string>
      <string name="device_maintainers_oneplus3_title">Deepak jr (The_real_Deepakjr)</string>
 
-     <string name="device_maintainers_rmx1921_title_summary">Realme XT (RMX1921)</string>
-     <string name="device_maintainers_rmx1921_title">Agung Pratama (skylarkAurora)</string>
-
-     <string name="device_maintainers_raphael_title_summary">Xiaomi K20/MI9T - Pro (Raphael)</string>
-     <string name="device_maintainers_raphael_title">Kunal Shah (kunalshah)</string>
-
      <string name="device_maintainers_wayne_title_summary">Xiaomi Mi 6X (Wayne)</string>
      <string name="device_maintainers_wayne_title">Jullian Milhomem Santos(jullian14)</string>
 
@@ -138,17 +132,20 @@
      <string name="device_maintainers_kenzo_title_summary">Xiaomi Redmi Note 3 Pro (Kenzo)</string>
      <string name="device_maintainers_kenzo_title">MocaRafee (Yuu_ak12)</string>
 
+     <string name="device_maintainers_raphael_title_summary">Xiaomi Redmi K20 Pro (Raphael)</string>
+     <string name="device_maintainers_raphael_title">Nandu (chayagrahakan)</string>
+
      <string name="device_maintainers_mido_title_summary">Xiaomi Redmi Note 4 (Mido)</string>
      <string name="device_maintainers_mido_title">Ghost (G_H_0_5_7)</string>
 
      <string name="device_maintainers_lavender_title_summary">Xiaomi Redmi Note 7 (Lavender)</string>
      <string name="device_maintainers_lavender_title">Zugeng Owen (tukangcaribug)</string>
 
-     <string name="device_maintainers_curtana_title_summary">Xiaomi Redmi Note 9S/Pro (Curtana)</string>
-     <string name="device_maintainers_curtana_title">Ahmed Tohamy (ahmed_tohamy)</string>
+     <string name="device_maintainers_joyuse_title_summary">Xiaomi Redmi Note 9 Pro (Joyuse)</string>
+     <string name="device_maintainers_joyuse_title">Agung Pratama (skylarkAurora)</string>
 
      <string name="device_maintainers_whyred_title_summary">Xiaomi Redmi Note 5 Pro (Whyred)</string>
-     <string name="device_maintainers_whyred_title">Agung Pratama</string>
+     <string name="device_maintainers_whyred_title">Agung Pratama (skylarkAurora)</string>
     
      <!-- Zenx-Categories -->
     <string name="about_summary">Learn more about ZenX-OS</string>
