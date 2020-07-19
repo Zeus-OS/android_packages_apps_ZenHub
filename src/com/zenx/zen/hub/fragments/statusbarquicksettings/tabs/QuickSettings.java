@@ -337,7 +337,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         int qsBackgroundStyle = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.QS_BACKGROUND_STYLE, 0);
 
-        if(qsBackgroundStyle == 3) {
+        if(qsBackgroundStyle == 2) {
                 mQsBackgroundStyleColor = (ColorPickerPreference) findPreference(QS_BACKGROUND_STYLE_COLOR);
                 int qsBackgroundStyleColor = Settings.System.getInt(getContentResolver(),
                         Settings.System.QS_BACKGROUND_STYLE_COLOR, 0x0000000);

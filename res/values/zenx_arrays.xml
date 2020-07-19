@@ -1157,14 +1157,12 @@
     <string-array name="qs_background_style_entries" translatable="false">
         <item>@string/qs_background_default</item>
         <item>@string/qs_background_accent</item>
-        <item>@string/qs_background_transparent</item>
         <item>@string/qs_background_custom_color</item>
     </string-array>
     <string-array name="qs_background_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3</item>
     </string-array>
 
         <!-- VoLTE Icon Type -->
