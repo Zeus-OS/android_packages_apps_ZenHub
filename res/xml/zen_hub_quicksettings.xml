@@ -118,6 +118,12 @@
             android:summary="@string/qs_header_style_color_summary"
             android:defaultValue="0x00000000" />
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_header_style_gradient"
+            android:title="@string/qs_header_style_gradient_title"
+            android:summary="@string/qs_header_style_gradient_summary"
+            android:defaultValue="false"/>
+
         <ListPreference
             android:key="qs_background_style"
             android:title="@string/qs_background_style_title"

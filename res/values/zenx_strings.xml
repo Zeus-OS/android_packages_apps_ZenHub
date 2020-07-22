@@ -1429,4 +1429,7 @@
     <string name="notification_headers_title">R-Style Notifications</string>
     <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
 
+    <string name="qs_header_style_gradient_title">Gradient Header</string>
+    <string name="qs_header_style_gradient_summary">Enable or disable gradient QS background</string>
+
 </resources>
