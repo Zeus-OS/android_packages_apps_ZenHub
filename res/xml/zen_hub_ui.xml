@@ -130,6 +130,15 @@
             android:defaultValue="false" />
 
         <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="zenhub_icon_type"
+            android:title="@string/zenhub_icon_type_title"
+            android:entries="@array/zenhub_icon_type_entries"
+            android:entryValues="@array/zenhub_icon_type_values"
+            android:dialogTitle="@string/zenhub_icon_type_title"
+            android:summary="%s"
+            android:defaultValue="0" />
+
+        <com.zenx.support.preferences.SystemSettingListPreference
             android:key="zenhub_icon_size"
             android:title="@string/zenhub_icon_size_title"
             android:dialogTitle="@string/zenhub_icon_size_title"

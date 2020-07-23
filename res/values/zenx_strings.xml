@@ -1467,11 +1467,17 @@
     <string name="qs_tint_off">Disable</string>
     <string name="qs_tint_random">Random color</string>
     <string name="qs_tint_accent">Accent color</string>
-     <string name="qs_disco_mode">Disco</string>
+    <string name="qs_disco_mode">Disco</string>
 
-         <!-- QS Label Tint -->
+    <!-- QS Label Tint -->
     <string name="qs_label_use_new_tint">QS Label Tint</string>
     <string name="qs_label_tint_off">Default</string>
     <string name="qs_label_tint_random">Random color</string>
     <string name="qs_label_tint_accent">Accent color</string>
+
+    <!-- ZenHub Icon type -->
+    <string name="zenhub_icon_type_title">Icon type</string>
+    <string name="zenhub_icon_type_animated">Animated</string>
+    <string name="zenhub_icon_type_solid">Solid</string>
+
 </resources>

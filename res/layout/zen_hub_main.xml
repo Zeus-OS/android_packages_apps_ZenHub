@@ -35,6 +35,15 @@
             android:layout_marginEnd="16dp"
             android:clickable="true">
 
+                <ImageView
+                    android:id="@+id/statusbar_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_quicksettings" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/statusbar_quicksettings"
                 android:layout_width="wrap_content"
@@ -97,6 +106,16 @@
             android:clickable="true"
 		>
 
+                <ImageView
+                    android:id="@+id/notification_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_notifications" />
+
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/notification"
                 android:layout_width="wrap_content"
@@ -156,6 +175,16 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/lockscreen_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_lockscreen" />
+
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lockscreen"
@@ -217,6 +246,15 @@
             android:layout_marginEnd="16dp"
             android:clickable="true">
 
+            <ImageView
+                    android:id="@+id/navigation_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_navigation" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/navigation"
                 android:layout_width="wrap_content"
@@ -276,6 +314,15 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true" >
+
+            <ImageView
+                    android:id="@+id/screen_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_screen" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/userinterface"
@@ -337,6 +384,15 @@
             android:layout_marginEnd="16dp"
             android:clickable="true">
 
+            <ImageView
+                    android:id="@+id/misc_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_misc" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/misc"
                 android:layout_width="wrap_content"
@@ -395,6 +451,15 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/device_parts_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_device_parts" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/device"
@@ -455,6 +520,15 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true">
+
+            <ImageView
+                    android:id="@+id/rom_info_card_image"
+                   android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_about" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/rominfo"

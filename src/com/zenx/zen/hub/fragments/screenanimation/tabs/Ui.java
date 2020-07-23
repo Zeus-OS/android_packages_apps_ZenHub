@@ -43,9 +43,13 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String TAG = "DisplaySettings";
     private static final String DUAL_STATUSBAR_ROW_MODE = "dual_statusbar_row_mode";
     private static final String DUAL_ROW_DATAUSAGE = "dual_row_datausage";
+    private static final String ZENHUB_ICON_TYPE = "zenhub_icon_type";
+    private static final String ZENHUB_ICON_SIZE = "zenhub_icon_size";
 
     private SystemSettingListPreference mStatusbarDualRowMode;
     private SystemSettingListPreference mDualRowDataUsageMode;
+    private SystemSettingListPreference mZenHubIconType;
+    private SystemSettingListPreference mZenHubIconSize;
 
     @Override
     public int getMetricsCategory() {
@@ -72,7 +76,16 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         mStatusbarDualRowMode.setValue(String.valueOf(statusbarDualRowMode));
         mStatusbarDualRowMode.setSummary(mStatusbarDualRowMode.getEntry());
         mStatusbarDualRowMode.setOnPreferenceChangeListener(this);
+
+        mZenHubIconType = (SystemSettingListPreference) findPreference(ZENHUB_ICON_TYPE);
+        int zenHubIconType = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.ZENHUB_ICON_TYPE, 0, UserHandle.USER_CURRENT);
+        mZenHubIconType.setValue(String.valueOf(zenHubIconType));
+        mZenHubIconType.setSummary(mZenHubIconType.getEntry());
+        mZenHubIconType.setOnPreferenceChangeListener(this);
+
         handleDataUsePreferences();
+        handleZenHubIconPreferences();
     }
 
     @Override
@@ -92,12 +105,14 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     public void onResume() {
         super.onResume();
         handleDataUsePreferences();
+        handleZenHubIconPreferences();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         handleDataUsePreferences();
+        handleZenHubIconPreferences();
     }
 
     private void handleDataUsePreferences() {
@@ -121,6 +136,27 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         }
 
     }
+    private void handleZenHubIconPreferences() {
+
+        int iconType = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.ZENHUB_ICON_TYPE, 0);
+
+        if(iconType == 1) {
+            mZenHubIconSize = (SystemSettingListPreference) findPreference(ZENHUB_ICON_SIZE);
+            int zenHubIconSize = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                    Settings.System.ZENHUB_ICON_SIZE, 0, UserHandle.USER_CURRENT);
+            mZenHubIconSize.setValue(String.valueOf(zenHubIconSize));
+            mZenHubIconSize.setSummary(mZenHubIconSize.getEntry());
+            mZenHubIconSize.setOnPreferenceChangeListener(this);
+            mZenHubIconSize.setVisible(true);
+        } else {
+            mZenHubIconSize = (SystemSettingListPreference) findPreference(ZENHUB_ICON_SIZE);
+            if(mZenHubIconSize != null) {
+                mZenHubIconSize.setVisible(false);
+            }
+        }
+
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -139,6 +175,23 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DUAL_ROW_DATAUSAGE, dualRowDataUsageMode);
             mDualRowDataUsageMode.setSummary(mDualRowDataUsageMode.getEntries()[dualRowDataUsageModeIndex]);
+            return true;
+        } else if (preference == mZenHubIconSize) {
+            if(mZenHubIconSize != null) {
+                int zenHubIconSize = Integer.parseInt((String) newValue);
+                int zenHubIconSizeIndex = mZenHubIconSize.findIndexOfValue((String) newValue);
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.ZENHUB_ICON_SIZE, zenHubIconSize);
+                mZenHubIconSize.setSummary(mZenHubIconSize.getEntries()[zenHubIconSizeIndex]);
+            }
+            return true;
+        } else if (preference == mZenHubIconType) {
+            int zenHubIconType = Integer.parseInt((String) newValue);
+            int zenHubIconTypeIndex = mZenHubIconType.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ZENHUB_ICON_TYPE, zenHubIconType);
+            mZenHubIconType.setSummary(mZenHubIconType.getEntries()[zenHubIconTypeIndex]);
+            handleZenHubIconPreferences();
             return true;
         }
         return false;

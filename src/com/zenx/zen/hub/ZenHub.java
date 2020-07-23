@@ -51,6 +51,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.ComponentName;
+import com.airbnb.lottie.LottieAnimationView;
 
 import com.zenx.zen.hub.fragments.statusbarquicksettings.StatusbarQuicksettingsController;
 import com.zenx.zen.hub.fragments.screenanimation.UserInterfaceController;
@@ -101,6 +102,15 @@ public class ZenHub extends Fragment implements View.OnClickListener {
     ImageView mDevicePartsCardImage;
     ImageView mRomInfoCardImage;
 
+    LottieAnimationView mStatusbarQuicksettings;
+    LottieAnimationView mNotification;
+    LottieAnimationView mLockscreen;
+    LottieAnimationView mNavigation;
+    LottieAnimationView mUserinterface;
+    LottieAnimationView mMisc;
+    LottieAnimationView mDevice;
+    LottieAnimationView mRomInfo;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.zen_hub_main, container, false);
@@ -143,7 +153,7 @@ public class ZenHub extends Fragment implements View.OnClickListener {
 
         updateTitlePosition(view);
         updateDescritionPosition(view);
-        // updateZenHubIconSize(view);
+        updateZenHubIconSize(view);
     }
 
     public boolean isCenterTitleEnabled() {
@@ -164,6 +174,11 @@ public class ZenHub extends Fragment implements View.OnClickListener {
     public int zenHubIconSize() {
         return Settings.System.getInt(getContext().getContentResolver(),
             Settings.System.ZENHUB_ICON_SIZE, 1);
+    }
+
+    public int zenHubIconType() {
+        return Settings.System.getInt(getContext().getContentResolver(),
+            Settings.System.ZENHUB_ICON_TYPE, 0);
     }
 
     private void updateTitlePosition(View view) {
@@ -249,95 +264,143 @@ public class ZenHub extends Fragment implements View.OnClickListener {
         }
     }
 
-    // private void updateZenHubIconSize(View view) {
+     private void updateZenHubIconSize(View view) {
 
-    //     mStatusbarCardImage = (ImageView) view.findViewById(R.id.statusbar_card_image);
-    //     mNotificationCardImage = (ImageView) view.findViewById(R.id.notification_card_image);
-    //     mLockscreenCardImage = (ImageView) view.findViewById(R.id.lockscreen_card_image);
-    //     mNavigationCardImage = (ImageView) view.findViewById(R.id.navigation_card_image);
-    //     mScreenCardImage = (ImageView) view.findViewById(R.id.screen_card_image);
-    //     mMiscCardImage = (ImageView) view.findViewById(R.id.misc_card_image);
-    //     mDevicePartsCardImage = (ImageView) view.findViewById(R.id.device_parts_card_image);
-    //     mRomInfoCardImage = (ImageView) view.findViewById(R.id.rom_info_card_image);
+        mStatusbarCardImage = (ImageView) view.findViewById(R.id.statusbar_card_image);
+        mNotificationCardImage = (ImageView) view.findViewById(R.id.notification_card_image);
+        mLockscreenCardImage = (ImageView) view.findViewById(R.id.lockscreen_card_image);
+        mNavigationCardImage = (ImageView) view.findViewById(R.id.navigation_card_image);
+        mScreenCardImage = (ImageView) view.findViewById(R.id.screen_card_image);
+        mMiscCardImage = (ImageView) view.findViewById(R.id.misc_card_image);
+        mDevicePartsCardImage = (ImageView) view.findViewById(R.id.device_parts_card_image);
+        mRomInfoCardImage = (ImageView) view.findViewById(R.id.rom_info_card_image);
 
-    //     switch(zenHubIconSize()) {
-    //         case 0:
-    //             mStatusbarCardImage.getLayoutParams().height = 60;
-    //             mNotificationCardImage.getLayoutParams().height = 60;
-    //             mLockscreenCardImage.getLayoutParams().height = 60;
-    //             mNavigationCardImage.getLayoutParams().height = 60;
-    //             mScreenCardImage.getLayoutParams().height = 60;
-    //             mMiscCardImage.getLayoutParams().height = 60;
-    //             mDevicePartsCardImage.getLayoutParams().height = 60;
-    //             mRomInfoCardImage.getLayoutParams().height = 60;
-    //             mStatusbarCardImage.getLayoutParams().width = 60;
-    //             mNotificationCardImage.getLayoutParams().width = 60;
-    //             mLockscreenCardImage.getLayoutParams().width = 60;
-    //             mNavigationCardImage.getLayoutParams().width = 60;
-    //             mScreenCardImage.getLayoutParams().width = 60;
-    //             mMiscCardImage.getLayoutParams().width = 60;
-    //             mDevicePartsCardImage.getLayoutParams().width = 60;
-    //             mRomInfoCardImage.getLayoutParams().width = 60;
-    //             break;
-    //         case 1:
-    //             mStatusbarCardImage.getLayoutParams().height = 85;
-    //             mNotificationCardImage.getLayoutParams().height = 85;
-    //             mLockscreenCardImage.getLayoutParams().height = 85;
-    //             mNavigationCardImage.getLayoutParams().height = 85;
-    //             mScreenCardImage.getLayoutParams().height = 85;
-    //             mMiscCardImage.getLayoutParams().height = 85;
-    //             mDevicePartsCardImage.getLayoutParams().height = 85;
-    //             mRomInfoCardImage.getLayoutParams().height = 85;
-    //             mStatusbarCardImage.getLayoutParams().width = 85;
-    //             mNotificationCardImage.getLayoutParams().width = 85;
-    //             mLockscreenCardImage.getLayoutParams().width = 85;
-    //             mNavigationCardImage.getLayoutParams().width = 85;
-    //             mScreenCardImage.getLayoutParams().width = 85;
-    //             mMiscCardImage.getLayoutParams().width = 85;
-    //             mDevicePartsCardImage.getLayoutParams().width = 85;
-    //             mRomInfoCardImage.getLayoutParams().width = 85;
-    //              break;
-    //         case 2:
-    //             mStatusbarCardImage.getLayoutParams().height = 110;
-    //             mNotificationCardImage.getLayoutParams().height = 110;
-    //             mLockscreenCardImage.getLayoutParams().height = 110;
-    //             mNavigationCardImage.getLayoutParams().height = 110;
-    //             mScreenCardImage.getLayoutParams().height = 110;
-    //             mMiscCardImage.getLayoutParams().height = 110;
-    //             mDevicePartsCardImage.getLayoutParams().height = 110;
-    //             mRomInfoCardImage.getLayoutParams().height = 110;
-    //             mStatusbarCardImage.getLayoutParams().width = 110;
-    //             mNotificationCardImage.getLayoutParams().width = 110;
-    //             mLockscreenCardImage.getLayoutParams().width = 110;
-    //             mNavigationCardImage.getLayoutParams().width = 110;
-    //             mScreenCardImage.getLayoutParams().width = 110;
-    //             mMiscCardImage.getLayoutParams().width = 110;
-    //             mDevicePartsCardImage.getLayoutParams().width = 110;
-    //             mRomInfoCardImage.getLayoutParams().width = 110;
-    //             break;
-    //         case 3:
-    //             mStatusbarCardImage.getLayoutParams().height = 134;
-    //             mNotificationCardImage.getLayoutParams().height = 134;
-    //             mLockscreenCardImage.getLayoutParams().height = 134;
-    //             mNavigationCardImage.getLayoutParams().height = 134;
-    //             mScreenCardImage.getLayoutParams().height = 134;
-    //             mMiscCardImage.getLayoutParams().height = 134;
-    //             mDevicePartsCardImage.getLayoutParams().height = 134;
-    //             mRomInfoCardImage.getLayoutParams().height = 134;
-    //             mStatusbarCardImage.getLayoutParams().width = 134;
-    //             mNotificationCardImage.getLayoutParams().width = 134;
-    //             mLockscreenCardImage.getLayoutParams().width = 134;
-    //             mNavigationCardImage.getLayoutParams().width = 134;
-    //             mScreenCardImage.getLayoutParams().width = 134;
-    //             mMiscCardImage.getLayoutParams().width = 134;
-    //             mDevicePartsCardImage.getLayoutParams().width = 134;
-    //             mRomInfoCardImage.getLayoutParams().width = 134;
-    //             break;
-    //         default:
-    //             break;
-    //     }
+        mStatusbarQuicksettings = (LottieAnimationView) view.findViewById(R.id.statusbar_quicksettings);
+        mNotification = (LottieAnimationView) view.findViewById(R.id.notification);
+        mLockscreen = (LottieAnimationView) view.findViewById(R.id.lockscreen);
+        mNavigation = (LottieAnimationView) view.findViewById(R.id.navigation);
+        mUserinterface = (LottieAnimationView) view.findViewById(R.id.userinterface);
+        mMisc = (LottieAnimationView) view.findViewById(R.id.misc);
+        mDevice = (LottieAnimationView) view.findViewById(R.id.device);
+        mRomInfo = (LottieAnimationView) view.findViewById(R.id.rominfo);
 
-    // }
+
+      if(zenHubIconType() == 1)
+        {
+            mStatusbarCardImage.setVisibility(View.VISIBLE);
+            mNotificationCardImage.setVisibility(View.VISIBLE);
+            mLockscreenCardImage.setVisibility(View.VISIBLE);
+            mNavigationCardImage.setVisibility(View.VISIBLE);
+            mScreenCardImage.setVisibility(View.VISIBLE);;
+            mMiscCardImage.setVisibility(View.VISIBLE);
+            mDevicePartsCardImage.setVisibility(View.VISIBLE);
+            mRomInfoCardImage.setVisibility(View.VISIBLE);
+
+            mStatusbarQuicksettings.setVisibility(View.GONE);
+            mNotification.setVisibility(View.GONE);
+            mLockscreen.setVisibility(View.GONE);
+            mNavigation.setVisibility(View.GONE);
+            mUserinterface.setVisibility(View.GONE);
+            mMisc.setVisibility(View.GONE);
+            mDevice.setVisibility(View.GONE);
+            mRomInfo.setVisibility(View.GONE);
+
+            switch(zenHubIconSize()) {
+                case 0:
+                    mStatusbarCardImage.getLayoutParams().height = 60;
+                    mNotificationCardImage.getLayoutParams().height = 60;
+                    mLockscreenCardImage.getLayoutParams().height = 60;
+                    mNavigationCardImage.getLayoutParams().height = 60;
+                    mScreenCardImage.getLayoutParams().height = 60;
+                    mMiscCardImage.getLayoutParams().height = 60;
+                    mDevicePartsCardImage.getLayoutParams().height = 60;
+                    mRomInfoCardImage.getLayoutParams().height = 60;
+                    mStatusbarCardImage.getLayoutParams().width = 60;
+                    mNotificationCardImage.getLayoutParams().width = 60;
+                    mLockscreenCardImage.getLayoutParams().width = 60;
+                    mNavigationCardImage.getLayoutParams().width = 60;
+                    mScreenCardImage.getLayoutParams().width = 60;
+                    mMiscCardImage.getLayoutParams().width = 60;
+                    mDevicePartsCardImage.getLayoutParams().width = 60;
+                    mRomInfoCardImage.getLayoutParams().width = 60;
+                    break;
+                case 1:
+                    mStatusbarCardImage.getLayoutParams().height = 85;
+                    mNotificationCardImage.getLayoutParams().height = 85;
+                    mLockscreenCardImage.getLayoutParams().height = 85;
+                    mNavigationCardImage.getLayoutParams().height = 85;
+                    mScreenCardImage.getLayoutParams().height = 85;
+                    mMiscCardImage.getLayoutParams().height = 85;
+                    mDevicePartsCardImage.getLayoutParams().height = 85;
+                    mRomInfoCardImage.getLayoutParams().height = 85;
+                    mStatusbarCardImage.getLayoutParams().width = 85;
+                    mNotificationCardImage.getLayoutParams().width = 85;
+                    mLockscreenCardImage.getLayoutParams().width = 85;
+                    mNavigationCardImage.getLayoutParams().width = 85;
+                    mScreenCardImage.getLayoutParams().width = 85;
+                    mMiscCardImage.getLayoutParams().width = 85;
+                    mDevicePartsCardImage.getLayoutParams().width = 85;
+                    mRomInfoCardImage.getLayoutParams().width = 85;
+                    break;
+                case 2:
+                    mStatusbarCardImage.getLayoutParams().height = 110;
+                    mNotificationCardImage.getLayoutParams().height = 110;
+                    mLockscreenCardImage.getLayoutParams().height = 110;
+                    mNavigationCardImage.getLayoutParams().height = 110;
+                    mScreenCardImage.getLayoutParams().height = 110;
+                    mMiscCardImage.getLayoutParams().height = 110;
+                    mDevicePartsCardImage.getLayoutParams().height = 110;
+                    mRomInfoCardImage.getLayoutParams().height = 110;
+                    mStatusbarCardImage.getLayoutParams().width = 110;
+                    mNotificationCardImage.getLayoutParams().width = 110;
+                    mLockscreenCardImage.getLayoutParams().width = 110;
+                    mNavigationCardImage.getLayoutParams().width = 110;
+                    mScreenCardImage.getLayoutParams().width = 110;
+                    mMiscCardImage.getLayoutParams().width = 110;
+                    mDevicePartsCardImage.getLayoutParams().width = 110;
+                    mRomInfoCardImage.getLayoutParams().width = 110;
+                    break;
+                case 3:
+                    mStatusbarCardImage.getLayoutParams().height = 134;
+                    mNotificationCardImage.getLayoutParams().height = 134;
+                    mLockscreenCardImage.getLayoutParams().height = 134;
+                    mNavigationCardImage.getLayoutParams().height = 134;
+                    mScreenCardImage.getLayoutParams().height = 134;
+                    mMiscCardImage.getLayoutParams().height = 134;
+                    mDevicePartsCardImage.getLayoutParams().height = 134;
+                    mRomInfoCardImage.getLayoutParams().height = 134;
+                    mStatusbarCardImage.getLayoutParams().width = 134;
+                    mNotificationCardImage.getLayoutParams().width = 134;
+                    mLockscreenCardImage.getLayoutParams().width = 134;
+                    mNavigationCardImage.getLayoutParams().width = 134;
+                    mScreenCardImage.getLayoutParams().width = 134;
+                    mMiscCardImage.getLayoutParams().width = 134;
+                    mDevicePartsCardImage.getLayoutParams().width = 134;
+                    mRomInfoCardImage.getLayoutParams().width = 134;
+                    break;
+                default:
+                    break;
+            }
+        } else {
+                mStatusbarCardImage.setVisibility(View.GONE);
+                mNotificationCardImage.setVisibility(View.GONE);
+                mLockscreenCardImage.setVisibility(View.GONE);
+                mNavigationCardImage.setVisibility(View.GONE);
+                mScreenCardImage.setVisibility(View.GONE);
+                mMiscCardImage.setVisibility(View.GONE);
+                mDevicePartsCardImage.setVisibility(View.GONE);
+                mRomInfoCardImage.setVisibility(View.GONE);
+
+                mStatusbarQuicksettings.setVisibility(View.VISIBLE);
+                mNotification.setVisibility(View.VISIBLE);
+                mLockscreen.setVisibility(View.VISIBLE);
+                mNavigation.setVisibility(View.VISIBLE);
+                mUserinterface.setVisibility(View.VISIBLE);
+                mMisc.setVisibility(View.VISIBLE);
+                mDevice.setVisibility(View.VISIBLE);
+                mRomInfo.setVisibility(View.VISIBLE);
+            }
+    }
 
     @Override
     public void onClick(View view) {
