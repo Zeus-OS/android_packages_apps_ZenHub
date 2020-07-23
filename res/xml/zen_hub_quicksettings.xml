@@ -71,7 +71,13 @@
     <PreferenceCategory
         android:key="qs_style_category"
         android:title="@string/qs_style_category">
-        
+
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_headers"
+            android:title="@string/notification_headers_title"
+            android:summary="@string/notification_headers_summary"
+            android:defaultValue="true" />
+
         <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="qs_background_blur"
             android:title="@string/qs_blur_title"
