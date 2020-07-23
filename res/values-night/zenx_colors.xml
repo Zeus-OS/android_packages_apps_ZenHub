@@ -13,4 +13,5 @@
 
 <resources>
     <color name="fod_item_background_stroke_color">#555555</color>
+    <color name="divider_horizon">#ffffffff</color>
 </resources>

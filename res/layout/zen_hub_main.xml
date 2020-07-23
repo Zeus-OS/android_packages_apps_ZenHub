@@ -22,45 +22,55 @@
         android:padding="2dp"
         android:rowCount="4">
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:id="@+id/statusbar_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-                <ImageView
-                    android:id="@+id/statusbar_card_image"
-                    android:layout_gravity="center"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="21dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_quicksettings" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/statusbar_quicksettings"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8dp"
+                app:lottie_rawRes="@raw/statusbar_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
-                    android:id="@+id/statusbar_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/statusbar_quicksettings_title"
+                    android:id="@+id/statusbar_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -71,48 +81,58 @@
                     android:textSize="12sp" />
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:id="@+id/notification_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:clickable="true"
-            app:cardElevation="2dp">
+		>
 
-
-                <ImageView
-                    android:id="@+id/notification_card_image"
-                    android:layout_gravity="center"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="21dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_notifications" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="12dp"
+                app:lottie_rawRes="@raw/notification_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
+                	
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
 
                 <TextView
-                    android:id="@+id/notification_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_title"
+                    android:id="@+id/notification_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -123,46 +143,56 @@
                     android:textSize="12sp" />
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:id="@+id/lockscreen_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-                <ImageView
-                    android:id="@+id/lockscreen_card_image"
-                    android:layout_gravity="center"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="21dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_lockscreen" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lockscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="12dp"
+                app:lottie_rawRes="@raw/lockscreen_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
-                    android:id="@+id/lockscreen_card_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_title"
+                    android:id="@+id/lockscreen_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -171,47 +201,58 @@
                     android:text="@string/lockscreen_ambient_summary"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/navigation_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-                <ImageView
-                    android:id="@+id/navigation_card_image"
-                    android:layout_gravity="center"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="21dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_navigation" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="12dp"
+                app:lottie_rawRes="@raw/navigation_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:id="@+id/navigation_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/buttons_powermenu_volumebutton_title"
+                    android:id="@+id/navigation_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -220,47 +261,58 @@
                     android:text="@string/buttons_powermenu_volumebutton_summary"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/screen_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
+            android:background="@drawable/container_background"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true" >
 
-                <ImageView
-                    android:layout_gravity="center"
-                    android:id="@+id/screen_card_image"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginBottom="21dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_screen" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/userinterface"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="12dp"
+                app:lottie_rawRes="@raw/userinterface_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                	<View
+                        android:paddingTop="20dp"
+                        android:gravity="center"
+                        android:background="?android:attr/dividerHorizontal"
+                        android:layout_centerInParent="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:id="@+id/screen_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/screen_animation_title"
+                    android:id="@+id/screen_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -271,46 +323,56 @@
                     android:textSize="12sp" />
 
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:id="@+id/misc_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-               <ImageView
-                  android:layout_gravity="center"
-                  android:id="@+id/misc_card_image"
-                  android:layout_marginBottom="21dp"
-                  android:layout_width="50dp"
-                  android:layout_height="50dp"
-                  android:tint="?android:attr/colorAccent"
-                  android:src="@drawable/ic_settings_misc" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/misc"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8dp"
+                app:lottie_rawRes="@raw/misc_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/misc_card_title"
                     android:text="@string/misc_battery_title"
+                    android:id="@+id/misc_card_title"
+                    android:layout_centerInParent="true"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -320,95 +382,115 @@
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <FrameLayout
             android:id="@+id/device_parts_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-                <ImageView
-                    android:layout_gravity="center"
-                    android:id="@+id/device_parts_card_image"
-                    android:layout_marginBottom="21dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_device_parts" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/device"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="12dp"
+                app:lottie_rawRes="@raw/device_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
-                <TextView
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
                     android:layout_width="match_parent"
-                    android:id="@+id/device_parts_card_title"
-                    android:layout_height="wrap_content"
-                    android:text="@string/device_parts_title"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:layout_height="1dp"/>
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/device_parts_title"
+                    android:id="@+id/device_parts_card_title"
+                    android:layout_centerInParent="true"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="15sp" />
+
+               <TextView
                     android:layout_width="match_parent"
                     android:id="@+id/device_parts_card_description"
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_summary"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/rom_info_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            style="@style/ContextualCardStyle"
+            android:background="@drawable/container_background"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardElevation="8dp">
+            android:clickable="true">
 
-             <ImageView
-                android:layout_gravity="center"
-                android:id="@+id/rom_info_card_image"
-                android:layout_marginBottom="21dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:tint="?android:attr/colorAccent"
-                android:src="@drawable/ic_settings_about" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/rominfo"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8dp"
+                app:lottie_rawRes="@raw/rominfo_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|left"
+                android:layout_gravity="bottom|center"
                 android:layout_margin="4dp"
                 android:paddingLeft="4dp"
                 android:paddingBottom="8dp"
                 android:orientation="vertical">
 
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:id="@+id/rom_info_card_title"
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_title"
+                    android:id="@+id/rom_info_card_title"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -418,6 +500,7 @@
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="12sp" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
     </GridLayout>
+
 </LinearLayout>

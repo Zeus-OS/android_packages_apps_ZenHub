@@ -19,26 +19,26 @@
 
      <!-- Zenx-Combination-Categories -->
     <string name="statusbar_quicksettings_title">Statusbar</string>
-    <string name="statusbar_quicksettings_summary">Clock, Battery, Traffic, Carrier, Quicksettings</string>
+    <string name="statusbar_quicksettings_summary">Clock, Quicksettings</string>
     <string name="screen_animation_title">Userinterface</string>
-    <string name="screen_animation_summary"> Theming, Round Corner, App Scaling, Animation</string>
+    <string name="screen_animation_summary"> Theming, Animation</string>
     <string name="notification_headsup_title">Notifications</string>
-    <string name="notification_headsup_summary">Notification LED, Clear button, Headsup settings</string>
+    <string name="notification_headsup_summary">Behavior, Headsup options </string>
     <string name="misc_battery_title">Miscellaneous</string>
-    <string name="misc_battery_summary">Gaming Mode, Screenshot, Battery options</string>
+    <string name="misc_battery_summary">Various, Battery options</string>
     <string name="lockscreen_ambient_title">Lockscreen</string>
-    <string name="lockscreen_ambient_summary">Media cover art, Charging Info, Always on, Doze gestures</string>
-    <string name="links_devs_title">Rom Information</string>
-    <string name="links_devs_summary">General Rom and Developer Information</string>
+    <string name="lockscreen_ambient_summary">Advanced options, Ambient </string>
+    <string name="links_devs_title">About</string>
+    <string name="links_devs_summary">Rom and Developer Info</string>
     <string name="buttons_powermenu_volumebutton_title">Navigation</string>
-    <string name="buttons_powermenu_volumebutton_summary">Buttons, Gestures, Powermenu settings, Volume options</string>
+    <string name="buttons_powermenu_volumebutton_summary">Software, Hardware buttons </string>
     <string name="update_title">Update</string>
     <string name="system_updates_title">System Update</string>
     <string name="system_updates_summary">Check for newer ZenX-OS version</string>
     <string name="ui_catergory_title">Style</string>
     <string name="settings_category_title">Settings</string>
     <string name="device_parts_title">Device Parts</string>
-    <string name="device_parts_summary">Advanced options for setting up device and kernel values</string>
+    <string name="device_parts_summary">Advanced device options</string>
 
     <!-- Zenx-Bottom-Navigation -->
     <string name="bottom_nav_statusbar_title">Statusbar</string>

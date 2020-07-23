@@ -267,6 +267,7 @@
 
         <com.zenx.support.preferences.SystemSettingListPreference
             android:key="qs_label_use_new_tint"
+            android:dependency="qs_tile_title_visibility"
             android:title="@string/qs_label_use_new_tint"
             android:dialogTitle="@string/qs_label_use_new_tint"
             android:entries="@array/qs__label_tint_entries"
