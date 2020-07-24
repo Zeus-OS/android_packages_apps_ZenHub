@@ -1480,4 +1480,8 @@
     <string name="zenhub_icon_type_animated">Animated</string>
     <string name="zenhub_icon_type_solid">Solid</string>
 
+    <string name="qs_background_category">Backgroud</string>
+    <string name="qs_header_category">Header</string>
+    <string name="qs_tile_category">Tiles</string>
+
 </resources>
