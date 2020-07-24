@@ -1422,6 +1422,7 @@
     <string name="qs_tile_style_inkdrop">Ink drop</string>
     <string name="qs_tile_style_neonlike">Neon light</string>
     <string name="qs_tile_style_triangles">Triangles</string>
+    <string name="qs_tile_style_just_icon">Just Icons</string>
 
         <!-- R Notification headers -->
     <string name="notification_headers_title">R-Style Notifications</string>
