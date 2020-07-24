@@ -137,9 +137,9 @@ public class Ambient extends SettingsPreferenceFragment implements
     private void updateColorPrefs(int edgeLightColorMode) {
         if (mEdgeLightColor != null) {
             if (edgeLightColorMode == 3) {
-                getPreferenceScreen().addPreference(mEdgeLightColor);
+                mEdgeLightColor.setVisible(true);
             } else {
-                getPreferenceScreen().removePreference(mEdgeLightColor);
+                mEdgeLightColor.setVisible(false);
             }
         }
     }
