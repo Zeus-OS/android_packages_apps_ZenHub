@@ -1423,6 +1423,7 @@
     <string name="qs_tile_style_neonlike">Neon light</string>
     <string name="qs_tile_style_triangles">Triangles</string>
     <string name="qs_tile_style_just_icon">Just Icons</string>
+    <string name="qs_tile_style_mallow">Mallow</string>
 
         <!-- R Notification headers -->
     <string name="notification_headers_title">R-Style Notifications</string>

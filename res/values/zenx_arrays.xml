@@ -1275,6 +1275,7 @@
         <item>@string/qs_tile_style_neonlike</item>
         <item>@string/qs_tile_style_triangles</item>
         <item>@string/qs_tile_style_just_icon</item>
+        <item>@string/qs_tile_style_mallow</item>
     </string-array>
 
     <string-array name="qs_tile_style_selector_values" translatable="false">
