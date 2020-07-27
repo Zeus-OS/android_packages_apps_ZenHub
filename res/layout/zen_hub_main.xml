@@ -37,7 +37,7 @@
 
                 <ImageView
                     android:id="@+id/statusbar_card_image"
-                   android:layout_gravity="center"
+                    android:layout_gravity="center"
                     android:layout_marginBottom="18dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -49,8 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/statusbar_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -87,6 +87,10 @@
                     android:id="@+id/statusbar_card_description"
                     android:text="@string/statusbar_quicksettings_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -121,8 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/notification_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -159,6 +163,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/notification_headsup_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -191,8 +199,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/lockscreen_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -229,6 +237,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lockscreen_ambient_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -260,8 +272,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/navigation_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -298,6 +310,10 @@
                     android:id="@+id/navigation_card_description"
                     android:text="@string/buttons_powermenu_volumebutton_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -329,8 +345,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/userinterface_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -367,6 +383,10 @@
                     android:id="@+id/screen_card_description"
                     android:text="@string/screen_animation_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -398,8 +418,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/misc_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -436,6 +456,10 @@
                     android:id="@+id/misc_card_description"
                     android:text="@string/misc_battery_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
             </LinearLayout>
         </FrameLayout>
@@ -466,8 +490,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/device_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -504,6 +528,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/device_parts_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -535,8 +563,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:clickable="false"
-                android:layout_gravity="top|center"
-                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
                 app:lottie_rawRes="@raw/rominfo_anim"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true" />
@@ -572,6 +600,10 @@
                     android:layout_height="wrap_content"
                     android:text="@string/links_devs_summary"
                     android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"  
+                    android:ellipsize="marquee"  
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:textSize="12sp" />
             </LinearLayout>
         </FrameLayout>
