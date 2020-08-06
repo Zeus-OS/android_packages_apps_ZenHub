@@ -1499,4 +1499,6 @@
     <string name="status_bar_notif_count_title">Notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
+    <!-- Custom statusbar hight -->
+    <string name="custom_statusbar_height_tile">Statusbar Height</string>
 </resources>

@@ -35,6 +35,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.zenx.support.preferences.SystemSettingListPreference;
+import com.zenx.support.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,11 +46,13 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String DUAL_ROW_DATAUSAGE = "dual_row_datausage";
     private static final String ZENHUB_ICON_TYPE = "zenhub_icon_type";
     private static final String ZENHUB_ICON_SIZE = "zenhub_icon_size";
+    private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
 
     private SystemSettingListPreference mStatusbarDualRowMode;
     private SystemSettingListPreference mDualRowDataUsageMode;
     private SystemSettingListPreference mZenHubIconType;
     private SystemSettingListPreference mZenHubIconSize;
+    private CustomSeekBarPreference mCustomStatusbarHeight;
 
     @Override
     public int getMetricsCategory() {
@@ -83,6 +86,13 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         mZenHubIconType.setValue(String.valueOf(zenHubIconType));
         mZenHubIconType.setSummary(mZenHubIconType.getEntry());
         mZenHubIconType.setOnPreferenceChangeListener(this);
+
+        mCustomStatusbarHeight = (CustomSeekBarPreference) findPreference(CUSTOM_STATUSBAR_HEIGHT);
+        int customStatusbarHeight = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.CUSTOM_STATUSBAR_HEIGHT, getResources().getDimensionPixelSize(com.android.internal.R.dimen.status_bar_height), UserHandle.USER_CURRENT);
+        mCustomStatusbarHeight.setValue(customStatusbarHeight);
+        mCustomStatusbarHeight.setOnPreferenceChangeListener(this);
+
 
         handleDataUsePreferences();
         handleZenHubIconPreferences();
@@ -192,6 +202,11 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
                     Settings.System.ZENHUB_ICON_TYPE, zenHubIconType);
             mZenHubIconType.setSummary(mZenHubIconType.getEntries()[zenHubIconTypeIndex]);
             handleZenHubIconPreferences();
+            return true;
+        } else if (preference == mCustomStatusbarHeight) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.CUSTOM_STATUSBAR_HEIGHT, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

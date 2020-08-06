@@ -77,6 +77,14 @@
             android:entryValues="@array/dual_row_datausage_values"
             android:defaultValue="0" />
 
+        <com.zenx.support.preferences.CustomSeekBarPreference
+            android:key="custom_statusbar_height"
+            android:title="@string/custom_statusbar_height_tile"
+            android:max="135"
+            settings:min="20"
+            settings:units="dp"
+            settings:interval="1" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
