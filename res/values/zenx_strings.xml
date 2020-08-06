@@ -1380,6 +1380,12 @@
     <string name="volte_icon_volte">VoLTE Icon</string>
     <string name="volte_icon_oos">VoLTE OOS Icon</string>
     <string name="volte_icon_hd">HD Icon</string>
+    <string name="volte_volit">VoLIT Icon</string>
+    <string name="volte_asus">Asus Icon</string>
+    <string name="volte_caf_hd">CAF HD Icon</string>
+    <string name="volte_miui">MIUI 11 Icon</string>
+    <string name="volte_emui">EMUI Icon</string>
+    <string name="volte_oos_ten">OOS 10 Icon</string>
 
         <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi icon</string>

@@ -1199,6 +1199,12 @@
         <item>@string/volte_icon_volte</item>
         <item>@string/volte_icon_oos</item>
         <item>@string/volte_icon_hd</item>
+        <item>@string/volte_volit</item>
+        <item>@string/volte_asus</item>
+        <item>@string/volte_caf_hd</item>
+        <item>@string/volte_miui</item>
+        <item>@string/volte_emui</item>
+        <item>@string/volte_oos_ten</item>
     </string-array>
 
     <string-array name="volte_icon_type_values" translatable="false">
@@ -1206,6 +1212,12 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
     </string-array>
 
         <!-- VoWiFi Icon -->
