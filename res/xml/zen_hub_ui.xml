@@ -37,8 +37,14 @@
         android:summary="@string/style_suggestion_summary"
         settings:keywords="@string/keywords_display_wallpaper"
         settings:controller="com.android.settings.display.WallpaperPreferenceController">
-
     </com.android.settingslib.RestrictedPreference>
+
+    <ListPreference
+        android:key="ui_style"
+        android:title="@string/ui_style_title"
+        android:entries="@array/ui_style_selector_entries"
+        android:entryValues="@array/ui_style_selector_values"
+        android:persistent="false" />
 
     </PreferenceCategory>
 

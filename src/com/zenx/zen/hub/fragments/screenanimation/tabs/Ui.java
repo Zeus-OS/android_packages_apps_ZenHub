@@ -16,6 +16,8 @@
 
 package com.zenx.zen.hub.fragments.screenanimation.tabs;
 
+import static com.zenx.zen.hub.utils.Utils.handleOverlays;
+
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
@@ -23,6 +25,10 @@ import android.os.UserHandle;
 import androidx.preference.*;
 import android.provider.Settings;
 import com.android.internal.util.zenx.Utils;
+import com.android.internal.util.zenx.ThemesUtils;
+
+import android.content.om.IOverlayManager;
+import android.os.ServiceManager;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -47,12 +53,17 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String ZENHUB_ICON_TYPE = "zenhub_icon_type";
     private static final String ZENHUB_ICON_SIZE = "zenhub_icon_size";
     private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
+    private static final String UI_STYLE = "ui_style";
 
     private SystemSettingListPreference mStatusbarDualRowMode;
     private SystemSettingListPreference mDualRowDataUsageMode;
     private SystemSettingListPreference mZenHubIconType;
     private SystemSettingListPreference mZenHubIconSize;
     private CustomSeekBarPreference mCustomStatusbarHeight;
+    private ListPreference mUIStyle;
+
+    private IOverlayManager mOverlayManager;
+
 
     @Override
     public int getMetricsCategory() {
@@ -72,6 +83,9 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        mOverlayManager = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
 
         mStatusbarDualRowMode = (SystemSettingListPreference) findPreference(DUAL_STATUSBAR_ROW_MODE);
         int statusbarDualRowMode = Settings.System.getIntForUser(getActivity().getContentResolver(),
@@ -93,6 +107,35 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         mCustomStatusbarHeight.setValue(customStatusbarHeight);
         mCustomStatusbarHeight.setOnPreferenceChangeListener(this);
 
+        mUIStyle = (ListPreference) findPreference(UI_STYLE);
+        int UIStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.UI_STYLE, 0);
+        int UIStyleValue = getOverlayPosition(ThemesUtils.UI_THEMES);
+        if (UIStyleValue != 0) {
+            mUIStyle.setValue(String.valueOf(UIStyle));
+        }
+        mUIStyle.setSummary(mUIStyle.getEntry());
+        mUIStyle.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (preference == mUIStyle) {
+                    String value = (String) newValue;
+                    Settings.System.putInt(getActivity().getContentResolver(), Settings.System.UI_STYLE, Integer.valueOf(value));
+                    int valueIndex = mUIStyle.findIndexOfValue(value);
+                    mUIStyle.setSummary(mUIStyle.getEntries()[valueIndex]);
+                    String overlayName = getOverlayName(ThemesUtils.UI_THEMES);
+                    if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                    }
+                    if (valueIndex > 0) {
+                        handleOverlays(ThemesUtils.UI_THEMES[valueIndex],
+                                true, mOverlayManager);
+                    }
+                    return true;
+                }
+                return false;
+            }
+       });
 
         handleDataUsePreferences();
         handleZenHubIconPreferences();
@@ -212,5 +255,25 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         return false;
     }
 
+    private String getOverlayName(String[] overlays) {
+            String overlayName = null;
+            for (int i = 0; i < overlays.length; i++) {
+                String overlay = overlays[i];
+                if (Utils.isThemeEnabled(overlay)) {
+                    overlayName = overlay;
+                }
+            }
+            return overlayName;
+        }
 
+    private int getOverlayPosition(String[] overlays) {
+            int position = -1;
+            for (int i = 0; i < overlays.length; i++) {
+                String overlay = overlays[i];
+                if (Utils.isThemeEnabled(overlay)) {
+                    position = i;
+                }
+            }
+            return position;
+        }
 }

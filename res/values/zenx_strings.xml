@@ -1507,4 +1507,13 @@
 
     <!-- Custom statusbar hight -->
     <string name="custom_statusbar_height_tile">Statusbar Height</string>
+
+    <!-- GUI styles -->
+    <string name="ui_style_title">UI Style</string>
+    <string name="ui_style_default">Default</string>
+    <string name="ui_style_no_corner_radius">No Corner Radius</string>
+    <string name="ui_style_rectangle">Rectangle</string>
+    <string name="ui_style_round_large">Round Large</string>
+    <string name="ui_style_round_medium">Round Medium</string>
+
 </resources>
