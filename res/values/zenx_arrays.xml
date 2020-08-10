@@ -1505,45 +1505,45 @@
     </string-array>
 
     <string-array name="accent_presets_values" translatable="false">
-        <item>4285F4</item>
-        <item>AF6050</item>
-        <item>1B873B</item>
-        <item>0C80A7</item>
-        <item>C42CC9</item>
-        <item>725AFF</item>
-        <item>47618A</item>
-        <item>7cd318</item>
-        <item>6db647</item>
-        <item>88C533</item>
-        <item>00A4F8</item>
-        <item>202020</item>
-        <item>F40009</item>
-        <item>7289DA</item>
-        <item>AA12E5</item>
-        <item>3C5A99</item>
-        <item>41BFD8</item>
-        <item>F00075</item>
-        <item>e5173f</item>
-        <item>FE5A13</item>
-        <item>95D600</item>
-        <item>8dd7e2</item>
-        <item>FFCC00</item>
-        <item>EB0028</item>
-        <item>005CB4</item>
-        <item>C83035</item>
-        <item>FCC900</item>
-        <item>00ff00</item>
-        <item>034EA2</item>
-        <item>37474F</item>
-        <item>1DB954</item>
-        <item>00704A</item>
+        <item>FF4285F4</item>
+        <item>FFAF6050</item>
+        <item>FF1B873B</item>
+        <item>FF0C80A7</item>
+        <item>FFC42CC9</item>
+        <item>FF725AFF</item>
+        <item>FF47618A</item>
+        <item>FF7cd318</item>
+        <item>FF6db647</item>
+        <item>FF88C533</item>
+        <item>FF00A4F8</item>
+        <item>FF202020</item>
+        <item>FFF40009</item>
+        <item>FF7289DA</item>
+        <item>FFAA12E5</item>
+        <item>FF3C5A99</item>
+        <item>FF41BFD8</item>
+        <item>FFF00075</item>
+        <item>FFe5173f</item>
+        <item>FFFE5A13</item>
+        <item>FF95D600</item>
+        <item>FF8dd7e2</item>
+        <item>FFFFCC00</item>
+        <item>FFEB0028</item>
+        <item>FF005CB4</item>
+        <item>FFC83035</item>
+        <item>FFFCC900</item>
+        <item>FF00ff00</item>
+        <item>FF034EA2</item>
+        <item>FF37474F</item>
+        <item>FF1DB954</item>
+        <item>FF00704A</item>
         <item>FF009688</item>
-        <item>FF0046</item>
-        <item>6441A4</item>
-        <item>1da1f2</item>
+        <item>FFFF0046</item>
+        <item>FF6441A4</item>
+        <item>FF1da1f2</item>
         <item>FFFFFFFF</item>
-        <item>107C10</item>
-        <item>ff6700</item>
+        <item>FF107C10</item>
+        <item>FFff6700</item>
     </string-array>
 
         <!--  Volume Panel  -->
