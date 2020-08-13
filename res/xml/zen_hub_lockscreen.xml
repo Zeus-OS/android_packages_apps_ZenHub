@@ -64,6 +64,12 @@
         android:title="@string/ls_clock">
 
     <PreferenceScreen
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:fragment="com.zenx.zen.hub.fragments.lockscreenambient.tabs.submodules.LSClockWidget" />
+
+    <PreferenceScreen
         android:key="lockscreen_info"
         android:title="@string/lockscreen_info_title"
         android:summary="@string/lockscreen_info_summary"
