@@ -62,9 +62,9 @@
             android:icon="@drawable/zenx_maintainer" />
 
         <Preference
-            android:key="maintainers_h930"
-            android:summary="@string/device_maintainers_h930_title_summary"
-            android:title="@string/device_maintainers_h930_title"
+            android:key="maintainers_RMX1971"
+            android:summary="@string/device_maintainers_RMX1971_title_summary"
+            android:title="@string/device_maintainers_RMX1971_title"
             android:icon="@drawable/zenx_maintainer" />
 
         <Preference
@@ -152,9 +152,9 @@
             android:icon="@drawable/zenx_maintainer" />
 
         <Preference
-            android:key="maintainers_joyuse"
-            android:summary="@string/device_maintainers_joyuse_title_summary"
-            android:title="@string/device_maintainers_joyuse_title"
+            android:key="maintainers_begonia"
+            android:summary="@string/device_maintainers_begonia_title_summary"
+            android:title="@string/device_maintainers_begonia_title"
             android:icon="@drawable/zenx_maintainer" />
 
         
