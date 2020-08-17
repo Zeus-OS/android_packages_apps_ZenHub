@@ -28,7 +28,12 @@ import com.android.internal.util.zenx.Utils;
 import com.android.internal.util.zenx.ThemesUtils;
 
 import android.content.om.IOverlayManager;
+import android.content.SharedPreferences;
 import android.os.ServiceManager;
+import android.content.om.OverlayInfo;
+import android.graphics.Color;
+import android.os.SystemProperties;
+import android.os.RemoteException;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
@@ -42,7 +47,9 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.zenx.support.preferences.SystemSettingListPreference;
 import com.zenx.support.preferences.CustomSeekBarPreference;
+import com.zenx.support.colorpicker.ColorPickerPreference;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +61,9 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String ZENHUB_ICON_SIZE = "zenhub_icon_size";
     private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
     private static final String UI_STYLE = "ui_style";
+    private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
+    private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
 
     private SystemSettingListPreference mStatusbarDualRowMode;
     private SystemSettingListPreference mDualRowDataUsageMode;
@@ -63,6 +73,8 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private ListPreference mUIStyle;
 
     private IOverlayManager mOverlayManager;
+    private SharedPreferences mSharedPreferences;
+    private ColorPickerPreference rgbAccentPicker;
 
 
     @Override
@@ -137,6 +149,17 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
             }
        });
 
+        // RGB accent picker
+        mOverlayManager = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
+        rgbAccentPicker = (ColorPickerPreference) findPreference(PREF_RGB_ACCENT_PICKER);
+        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
+        int color = "-1".equals(colorVal)
+                ? Color.WHITE
+                : Color.parseColor("#" + colorVal);
+        rgbAccentPicker.setNewPreviewColor(color);
+        rgbAccentPicker.setOnPreferenceChangeListener(this);
+
         handleDataUsePreferences();
         handleZenHubIconPreferences();
     }
@@ -152,20 +175,6 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
         controllers.add(new NightModePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
         return controllers;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        handleDataUsePreferences();
-        handleZenHubIconPreferences();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        handleDataUsePreferences();
-        handleZenHubIconPreferences();
     }
 
     private void handleDataUsePreferences() {
@@ -251,9 +260,21 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.CUSTOM_STATUSBAR_HEIGHT, value, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == rgbAccentPicker) {
+            int color = (Integer) newValue;
+            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
+            SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
+            mSharedPreferences.edit().remove(PREF_THEME_ACCENT_COLOR);
+            try {
+                mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            } catch (RemoteException ignored) { }
         }
         return false;
     }
+
+
 
     private String getOverlayName(String[] overlays) {
             String overlayName = null;

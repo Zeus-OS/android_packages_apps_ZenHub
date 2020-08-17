@@ -554,7 +554,7 @@
     <string name="lock_clock_font_dumbledor">Dumbledor</string>
     <string name="lock_clock_font_phantombold">PhantomBold</string>
     <string name="lockscreen_info_title ">Info widget</string>
-    <string name="lockscreen_clock_title ">Clock widget</string>
+    <string name="lockscreen_clock_title ">Clock widget (Default clok only)</string>
     <string name="lockscreen_info_summary">Info widget styling</string>
     <string name="lockscreen_clock_summary">Clock widget styling</string>
     <string name="lock_date_font_dialog_title">Select lock date font</string>
@@ -1549,4 +1549,49 @@
     <string name="listview_bounce_interpolator">Bounce</string>
         <!-- Show Visualizer in QSPanel -->
     <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
+
+     <!-- RGB Picker -->
+    <string name="rgb_accent_picker_title">RGB accent picker</string>
+    <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
+
+     <!-- Accent presets -->
+    <string name="accent_preset_0">AOSP Cinnamon</string>
+    <string name="accent_preset_1">AOSP Green</string>
+    <string name="accent_preset_2">AOSP Ocean</string>
+    <string name="accent_preset_3">AOSP Orchid</string>
+    <string name="accent_preset_4">AOSP Purple</string>
+    <string name="accent_preset_5">AOSP Space</string>
+    <string name="accent_preset_6">AndroidOneGreen</string>
+    <string name="accent_preset_7">AospaGreen</string>
+    <string name="accent_preset_8">AtlantisGreen</string>
+    <string name="accent_preset_9">AzureRadiance</string>
+    <string name="accent_preset_10">black</string>
+    <string name="accent_preset_11">CocaColaRed</string>
+    <string name="accent_preset_12">DiscordPurple</string>
+    <string name="accent_preset_13">ElectricViolet</string>
+    <string name="accent_preset_14">FacebookBlue</string>
+    <string name="accent_preset_15">FiBlue</string>
+    <string name="accent_preset_16">InstagramCerise</string>
+    <string name="accent_preset_17">JollibeeCrimson</string>
+    <string name="accent_preset_18">MarsOrange</string>
+    <string name="accent_preset_19">MonsterEnergyGreen</string>
+    <string name="accent_preset_20">NextbitMint</string>
+    <string name="accent_preset_21">NovaYellow</string>
+    <string name="accent_preset_22">OneplusRed</string>
+    <string name="accent_preset_23">PepsiBlue</string>
+    <string name="accent_preset_24">PersianRed</string>
+    <string name="accent_preset_25">PocophoneYellow</string>
+    <string name="accent_preset_26">RazerGreen</string>
+    <string name="accent_preset_27">SamsungBlue</string>
+    <string name="accent_preset_28">SlateSpruce</string>
+    <string name="accent_preset_29">SpotifyGreen</string>
+    <string name="accent_preset_30">StarbucksGreen</string>
+    <string name="accent_preset_31">teal</string>
+    <string name="accent_preset_32">TorchPink</string>
+    <string name="accent_preset_33">TwitchPurple</string>
+    <string name="accent_preset_34">TwitterBlue</string>
+    <string name="accent_preset_35">white</string>
+    <string name="accent_preset_36">XboxGreen</string>
+    <string name="accent_preset_37">XiaomiOrange</string>
+    <string name="accent_preset_title">Accent preset</string>
 </resources>
