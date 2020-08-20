@@ -43,7 +43,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.zenx.zen.hub.preferences.Utils;
+import com.android.internal.util.zenx.Utils;
 import com.zenx.support.preferences.SystemSettingSeekBarPreference;
 import com.zenx.support.preferences.SystemSettingSwitchPreference;
 import com.zenx.support.preferences.SystemSettingSeekBarPreference;
@@ -96,6 +96,7 @@ public class VolumeButton extends SettingsPreferenceFragment implements Preferen
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYNTHOS_VOLUME_PANEL_THEME, style);
             mVolumePanelTheme.setSummary(mVolumePanelTheme.getEntries()[index]);
+            Utils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mVolumeAlignment) {
             int align = Integer.valueOf((String) newValue);
