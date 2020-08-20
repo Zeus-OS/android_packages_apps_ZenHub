@@ -271,6 +271,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
                  mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
             } catch (RemoteException ignored) {
             }
+            Utils.showSystemUiRestartDialog(getContext());
          }
         return false;
     }
