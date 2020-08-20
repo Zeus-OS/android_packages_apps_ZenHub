@@ -1610,4 +1610,7 @@
     <string name="volume_panel_compat_val" translatable="false">co.potatoproject.plugin.volume.compact</string>
     <string name="volume_panel_oreo_val" translatable="false">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val" translatable="false">co.potatoproject.plugin.volume.tiled</string>
+
+        <!-- QQS brightness slider -->
+    <string name="qqs_brightness_slider_title">Quick Qs Brightness slider</string>
 </resources>
