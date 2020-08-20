@@ -199,6 +199,15 @@
         android:title="@string/brightness_category_title"
         android:key="brightness_slider_cat" >
 
+        <com.zenx.support.preferences.SystemSettingListPreference
+            android:key="qs_show_brightness_slider_extend"
+            android:title="@string/qs_show_brightness_slider_extend_title"
+            android:summary="%s"
+            android:dialogTitle="@string/qs_show_brightness_title"
+            android:entries="@array/status_bar_brightness_slider_entries"
+            android:entryValues="@array/status_bar_brightness_slider_values"
+            android:defaultValue="1" />
+
         <com.zenx.support.preferences.SecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
