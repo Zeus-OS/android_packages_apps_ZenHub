@@ -18,19 +18,13 @@
     android:key="button_settings"
     android:title="@string/audio_panel_view">
 
-    <com.zenx.support.preferences.SystemSettingListPreference
-            android:key="systemui_plugin_volume"
-            android:title="@string/volume_panel"
-            android:entries="@array/volume_panel_entries"
-            android:entryValues="@array/volume_panel_values"
-            android:defaultValue="@string/volume_panel_aosp_val" />
 
     <PreferenceCategory
         android:key="synthos_volume_panel"
         android:title="@string/synthos_volume_panel_category_title" >
 
         <ListPreference
-            android:key="synthos_volume_panel_theme"
+            android:key="systemui_plugin_volume"
             android:title="@string/synthos_volume_panel_theme_title"
             android:summary="@string/synthos_volume_panel_theme_summary"
             android:dialogTitle="@string/synthos_volume_panel_theme_summary"
@@ -39,11 +33,6 @@
             android:defaultValue="0"
             android:persistent="false" />
 
-     <com.zenx.support.preferences.SystemSettingSwitchPreference
-        android:key="synthos_hide_things_volumepanel"
-        android:summary="@string/synthos_hide_things_volumepanel_summary"
-        android:title="@string/synthos_hide_things_volumepanel_title"
-        android:defaultValue="true" />
     </PreferenceCategory>
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference
@@ -120,4 +109,31 @@
         android:summary="@string/synthos_music_volume_panel_text_summary"
         android:title="@string/synthos_music_volume_panel_text_title"
         android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="synthos_media_card_volume_panel_full_width"
+            android:summary="@string/synthos_media_card_volume_panel_full_width_summary"
+            android:title="@string/synthos_media_card_volume_panel_full_width_title"
+            android:defaultValue="false" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_gradient_stroke"
+            android:summary="@string/volume_dialog_gradient_stroke_summary"
+            android:title="@string/volume_dialog_gradient_stroke_title"
+            android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_rounded_system"
+            android:summary="@string/volume_dialog_rounded_system_summary"
+            android:title="@string/volume_dialog_rounded_system_title"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="volume_dialog_rounded_value"
+            android:title="@string/volume_dialog_rounded_value_title"
+            android:min="0"
+            android:max="100"
+            settings:units="dp"
+            android:defaultValue="36" />
+
 </PreferenceScreen>
