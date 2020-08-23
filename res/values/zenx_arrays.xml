@@ -983,10 +983,8 @@
 
     <!-- FOD Recognizing fingerprint animations -->
     <string-array name="fod_recog_animation_entries" translatable="false">
-        <item>@string/fod_recog_animation_miui_normal</item>
         <item>@string/fod_recog_animation_miui_aod</item>
         <item>@string/fod_recog_animation_miui_aurora_cas</item>
-        <item>@string/fod_recog_animation_miui_light</item>
         <item>@string/fod_recog_animation_miui_pop</item>
         <item>@string/fod_recog_animation_miui_pulse</item>
         <item>@string/fod_recog_animation_miui_pulse_white</item>
@@ -1010,8 +1008,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>11</item>
-        <item>12</item>
     </string-array>
 
     <!-- QS footer Data Usage -->
