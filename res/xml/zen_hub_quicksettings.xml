@@ -122,13 +122,6 @@
             android:fragment="com.zenx.zen.hub.fragments.statusbarquicksettings.tabs.submodules.QsBlur"
             android:defaultValue="false" />
 
-                <!-- Visualizer QSPanel -->
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="synthos_visualizer_qspanel"
-            android:title="@string/synthos_visualizer_qspanel_title"
-            android:defaultValue="true" />
-
-
         <ListPreference
             android:key="qs_background_style"
             android:title="@string/qs_background_style_title"
