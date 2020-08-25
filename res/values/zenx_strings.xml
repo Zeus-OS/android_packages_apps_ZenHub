@@ -1168,7 +1168,7 @@
 
      <!-- Ambient visualizer -->
     <string name="ambient_visualizer_title">Show on Ambient Display</string>
-    <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display</string>
+    <string name="ambient_visualizer_summary">Display the visualizer bars on ambient display (Reboot SystemUI to apply)</string>
     <!-- Media heads up -->
     <string name="show_media_heads_up_title">Media heads up</string>
     <string name="show_media_heads_up_summary">Show heads up notification when a new track is played</string>
@@ -1551,6 +1551,8 @@
     <string name="listview_overshoot_interpolator">Overshoot</string>
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
+        <!-- Show Visualizer in QSPanel -->
+    <string name="synthos_visualizer_qspanel_title">Show Music Visualizer in QS Panel</string>
 
      <!-- RGB Picker -->
     <string name="rgb_accent_picker_title">RGB accent picker</string>
