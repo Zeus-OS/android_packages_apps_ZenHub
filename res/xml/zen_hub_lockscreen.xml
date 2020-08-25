@@ -177,18 +177,7 @@
             android:defaultValue="0"
             android:dependency="fod_recognizing_animation" />
 
-        <com.zenx.support.preferences.SwitchPreference
-            android:key="screen_off_fod"
-            android:title="@string/screen_off_fod_title"
-            android:summary="@string/screen_off_fod_summary"
-            android:defaultValue="false" />
 
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="screen_off_fod_icon"
-            android:title="@string/screen_off_fod_icon_title"
-            android:summary="@string/screen_off_fod_icon_summary"
-            android:defaultValue="true"
-            android:dependency="screen_off_fod" />
 
     </PreferenceCategory>
 
