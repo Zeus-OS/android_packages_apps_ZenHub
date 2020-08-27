@@ -1335,7 +1335,8 @@
     <string name="headset_connect_player_title">Launch music app on headset connection</string>
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
 
-    <string name="switch_ui_catergory_title">Switches</string>
+    <string name="accent_color_catergory">Accent color</string>
+
     <string name="switch_style_title">Switch Styles</string>
     <string name="switch_default">Default</string>
     <string name="switch_narrow">Narrow</string>
@@ -1513,7 +1514,7 @@
     <string name="custom_statusbar_height_tile">Statusbar Height</string>
 
     <!-- GUI styles -->
-    <string name="ui_style_title">UI Style</string>
+    <string name="ui_style_title">UI Corner style</string>
     <string name="ui_style_default">Default</string>
     <string name="ui_style_no_corner_radius">No Corner Radius</string>
     <string name="ui_style_rectangle">Rectangle</string>
@@ -1559,6 +1560,7 @@
     <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
 
      <!-- Accent presets -->
+     <string name="accent_color_catergory_title">Accent color</string>
      <string name="custom_string">Custom</string>
       <string name="accent_preset_0">AOSP Cinnamon</string>
     <string name="accent_preset_1">AOSP Green</string>
@@ -1600,9 +1602,10 @@
     <string name="accent_preset_37">XiaomiOrange</string>
     <string name="accent_preset_title">Accent preset</string>
 
-        <!--  Volume Panel Plugin   -->
-    <string name="volume_ui_catergory_title">Volume Style</string>
-    <string name="volume_panel">Volume Panel Style</string>
+    <string name="ui_elemets_catergory">UI Elements style</string>
+
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Volume panel style</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compat">Compact</string>
     <string name="volume_panel_oreo">Oreo</string>
@@ -1615,4 +1618,15 @@
 
         <!-- QQS brightness slider -->
     <string name="qqs_brightness_slider_title">Quick Qs Brightness slider</string>
+
+    <string name="ui_elemets_catergory_title">UI elements</string>
+
+    <!-- Brightness Slider style -->
+    <string name="brightness_slider_style_title">Brightness slider style</string>
+    <string name="brightness_slider_style_default">Default</string>
+    <string name="brightness_slider_style_daniel">Daniel</string>
+    <string name="brightness_slider_style_mememini">Meme mini</string>
+    <string name="brightness_slider_style_memeround">Meme round</string>
+    <string name="brightness_slider_style_memeroundstroke">Meme round stroke</string>
+    <string name="brightness_slider_style_memestroke">Meme stroke</string>
 </resources>

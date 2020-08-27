@@ -64,6 +64,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String ZENHUB_ICON_SIZE = "zenhub_icon_size";
     private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
     private static final String UI_STYLE = "ui_style";
+    private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
@@ -75,6 +76,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private SystemSettingListPreference mZenHubIconSize;
     private CustomSeekBarPreference mCustomStatusbarHeight;
     private ListPreference mUIStyle;
+    private ListPreference mBrightnessSliderStyle;
 
     private IOverlayManager mOverlayManager;
     private SharedPreferences mSharedPreferences;
@@ -146,6 +148,36 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
                     }
                     if (valueIndex > 0) {
                         handleOverlays(ThemesUtils.UI_THEMES[valueIndex],
+                                true, mOverlayManager);
+                    }
+                    return true;
+                }
+                return false;
+            }
+       });
+
+        mBrightnessSliderStyle = (ListPreference) findPreference(BRIGHTNESS_SLIDER_STYLE);
+        int BrightnessSliderStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.BRIGHTNESS_SLIDER_STYLE, 0);
+        int BrightnessSliderStyleValue = getOverlayPosition(ThemesUtils.BRIGHTNESS_SLIDER_THEMES);
+        if (BrightnessSliderStyleValue != 0) {
+            mBrightnessSliderStyle.setValue(String.valueOf(BrightnessSliderStyle));
+        }
+        mBrightnessSliderStyle.setSummary(mBrightnessSliderStyle.getEntry());
+        mBrightnessSliderStyle.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (preference == mBrightnessSliderStyle) {
+                    String value = (String) newValue;
+                    Settings.System.putInt(getActivity().getContentResolver(), Settings.System.BRIGHTNESS_SLIDER_STYLE, Integer.valueOf(value));
+                    int valueIndex = mBrightnessSliderStyle.findIndexOfValue(value);
+                    mBrightnessSliderStyle.setSummary(mBrightnessSliderStyle.getEntries()[valueIndex]);
+                    String overlayName = getOverlayName(ThemesUtils.BRIGHTNESS_SLIDER_THEMES);
+                    if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                    }
+                    if (valueIndex > 0) {
+                        handleOverlays(ThemesUtils.BRIGHTNESS_SLIDER_THEMES[valueIndex],
                                 true, mOverlayManager);
                     }
                     return true;
