@@ -1603,12 +1603,10 @@
     <string name="volume_panel">Volume Panel Style</string>
     <string name="volume_panel_aosp">AOSP</string>
     <string name="volume_panel_compat">Compact</string>
-    <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tiled</string>
     <!--  Volume Panel Plugin Values   -->
     <string name="volume_panel_aosp_val" translatable="false">co.potatoproject.plugin.volume.aosp</string>
     <string name="volume_panel_compat_val" translatable="false">co.potatoproject.plugin.volume.compact</string>
-    <string name="volume_panel_oreo_val" translatable="false">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val" translatable="false">co.potatoproject.plugin.volume.tiled</string>
 
         <!-- QQS brightness slider -->
