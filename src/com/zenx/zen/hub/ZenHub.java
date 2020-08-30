@@ -151,6 +151,12 @@ public class ZenHub extends Fragment implements View.OnClickListener {
         mRomInfoCard = (FrameLayout) view.findViewById(R.id.rom_info_card);
         mRomInfoCard.setOnClickListener(this);
 
+        if(isDevicePartsEnabled()){
+             mDevicePartsCard.setVisibility(view.VISIBLE);
+        } else {
+            mDevicePartsCard.setVisibility(view.GONE);
+        }
+
         updateTitlePosition(view);
         updateDescritionPosition(view);
         updateZenHubIconSize(view);
@@ -179,6 +185,11 @@ public class ZenHub extends Fragment implements View.OnClickListener {
     public int zenHubIconType() {
         return Settings.System.getInt(getContext().getContentResolver(),
             Settings.System.ZENHUB_ICON_TYPE, 0);
+    }
+
+    public boolean isDevicePartsEnabled() {
+        return Settings.System.getInt(getContext().getContentResolver(),
+            Settings.System.ZENHUB_SHOW_DEVICE_PARTS, 1) == 1;
     }
 
     private void updateTitlePosition(View view) {

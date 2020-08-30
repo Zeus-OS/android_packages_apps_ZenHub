@@ -465,6 +465,78 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/rom_info_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/container_background"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true">
+
+            <ImageView
+                    android:id="@+id/rom_info_card_image"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="18dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:tint="?android:attr/colorAccent"
+                    android:src="@drawable/ic_settings_about" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/rominfo"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:clickable="false"
+                android:layout_gravity="center"
+                android:layout_marginBottom="28dp"
+                app:lottie_rawRes="@raw/rominfo_anim"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_margin="4dp"
+                android:paddingLeft="4dp"
+                android:paddingBottom="8dp"
+                android:orientation="vertical">
+
+                <View
+                    android:paddingTop="20dp"
+                    android:gravity="center"
+                    android:background="?android:attr/dividerHorizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/links_devs_title"
+                    android:id="@+id/rom_info_card_title"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rom_info_card_description"
+                    android:layout_height="wrap_content"
+                    android:text="@string/links_devs_summary"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:maxLines="1"
+                    android:ellipsize="marquee"  
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <FrameLayout
             android:id="@+id/device_parts_card"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -534,77 +606,6 @@
                     android:scrollHorizontally="true"
                     android:textSize="12sp" />
 
-            </LinearLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/rom_info_card"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/container_background"
-            android:layout_marginBottom="40dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true">
-
-            <ImageView
-                    android:id="@+id/rom_info_card_image"
-                   android:layout_gravity="center"
-                    android:layout_marginBottom="18dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:tint="?android:attr/colorAccent"
-                    android:src="@drawable/ic_settings_about" />
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/rominfo"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:clickable="false"
-                android:layout_gravity="center"
-                android:layout_marginBottom="28dp"
-                app:lottie_rawRes="@raw/rominfo_anim"
-                app:lottie_loop="true"
-                app:lottie_autoPlay="true" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_margin="4dp"
-                android:paddingLeft="4dp"
-                android:paddingBottom="8dp"
-                android:orientation="vertical">
-
-                <View
-                    android:paddingTop="20dp"
-                    android:gravity="center"
-                    android:background="?android:attr/dividerHorizontal"
-                    android:layout_centerInParent="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/links_devs_title"
-                    android:id="@+id/rom_info_card_title"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:id="@+id/rom_info_card_description"
-                    android:layout_height="wrap_content"
-                    android:text="@string/links_devs_summary"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:maxLines="1"  
-                    android:ellipsize="marquee"  
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:scrollHorizontally="true"
-                    android:textSize="12sp" />
             </LinearLayout>
         </FrameLayout>
     </GridLayout>

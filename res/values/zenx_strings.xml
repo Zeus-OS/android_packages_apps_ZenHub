@@ -1410,6 +1410,8 @@
     <string name="zenhub_show_description_summary">Enable or disable Card description</string>
     <string name="zenhub_description_center_title">Center Card description position</string>
     <string name="zenhub_description_center_summary">Switch description position in zenhub between left and center</string>
+    <string name="zenhub_show_device_parts_title">Show device parts</string>
+    <string name="zenhub_show_device_parts_summary">Show or hide device parts in ZenHub</string>
 
     <string name="zenhub_icon_size_title">Icon Size</string>
     <string name="zenhub_icon_size_small">Small</string>
