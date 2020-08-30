@@ -1126,6 +1126,7 @@
         <item>@string/volte_miui</item>
         <item>@string/volte_emui</item>
         <item>@string/volte_oos_ten</item>
+        <item>@string/volte_vring</item>
     </string-array>
 
     <string-array name="volte_icon_type_values" translatable="false">
@@ -1139,6 +1140,7 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
+        <item>10</item>
     </string-array>
 
         <!-- VoWiFi Icon -->
