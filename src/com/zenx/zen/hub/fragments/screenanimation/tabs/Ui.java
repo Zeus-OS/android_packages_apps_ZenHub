@@ -65,6 +65,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private static final String CUSTOM_STATUSBAR_HEIGHT = "custom_statusbar_height";
     private static final String UI_STYLE = "ui_style";
     private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
+    private static final String NAVBAR_STYLE = "navbar_style";
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
@@ -77,6 +78,7 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
     private CustomSeekBarPreference mCustomStatusbarHeight;
     private ListPreference mUIStyle;
     private ListPreference mBrightnessSliderStyle;
+    private ListPreference mNavbarStyle;
 
     private IOverlayManager mOverlayManager;
     private SharedPreferences mSharedPreferences;
@@ -178,6 +180,36 @@ public class Ui extends DashboardFragment implements Preference.OnPreferenceChan
                     }
                     if (valueIndex > 0) {
                         handleOverlays(ThemesUtils.BRIGHTNESS_SLIDER_THEMES[valueIndex],
+                                true, mOverlayManager);
+                    }
+                    return true;
+                }
+                return false;
+            }
+       });
+
+        mNavbarStyle = (ListPreference) findPreference(NAVBAR_STYLE);
+        int navbarStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NAVBAR_STYLE, 0);
+        int navbarStyleValue = getOverlayPosition(ThemesUtils.NAVBAR_STYLES);
+        if (navbarStyleValue != 0) {
+            mNavbarStyle.setValue(String.valueOf(navbarStyle));
+        }
+        mNavbarStyle.setSummary(mNavbarStyle.getEntry());
+        mNavbarStyle.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                if (preference == mNavbarStyle) {
+                    String value = (String) newValue;
+                    Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NAVBAR_STYLE, Integer.valueOf(value));
+                    int valueIndex = mNavbarStyle.findIndexOfValue(value);
+                    mNavbarStyle.setSummary(mNavbarStyle.getEntries()[valueIndex]);
+                    String overlayName = getOverlayName(ThemesUtils.NAVBAR_STYLES);
+                    if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                    }
+                    if (valueIndex > 0) {
+                        handleOverlays(ThemesUtils.NAVBAR_STYLES[valueIndex],
                                 true, mOverlayManager);
                     }
                     return true;
