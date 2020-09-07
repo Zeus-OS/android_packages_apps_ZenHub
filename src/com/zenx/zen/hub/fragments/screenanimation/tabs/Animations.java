@@ -100,13 +100,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
 
-        mScreenOffAnimation = (ListPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
-        int screenOffAnimation = Settings.System.getInt(getContentResolver(),
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
-        mScreenOffAnimation.setValue(Integer.toString(screenOffAnimation));
-        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
-        mScreenOffAnimation.setOnPreferenceChangeListener(this);
-
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(getContentResolver(),
                 Settings.System.LISTVIEW_ANIMATION, 0);
@@ -148,12 +141,6 @@ public class Animations extends SettingsPreferenceFragment  implements Preferenc
             Settings.Global.putString(getContentResolver(), Settings.Global.TOAST_ANIMATION, (String) newValue);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (preference == mScreenOffAnimation) {
-            int value = Integer.valueOf((String) newValue);
-            int index = mScreenOffAnimation.findIndexOfValue((String) newValue);
-            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_ANIMATION, value);
             return true;
         } else if (preference == mListViewAnimation) {
             int value = Integer.parseInt((String) newValue);
