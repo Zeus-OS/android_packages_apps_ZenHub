@@ -31,7 +31,7 @@
             android:key="show_battery_bar_on_doze"
             android:title="@string/doze_show_battery_bar_title"
             android:summary="@string/doze_show_battery_bar_summary"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <com.zenx.support.colorpicker.ColorPickerPreference
             android:key="sysui_keyguard_battery_bar_color"

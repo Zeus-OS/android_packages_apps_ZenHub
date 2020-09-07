@@ -114,7 +114,7 @@
             android:title="@string/synthos_center_notification_headers_title"
             android:summary="@string/synthos_center_notification_headers_summary"
             android:dependency="notification_headers"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
         <com.zenx.support.preferences.SystemSettingMasterSwitchPreference
             android:key="qs_background_blur"
             android:title="@string/qs_blur_title"
@@ -126,7 +126,7 @@
         <com.zenx.support.preferences.SystemSettingSwitchPreference
             android:key="synthos_visualizer_qspanel"
             android:title="@string/synthos_visualizer_qspanel_title"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
 
         <ListPreference
