@@ -1685,9 +1685,8 @@
     <string name="synthos_hide_ringer_volumepanel_summary">Hide Ringer Container below volume panel</string>
     <string name="synthos_hide_extended_volumepanel_title">Hide Extended below volume panel</string>
     <string name="synthos_hide_extended_volumepanel_summary">Hide Extended Container below volume panel</string>
- <!-- Align to left lockscreen items -->
-    <string name="synthos_align_lockscreen_left_title">Align Lockscreen Items to Left</string>
-    <string name="synthos_align_lockscreen_left_summary">Align to left or center the lockscreen items</string>
-    <string name="synthos_align_lockscreen_left_margin">Left Edge Margin</string>
+
+    <string name="volume_panel_location">Location</string>
+    <string name="volume_panel_items_title">Items</string>
 
 </resources>

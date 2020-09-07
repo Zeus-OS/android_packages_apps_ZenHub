@@ -33,7 +33,83 @@
             android:defaultValue="0"
             android:persistent="false" />
 
+        <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_gradient_stroke"
+            android:summary="@string/volume_dialog_gradient_stroke_summary"
+            android:title="@string/volume_dialog_gradient_stroke_title"
+            android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="volume_dialog_rounded_system"
+            android:summary="@string/volume_dialog_rounded_system_summary"
+            android:title="@string/volume_dialog_rounded_system_title"
+            android:defaultValue="true" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="volume_dialog_rounded_value"
+            android:title="@string/volume_dialog_rounded_value_title"
+            android:min="0"
+            android:max="100"
+            settings:units="dp"
+            android:defaultValue="36" />
+
     </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="volume_panel_location"
+        android:title="@string/volume_panel_location" >
+
+        <ListPreference
+            android:key="volume_panel_alignment"
+            android:title="@string/synthos_volume_panel_alignment_title"
+            android:summary="%s"
+            android:dialogTitle="@string/synthos_volume_panel_alignment_title"
+            android:entries="@array/volume_alignment_entries"
+            android:entryValues="@array/volume_alignment_values"
+            android:defaultValue="1"
+            android:persistent="false" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="synthos_volume_panel_padding_top"
+            android:title="@string/synthos_volume_panel_padding_top_title"
+            android:max="100"
+            android:min="0"
+            settings:units="dp"
+            android:defaultValue="20" />
+
+        <com.zenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="synthos_volume_panel_padding_bottom"
+            android:title="@string/synthos_volume_panel_padding_bottom_title"
+            android:max="100"
+            android:min="0"
+            settings:units="dp"
+            android:defaultValue="20" />
+
+        </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="music_card"
+        android:title="@string/music_card_title">
+
+       <com.zenx.support.preferences.SystemSettingSwitchPreference
+        android:key="synthos_music_volume_panel_text"
+        android:summary="@string/synthos_music_volume_panel_text_summary"
+        android:title="@string/synthos_music_volume_panel_text_title"
+        android:defaultValue="true" />
+
+         <com.zenx.support.preferences.SystemSettingSwitchPreference
+            android:key="synthos_media_card_volume_panel_full_width"
+            android:summary="@string/synthos_media_card_volume_panel_full_width_summary"
+            android:title="@string/synthos_media_card_volume_panel_full_width_title"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="volume_panel_items"
+        android:title="@string/volume_panel_items_title" >
 
     <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="audio_panel_view_media"
@@ -78,66 +154,6 @@
             android:title="@string/synthos_hide_extended_volumepanel_title"
             android:defaultValue="false" />
 
-        <ListPreference
-            android:key="volume_panel_alignment"
-            android:title="@string/synthos_volume_panel_alignment_title"
-            android:summary="%s"
-            android:dialogTitle="@string/synthos_volume_panel_alignment_title"
-            android:entries="@array/volume_alignment_entries"
-            android:entryValues="@array/volume_alignment_values"
-            android:defaultValue="1"
-            android:persistent="false" />
+    </PreferenceCategory>
 
-        <com.zenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="synthos_volume_panel_padding_top"
-            android:title="@string/synthos_volume_panel_padding_top_title"
-            android:max="100"
-            android:min="0"
-            settings:units="dp"
-            android:defaultValue="20" />
-
-        <com.zenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="synthos_volume_panel_padding_bottom"
-            android:title="@string/synthos_volume_panel_padding_bottom_title"
-            android:max="100"
-            android:min="0"
-            settings:units="dp"
-            android:defaultValue="20" />
-
-      <PreferenceCategory
-        android:key="music_card"
-        android:title="@string/music_card_title">
-
-       <com.zenx.support.preferences.SystemSettingSwitchPreference
-        android:key="synthos_music_volume_panel_text"
-        android:summary="@string/synthos_music_volume_panel_text_summary"
-        android:title="@string/synthos_music_volume_panel_text_title"
-        android:defaultValue="true" />
-
-         <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="synthos_media_card_volume_panel_full_width"
-            android:summary="@string/synthos_media_card_volume_panel_full_width_summary"
-            android:title="@string/synthos_media_card_volume_panel_full_width_title"
-            android:defaultValue="false" />
-
-         <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="volume_dialog_gradient_stroke"
-            android:summary="@string/volume_dialog_gradient_stroke_summary"
-            android:title="@string/volume_dialog_gradient_stroke_title"
-            android:defaultValue="true" />
-
-         <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="volume_dialog_rounded_system"
-            android:summary="@string/volume_dialog_rounded_system_summary"
-            android:title="@string/volume_dialog_rounded_system_title"
-            android:defaultValue="true" />
-
-        <com.zenx.support.preferences.SystemSettingSeekBarPreference
-            android:key="volume_dialog_rounded_value"
-            android:title="@string/volume_dialog_rounded_value_title"
-            android:min="0"
-            android:max="100"
-            settings:units="dp"
-            android:defaultValue="36" />
- </PreferenceCategory>
 </PreferenceScreen>
