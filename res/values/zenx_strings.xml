@@ -1643,7 +1643,8 @@
 
         <!-- Audio Panel view -->
     <string name="audio_panel_view">Volume panel</string>
-    <string name="audio_panel_view_media_title">Media</string> 
+    <string name="audio_panel_view_summary">Advanced volume panel theming</string>
+    <string name="audio_panel_view_media_title">Media</string>
     <string name="audio_panel_view_ringer_title">Ring</string> 
     <string name="audio_panel_view_notification_title">Notification</string> 
     <string name="audio_panel_view_alarm_title">Alarm</string> 
@@ -1681,5 +1682,20 @@
     <string name="volume_panel_alignment_top">Top</string>
     <string name="volume_panel_alignment_center">Center</string>
     <string name="volume_panel_alignment_bottom">Bottom</string>
+
+    <!-- Add Media Card in Ambient -->
+    <string name="music_card_title">Media Card</string>
+    <string name="media_card_ambient_title">Media Card in Ambient</string>
+    <string name="media_card_ambient_summary">Add Media Card in Ambient Display</string>
+
+       <!-- Volume panel Hide Things-->
+    <string name="synthos_hide_ringer_volumepanel_title">Hide Ringer below volume panel</string>
+    <string name="synthos_hide_ringer_volumepanel_summary">Hide Ringer Container below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_title">Hide Extended below volume panel</string>
+    <string name="synthos_hide_extended_volumepanel_summary">Hide Extended Container below volume panel</string>
+ <!-- Align to left lockscreen items -->
+    <string name="synthos_align_lockscreen_left_title">Align Lockscreen Items to Left</string>
+    <string name="synthos_align_lockscreen_left_summary">Align to left or center the lockscreen items</string>
+    <string name="synthos_align_lockscreen_left_margin">Left Edge Margin</string>
 
 </resources>

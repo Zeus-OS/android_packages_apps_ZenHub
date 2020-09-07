@@ -104,6 +104,10 @@
             settings:units="dp"
             android:defaultValue="20" />
 
+      <PreferenceCategory
+        android:key="music_card"
+        android:title="@string/music_card_title">
+
        <com.zenx.support.preferences.SystemSettingSwitchPreference
         android:key="synthos_music_volume_panel_text"
         android:summary="@string/synthos_music_volume_panel_text_summary"
@@ -135,5 +139,5 @@
             android:max="100"
             settings:units="dp"
             android:defaultValue="36" />
-
+ </PreferenceCategory>
 </PreferenceScreen>

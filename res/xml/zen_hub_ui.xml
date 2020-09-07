@@ -99,7 +99,8 @@
 
     <Preference
         android:key="audio_panel"
-        android:fragment="com.derpquest.settings.fragments.AudioPanelSettings"
+        android:fragment="com.zenx.zen.hub.fragments.screenanimation.tabs.submodules.AudioPanelSettings"
+        android:summary="@string/audio_panel_view_summary"
         android:title="@string/audio_panel_view" />
 
     </PreferenceCategory>
