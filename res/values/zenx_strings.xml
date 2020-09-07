@@ -1600,7 +1600,6 @@
     <!--  Volume Panel Plugin   -->
     <string name="volume_panel">Volume panel style</string>
     <string name="volume_panel_aosp">AOSP</string>
-    <string name="volume_panel_stock">Stock AOSPA</string>
     <string name="volume_panel_compat">Compact</string>
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Tiled</string>
@@ -1654,6 +1653,7 @@
     <string name="synthos_volume_panel_theme_aosp">AOSP</string>
     <string name="synthos_volume_panel_theme_oreo">Oreo</string>
     <string name="synthos_volume_panel_theme_tiled">Tiled</string>
+    <string name="volume_panel_stock">Stock AOSP</string>
 
     <string name="volume_dialog_gradient_stroke_title">Use Gradient Stoke</string>
     <string name="volume_dialog_gradient_stroke_summary">A Simple Gradient Stoke With System Colors</string>

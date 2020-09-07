@@ -1586,12 +1586,14 @@
 
        <!-- Volume Panel Theme -->
     <string-array name="volume_theme_entries" translatable="false">
+        <item>@string/volume_panel_stock</item>
         <item>@string/synthos_volume_panel_theme_aosp</item>
         <item>@string/synthos_volume_panel_theme_compact</item>
         <item>@string/synthos_volume_panel_theme_oreo</item>
         <item>@string/synthos_volume_panel_theme_tiled</item>
     </string-array>
      <string-array name="volume_theme_values" translatable="false">
+        <item>none</item>
         <item>co.potatoproject.plugin.volume.aosp</item>
         <item>co.potatoproject.plugin.volume.compact</item>
         <item>co.potatoproject.plugin.volume.oreo</item>
