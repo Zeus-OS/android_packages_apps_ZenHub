@@ -86,12 +86,6 @@
         android:key="custom_doze"
         android:title="@string/custom_doze_settings">
 
-        <com.zenx.support.preferences.SystemSettingSwitchPreference
-            android:key="media_card_ambient"
-            android:title="@string/media_card_ambient_title"
-            android:summary="@string/media_card_ambient_summary"
-            android:defaultValue="true" />
-
         <Preference
             android:key="ambient_display_custom"
             android:persistent="false"
