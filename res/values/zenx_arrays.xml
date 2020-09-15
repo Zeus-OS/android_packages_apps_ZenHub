@@ -1211,6 +1211,7 @@
         <item>@string/qs_tile_style_triangles</item>
         <item>@string/qs_tile_style_just_icon</item>
         <item>@string/qs_tile_style_mallow</item>
+        <item>@string/qstile_oos</item>
     </string-array>
 
     <string-array name="qs_tile_style_selector_values" translatable="false">
@@ -1235,6 +1236,7 @@
         <item>18</item>
         <item>19</item>
         <item>20</item>
+        <item>21</item>
     </string-array>
 
     <!-- Pulse -->
