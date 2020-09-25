@@ -543,14 +543,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">Ikona HD</string>
     <string name="show_hd_icon_summary">Zobrazit ikonu HD namísto VoLTE</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Uložit</string>
-    <string name="aspect_ratio_category_title">Škálování starších aplikací</string>
-    <string name="aspect_ratio_apps_enabled_title">Vynutit vyšší poměr stran</string>
-    <string name="aspect_ratio_apps_enabled_summary">Povolit vybraným starším aplikacím používat celou obrazovku</string>
-    <string name="aspect_ratio_apps_list_title">Vybrat aplikace</string>
-    <string name="aspect_ratio_apps_list_summary">Pro tyto aplikace vynutit zobrazení na celou obrazovku</string>
-    <string name="aspect_ratio_footer_text">Aby se změny projevily, restartujte aplikace</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Rohy</string>
     <string name="corner_radius">Poloměr zaoblených rohů</string>

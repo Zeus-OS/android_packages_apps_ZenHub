@@ -543,14 +543,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">Ikon HD</string>
     <string name="show_hd_icon_summary">Tampilkan ikon HD di bilah status sebagai ganti VoLTE</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Simpan</string>
-    <string name="aspect_ratio_category_title">Penskalaan aplikasi lawas</string>
-    <string name="aspect_ratio_apps_enabled_title">Paksa aspek rasio yang lebih tinggi</string>
-    <string name="aspect_ratio_apps_enabled_summary">Izinkan aplikasi lawas menggunakan layar penuh</string>
-    <string name="aspect_ratio_apps_list_title">Pilih aplikasi</string>
-    <string name="aspect_ratio_apps_list_summary">Paksa layar penuh untuk aplikasi ini</string>
-    <string name="aspect_ratio_footer_text">Mulai ulang aplikasi untuk menerapkan perubahan</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Sudut</string>
     <string name="corner_radius">Radius lengkungan sudut</string>

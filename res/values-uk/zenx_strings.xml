@@ -543,14 +543,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">Значок HD</string>
     <string name="show_hd_icon_summary">Показувати значок HD у рядку стану замість VoLTE</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Зберегти</string>
-    <string name="aspect_ratio_category_title">Масштабування старих додатків</string>
-    <string name="aspect_ratio_apps_enabled_title">Примусове підвищення співвідношення сторін</string>
-    <string name="aspect_ratio_apps_enabled_summary">Дозволити вибраним застарілим додаткам працювати у повноекранному режимі</string>
-    <string name="aspect_ratio_apps_list_title">Виберіть додатки</string>
-    <string name="aspect_ratio_apps_list_summary">Примусово використовувати повноекранний режим для цих додатків</string>
-    <string name="aspect_ratio_footer_text">Перезапустіть додаток, щоб зміни набули чинності</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Кути</string>
     <string name="corner_radius">Радіус округлення кутів</string>

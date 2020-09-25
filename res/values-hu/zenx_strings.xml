@@ -543,14 +543,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">HD ikon</string>
     <string name="show_hd_icon_summary">Jelenítse meg a HD ikont az állapotsorban, az VoLTE helyett</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Mentés</string>
-    <string name="aspect_ratio_category_title">Régi alkalmazás méretezése</string>
-    <string name="aspect_ratio_apps_enabled_title">Nagyobb képarány kényszerítése</string>
-    <string name="aspect_ratio_apps_enabled_summary">Engedélyezze a kiválasztott régi alkalmazásoknak a teljes képernyő használatát</string>
-    <string name="aspect_ratio_apps_list_title">Alkalmazás kiválasztása</string>
-    <string name="aspect_ratio_apps_list_summary">Teljes képernyő kényszerítése ezekre az alkalmazásokra</string>
-    <string name="aspect_ratio_footer_text">Indítsa újra az alkalmazásokat a módosítások hatályba lépése érdekében</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Sarkok</string>
     <string name="corner_radius">A lekerekített sarok sugara</string>

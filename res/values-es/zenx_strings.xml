@@ -780,14 +780,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">Icono HD</string>
     <string name="show_hd_icon_summary">Mostrar icono HD en la barra de estado en lugar de VoLTE</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Guardar</string>
-    <string name="aspect_ratio_category_title">Escalado de aplicación heredada</string>
-    <string name="aspect_ratio_apps_enabled_title">Forzar mayor relación de aspecto</string>
-    <string name="aspect_ratio_apps_enabled_summary">Permitir que las aplicaciones seleccionadas usen pantalla completa</string>
-    <string name="aspect_ratio_apps_list_title">Seleccionar apps</string>
-    <string name="aspect_ratio_apps_list_summary">Forzar pantalla completa para estas aplicaciones</string>
-    <string name="aspect_ratio_footer_text">Reiniciar las aplicaciones para que los cambios surtan efecto</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Esquinas</string>
     <string name="corner_radius">Radio de esquina redondeada</string>

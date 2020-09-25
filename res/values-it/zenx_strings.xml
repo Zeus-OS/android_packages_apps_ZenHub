@@ -543,14 +543,6 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">Icona HD</string>
     <string name="show_hd_icon_summary">Visualizza l\'icona HD nella barra di stato invece di VoLTE</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Salva</string>
-    <string name="aspect_ratio_category_title">Ridimensionamento delle app legacy</string>
-    <string name="aspect_ratio_apps_enabled_title">Forza rapporto d\'aspetto</string>
-    <string name="aspect_ratio_apps_enabled_summary">Consenti alle app legacy di utilizzare lo schermo intero</string>
-    <string name="aspect_ratio_apps_list_title">Seleziona app</string>
-    <string name="aspect_ratio_apps_list_summary">Forza schermo intero per queste app</string>
-    <string name="aspect_ratio_footer_text">Riavvia le app per rendere effettive le modifiche</string>
     <!-- Rounded corners -->
     <string name="corners_category_title">Angoli</string>
     <string name="corner_radius">Raggio degli angoli arrotondati</string>

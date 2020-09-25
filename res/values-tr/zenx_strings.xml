@@ -543,14 +543,7 @@
     <!-- Volte icon -->
     <string name="show_hd_icon_title">HD simgesi</string>
     <string name="show_hd_icon_summary">Durum çubuğunda VoLTE yerine HD simgesini göster</string>
-    <!-- Per App aspect Ratio -->
-    <string name="action_save">Kaydet</string>
-    <string name="aspect_ratio_category_title">Eski uygulama ölçeklendirme</string>
-    <string name="aspect_ratio_apps_enabled_title">Daha yüksek en boy oranını zorla</string>
-    <string name="aspect_ratio_apps_enabled_summary">Seçilen eski uygulamaların tam ekran kullanmasına izin ver</string>
-    <string name="aspect_ratio_apps_list_title">Uygulama seçin</string>
-    <string name="aspect_ratio_apps_list_summary">Bu uygulamalar için tam ekranı zorla</string>
-    <string name="aspect_ratio_footer_text">Değişikliklerin etkili olması için uygulamaları yeniden başlatın</string>
+
     <!-- Rounded corners -->
     <string name="corners_category_title">Köşeler</string>
     <string name="corner_radius">Yuvarlak köşe yarıçapı</string>

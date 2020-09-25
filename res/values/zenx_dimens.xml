@@ -15,17 +15,13 @@
 -->
 <resources>
     <dimen name="picker_circle_preview_size">26dp</dimen>
-    <dimen name="alert_dialog_padding_material">20dp</dimen>
 
      <!-- Bottom navigation bar -->
     <dimen name="design_bottom_navigation_text_size">10dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">11dp</dimen>
 
-    
     <!-- Shortcut picker -->
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
-    <dimen name="floating_widget_view_padding">10dp</dimen>
-    <dimen name="floating_widget_window_padding">10dp</dimen>
 
     <dimen name="fod_picker_item_margin">20dp</dimen>
     <dimen name="fod_picker_item_size">100dp</dimen>

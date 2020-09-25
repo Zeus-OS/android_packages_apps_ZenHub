@@ -15,11 +15,6 @@
 -->
 <resources>
 
-    <style name="preference_icon_frame">
-        <item name="android:layout_marginStart">-4dp</item>
-        <item name="android:minWidth">60dp</item>
-    </style>
-
     <style name="DtBottomNavStyle">
         <item name="itemIconTint">@drawable/bottomnav_item_color</item>
         <item name="itemTextColor">@drawable/bottomnav_item_color</item>
