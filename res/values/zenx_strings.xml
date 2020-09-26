@@ -1292,6 +1292,13 @@
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
     <string name="fod_recog_animation_pureview_future">Future</string>
     <string name="fod_recog_animation_pureview_molecular">Molecular</string>
+    <string name="fod_miui_neon_recognizing_anim">MIUI Neon</string>
+    <string name="fod_recog_animation_rogfusion">ROG Fusion</string>
+    <string name="fod_recog_animation_rogpulsar">ROG Pulsar</string>
+    <string name="fod_recog_animation_rogsupernova">ROG Supernova</string>
+    <string name="fod_recog_animation_vivoendless">Vivo Endless</string>
+    <string name="fod_recog_animation_realmecloud">Realme Cloud</string>
+    <string name="fod_recog_animation_realmeripple">Realme Ripple</string>
 
 
     <!-- Status Bar Ticker -->
