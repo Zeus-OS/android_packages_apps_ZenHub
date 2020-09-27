@@ -155,6 +155,9 @@
 
      <string name="device_maintainers_begonia_title_summary">Xiaomi Redmi Note 8 Pro (begonia)</string>
      <string name="device_maintainers_begonia_title">Itachi Uchiha (KonohaHokage)</string>
+
+     <string name="device_maintainers_davinci_title_summary">Xiaomi Redmi 9T/K20 (davinci)</string>
+     <string name="device_maintainers_davinci_title">Spyros Kal (spkal01)</string>
     
      <!-- Zenx-Categories -->
     <string name="about_summary">Learn more about ZenX-OS</string>

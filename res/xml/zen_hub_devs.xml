@@ -156,8 +156,12 @@
             android:summary="@string/device_maintainers_begonia_title_summary"
             android:title="@string/device_maintainers_begonia_title"
             android:icon="@drawable/zenx_maintainer" />
-
-        
+                  
+        <Preference
+            android:key="maintainers_davinci"
+            android:summary="@string/device_maintainers_davinci_title_summary"
+            android:title="@string/device_maintainers_davinci_title"
+            android:icon="@drawable/zenx_maintainer" />
 
     </PreferenceCategory>
 
