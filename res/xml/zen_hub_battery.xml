@@ -26,6 +26,24 @@
             android:defaultValue="false" />
 
     <PreferenceCategory
+        android:key="wakelock_category"
+        android:title="@string/wakelock_category_title">
+
+    <Preference
+        android:key="alarm_blocker"
+        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.AlarmBlocker"
+        android:title="@string/alarm_blocker"
+        android:summary="@string/alarm_blocker_summary" />
+
+    <Preference
+        android:key="wakelock_blocker"
+        android:fragment="com.zenx.zen.hub.fragments.miscbattery.tabs.submodules.WakeLockBlocker"
+        android:title="@string/wakelock_blocker_title"
+        android:summary="@string/wakelock_blocker_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="battery_actions"
         android:title="@string/advanced_doze_settings">
 
