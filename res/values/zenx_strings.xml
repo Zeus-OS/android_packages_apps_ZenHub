@@ -302,6 +302,7 @@
     <string name="statusbar_items_category_title">Icons</string>
     <string name="statusbar_items_category_summary">Change icon visibility</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
+    <string name="status_bar_custom_header_height_title">Image height offset</string>
      <!-- Statusbar Tuner -->
     <string name="statusbar_items_title">Statusbar items</string>
     <string name="statusbar_items_summary">Configure the visibility of icons in the status bar</string>
