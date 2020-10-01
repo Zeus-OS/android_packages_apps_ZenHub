@@ -1278,7 +1278,18 @@
     <!-- Screen off FOD -->
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Use fingerprint reader also when the screen is off</string>
-
+    
+    <!-- FOD pressed state effect -->
+    <string name="fod_pressed_icon_title">FOD Pressed Icon</string>
+    <string name="fod_pressed_state_default_0">MIUI Cyan</string>
+    <string name="fod_pressed_state_default_1">Vivo Cyan Shadow</string>
+    <string name="fod_pressed_state_default_2">Vivo Cyan Shadow 2</string>
+    <string name="fod_pressed_state_default_3">Vivo Cyan</string>
+    <string name="fod_pressed_state_default_4">Realme Green Shadow</string>
+    <string name="fod_pressed_state_default_5">Vivo Green</string>
+    <string name="fod_pressed_state_default_6">MIUI White</string>
+    <string name="fod_pressed_state_default_7">Vivo Yellow Shadow</string>
+    
     <!-- FOD animations -->
     <string name="fod_recog_animation">Recognizing animation</string>
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
